@@ -1,0 +1,122 @@
+:root {
+  color-scheme: light;
+  --color-ink: #1f1b18;
+  --color-muted: #675f58;
+  --color-surface: #f7f2ec;
+  --color-panel: #fffaf4;
+  --color-accent: #8f3f34;
+  --color-accent-strong: #5f2922;
+  --color-line: #dfd3c8;
+  --font-sans:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+a {
+  color: inherit;
+}
+
+.home-shell {
+  min-height: 100vh;
+}
+
+.hero-section {
+  align-items: center;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(247, 242, 236, 0.96),
+      rgba(247, 242, 236, 0.72)
+    ),
+    var(--color-surface);
+  display: flex;
+  min-height: 92vh;
+  padding: clamp(4rem, 9vw, 8rem) clamp(1.25rem, 5vw, 5rem);
+}
+
+.hero-content {
+  max-width: 720px;
+}
+
+.eyebrow {
+  color: var(--color-accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: clamp(4rem, 9vw, 8rem);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 0.9;
+  margin: 0;
+}
+
+.hero-description {
+  color: var(--color-muted);
+  font-size: clamp(1.125rem, 2vw, 1.45rem);
+  line-height: 1.6;
+  margin: 1.5rem 0 0;
+  max-width: 620px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.button {
+  align-items: center;
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  display: inline-flex;
+  font-size: 0.95rem;
+  font-weight: 700;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.8rem 1rem;
+  text-decoration: none;
+}
+
+.button-primary {
+  background: var(--color-accent-strong);
+  border-color: var(--color-accent-strong);
+  color: var(--color-panel);
+}
+
+.button-secondary {
+  background: transparent;
+  color: var(--color-ink);
+}
+
+@media (max-width: 640px) {
+  .hero-section {
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 5rem;
+  }
+
+  .button {
+    width: 100%;
+  }
+}
