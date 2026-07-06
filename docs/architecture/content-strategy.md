@@ -42,6 +42,16 @@ UI components should define:
 * Accessible structure.
 * Interaction hooks.
 
+## Type Conventions
+
+Content modules should use shared TypeScript contracts from `src/types/` and the `satisfies` operator where possible.
+
+Example responsibilities:
+
+* `src/types/content.ts` defines reusable content shapes such as CTA/action links, imported through `@app-types/*`.
+* `src/content/*.ts` exports typed content objects.
+* Astro and React components consume content through props or imports, but should not become the source of business definitions.
+
 ## Content Tone
 
 Content should be:
@@ -70,6 +80,7 @@ Do not add CMS infrastructure during MVP unless a documented decision changes th
 * [../product/positioning.md](../product/positioning.md)
 * [../business/business-rules.md](../business/business-rules.md)
 * [frontend-architecture.md](frontend-architecture.md)
+* [frontend-conventions.md](frontend-conventions.md)
 * [../product/roadmap.md](../product/roadmap.md)
 
 ## Missing Information / Clarifications

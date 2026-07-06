@@ -144,8 +144,6 @@ Do not introduce these capabilities during MVP implementation:
 
 ## Missing Information / Clarifications
 
-* Final repository stack has not been initialized or confirmed in code.
-* Package manager and scripts are not documented yet.
 * Deployment platform is not selected.
 * Analytics provider is not selected.
 * Form handling, Calendly integration details, and lead delivery process are not finalized.

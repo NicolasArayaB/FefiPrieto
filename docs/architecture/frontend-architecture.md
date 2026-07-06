@@ -24,6 +24,8 @@ Components should describe structure and presentation.
 
 Avoid embedding long business copy or service definitions directly inside components. Use content modules for business content so the offering can evolve without requiring structural rewrites.
 
+Detailed implementation conventions are defined in [frontend-conventions.md](frontend-conventions.md).
+
 ## State Management
 
 Use Zustand only where state is meaningfully shared or persistent across components.
@@ -73,7 +75,9 @@ src/
   types/
 ```
 
-Path aliases are configured in `tsconfig.json` using the matching `@folder/*` convention, for example `@components/*`, `@layouts/*`, `@content/*`, and `@lib/*`.
+Path aliases are configured in `tsconfig.json` using the matching `@folder/*` convention, for example `@components/*`, `@layouts/*`, `@content/*`, `@lib/*`, and `@app-types/*`.
+
+Reusable UI primitives live in `src/components/ui/`. Page or section-specific components should move into `src/components/sections/` once the section surface grows beyond a route file.
 
 ## Environment Variables
 
@@ -96,17 +100,24 @@ Frontend implementation should:
 * Optimize image and media delivery.
 * Preserve responsive interaction quality on mobile.
 
+## Accessibility Requirements
+
+Frontend implementation should:
+
+* Use semantic HTML before ARIA.
+* Connect section landmarks to visible headings.
+* Preserve visible focus states.
+* Keep interactive targets large enough for touch input.
+* Ensure content remains understandable without animation.
+
 ## Related Documents
 
 * [system-overview.md](system-overview.md)
+* [frontend-conventions.md](frontend-conventions.md)
 * [content-strategy.md](content-strategy.md)
 * [../design/principles.md](../design/principles.md)
 * [../business/business-rules.md](../business/business-rules.md)
 
 ## Missing Information / Clarifications
 
-* CSS strategy is not selected.
-* Component naming conventions are not defined.
 * Testing strategy is not defined.
-* Accessibility acceptance criteria are not documented.
-* Animation library responsibilities between GSAP and Framer Motion need clarification.
