@@ -1,3 +1,5 @@
+import type { HomeContent } from "@app-types/content";
+
 export const homeContent = {
   hero: {
     eyebrow: "Image psychology and executive presence",
@@ -13,4 +15,4 @@ export const homeContent = {
       href: "mailto:hello@example.com?subject=Individual%20consultation",
     },
   },
-};
+} satisfies HomeContent;

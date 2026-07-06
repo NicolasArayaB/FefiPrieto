@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import HeroSection from "@components/sections/HeroSection.astro";
 import { homeContent } from "@content/home";
 
 const { hero } = homeContent;
@@ -7,20 +8,6 @@ const { hero } = homeContent;
 
 <BaseLayout>
   <main class="home-shell">
-    <section class="hero-section" aria-labelledby="hero-title">
-      <div class="hero-content">
-        <p class="eyebrow">{hero.eyebrow}</p>
-        <h1 id="hero-title">{hero.title}</h1>
-        <p class="hero-description">{hero.description}</p>
-        <div class="hero-actions" aria-label="Primary actions">
-          <a class="button button-primary" href={hero.primaryCta.href}>
-            {hero.primaryCta.label}
-          </a>
-          <a class="button button-secondary" href={hero.secondaryCta.href}>
-            {hero.secondaryCta.label}
-          </a>
-        </div>
-      </div>
-    </section>
+    <HeroSection content={hero} />
   </main>
 </BaseLayout>

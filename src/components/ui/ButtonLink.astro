@@ -1,0 +1,50 @@
+---
+import type { ActionLink } from "@app-types/content";
+
+interface Props extends ActionLink {
+  variant?: "primary" | "secondary";
+}
+
+const { href, label, variant = "secondary" } = Astro.props;
+---
+
+<a class:list={["button-link", `button-link-${variant}`]} href={href}>
+  <slot>{label}</slot>
+</a>
+
+<style>
+  .button-link {
+    align-items: center;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-control);
+    display: inline-flex;
+    font-size: 0.95rem;
+    font-weight: 700;
+    justify-content: center;
+    min-height: var(--target-size);
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+  }
+
+  .button-link:focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 3px;
+  }
+
+  .button-link-primary {
+    background: var(--color-accent-strong);
+    border-color: var(--color-accent-strong);
+    color: var(--color-panel);
+  }
+
+  .button-link-secondary {
+    background: transparent;
+    color: var(--color-ink);
+  }
+
+  @media (max-width: 640px) {
+    .button-link {
+      width: 100%;
+    }
+  }
+</style>

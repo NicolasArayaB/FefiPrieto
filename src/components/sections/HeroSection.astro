@@ -1,0 +1,84 @@
+---
+import ButtonLink from "@components/ui/ButtonLink.astro";
+import Container from "@components/ui/Container.astro";
+import Section from "@components/ui/Section.astro";
+import type { HeroContent } from "@app-types/content";
+
+interface Props {
+  content: HeroContent;
+}
+
+const { content } = Astro.props;
+---
+
+<Section class="hero-section" labelledby="hero-title">
+  <Container>
+    <div class="hero-content">
+      <p class="eyebrow">{content.eyebrow}</p>
+      <h1 id="hero-title">{content.title}</h1>
+      <p class="hero-description">{content.description}</p>
+      <div class="hero-actions" aria-label="Primary actions">
+        <ButtonLink {...content.primaryCta} variant="primary" />
+        <ButtonLink {...content.secondaryCta} />
+      </div>
+    </div>
+  </Container>
+</Section>
+
+<style>
+  .hero-section {
+    align-items: center;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(247, 242, 236, 0.96),
+        rgba(247, 242, 236, 0.72)
+      ),
+      var(--color-surface);
+    display: flex;
+    min-height: 92vh;
+  }
+
+  .hero-content {
+    max-width: 720px;
+  }
+
+  .eyebrow {
+    color: var(--color-accent);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    margin: 0 0 1rem;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-size: clamp(4rem, 9vw, 8rem);
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 0.9;
+    margin: 0;
+  }
+
+  .hero-description {
+    color: var(--color-muted);
+    font-size: clamp(1.125rem, 2vw, 1.45rem);
+    line-height: 1.6;
+    margin: 1.5rem 0 0;
+    max-width: 620px;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 640px) {
+    .hero-section {
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+  }
+</style>
