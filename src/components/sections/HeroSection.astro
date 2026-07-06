@@ -13,14 +13,22 @@ const { content } = Astro.props;
 
 <Section class="hero-section" labelledby="hero-title">
   <Container>
-    <div class="hero-content">
-      <p class="eyebrow">{content.eyebrow}</p>
-      <h1 id="hero-title">{content.title}</h1>
-      <p class="hero-description">{content.description}</p>
-      <div class="hero-actions" aria-label="Primary actions">
-        <ButtonLink {...content.primaryCta} variant="primary" />
-        <ButtonLink {...content.secondaryCta} />
+    <div class="hero-frame surface-panel">
+      <div class="hero-copy">
+        <p class="eyebrow">{content.eyebrow}</p>
+        <h1 id="hero-title">{content.title}</h1>
+        <p class="hero-description">{content.description}</p>
+        <div class="hero-actions" aria-label="Primary actions">
+          <ButtonLink {...content.primaryCta} variant="primary" />
+          <ButtonLink {...content.secondaryCta} />
+        </div>
       </div>
+      <aside class="hero-aside" aria-label="Brand statement">
+        <p class="hero-aside-label">Foundational belief</p>
+        <p class="hero-aside-text">
+          Image is not superficial. It is psychological.
+        </p>
+      </aside>
     </div>
   </Container>
 </Section>
@@ -28,57 +36,115 @@ const { content } = Astro.props;
 <style>
   .hero-section {
     align-items: center;
-    background:
-      linear-gradient(
-        90deg,
-        rgba(247, 242, 236, 0.96),
-        rgba(247, 242, 236, 0.72)
-      ),
-      var(--color-surface);
     display: flex;
     min-height: 92vh;
   }
 
-  .hero-content {
-    max-width: 720px;
+  .hero-frame {
+    border-radius: var(--radius-lg);
+    display: grid;
+    gap: var(--space-xl);
+    grid-template-columns: minmax(0, 1.7fr) minmax(240px, 0.8fr);
+    padding: clamp(1.5rem, 4vw, 3rem);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-frame::after {
+    background:
+      linear-gradient(180deg, rgba(147, 80, 63, 0.18), transparent 46%),
+      var(--gradient-hero);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+  }
+
+  .hero-copy,
+  .hero-aside {
+    position: relative;
+    z-index: 1;
   }
 
   .eyebrow {
     color: var(--color-accent);
-    font-size: 0.78rem;
+    font-size: var(--font-size-xs);
     font-weight: 700;
-    letter-spacing: 0;
-    margin: 0 0 1rem;
+    letter-spacing: var(--tracking-wide);
+    margin: 0 0 var(--space-md);
     text-transform: uppercase;
   }
 
   h1 {
-    font-size: clamp(4rem, 9vw, 8rem);
-    font-weight: 700;
-    letter-spacing: 0;
-    line-height: 0.9;
-    margin: 0;
+    font-size: var(--font-size-4xl);
+    line-height: var(--line-height-tight);
+    max-width: 10ch;
   }
 
   .hero-description {
-    color: var(--color-muted);
-    font-size: clamp(1.125rem, 2vw, 1.45rem);
-    line-height: 1.6;
-    margin: 1.5rem 0 0;
+    color: var(--color-ink-soft);
+    font-size: var(--font-size-xl);
+    line-height: var(--line-height-body);
+    margin-top: var(--space-md);
     max-width: 620px;
   }
 
   .hero-actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-top: 2rem;
+    gap: var(--space-xs);
+    margin-top: var(--space-lg);
+  }
+
+  .hero-aside {
+    align-self: end;
+    background: rgba(255, 250, 244, 0.72);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+  }
+
+  .hero-aside-label {
+    color: var(--color-muted);
+    font-family: var(--font-body);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    letter-spacing: var(--tracking-wide);
+    margin-bottom: var(--space-sm);
+    text-transform: uppercase;
+  }
+
+  .hero-aside-text {
+    font-family: var(--font-display);
+    font-size: var(--font-size-2xl);
+    letter-spacing: var(--tracking-soft);
+    line-height: var(--line-height-snug);
+  }
+
+  @media (max-width: 900px) {
+    .hero-frame {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-aside {
+      max-width: 28rem;
+    }
   }
 
   @media (max-width: 640px) {
     .hero-section {
       align-items: flex-start;
       min-height: 100vh;
+    }
+
+    .hero-frame {
+      border-radius: var(--radius-md);
+      gap: var(--space-lg);
+      padding: 1.25rem;
+    }
+
+    h1 {
+      max-width: 8ch;
     }
   }
 </style>

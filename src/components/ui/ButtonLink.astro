@@ -3,12 +3,16 @@ import type { ActionLink } from "@app-types/content";
 
 interface Props extends ActionLink {
   variant?: "primary" | "secondary";
+  size?: "default" | "compact";
 }
 
-const { href, label, variant = "secondary" } = Astro.props;
+const { href, label, variant = "secondary", size = "default" } = Astro.props;
 ---
 
-<a class:list={["button-link", `button-link-${variant}`]} href={href}>
+<a
+  class:list={["button-link", `button-link-${variant}`, `button-link-${size}`]}
+  href={href}
+>
   <slot>{label}</slot>
 </a>
 
@@ -17,29 +21,53 @@ const { href, label, variant = "secondary" } = Astro.props;
     align-items: center;
     border: 1px solid var(--color-line);
     border-radius: var(--radius-control);
+    box-shadow: var(--shadow-soft);
     display: inline-flex;
-    font-size: 0.95rem;
+    font-size: var(--font-size-sm);
     font-weight: 700;
+    gap: var(--space-2xs);
     justify-content: center;
+    letter-spacing: 0.02em;
     min-height: var(--target-size);
-    padding: 0.8rem 1rem;
+    padding: 0.9rem 1.25rem;
     text-decoration: none;
+    transition:
+      transform var(--duration-fast) var(--easing-standard),
+      background-color var(--duration-fast) var(--easing-standard),
+      border-color var(--duration-fast) var(--easing-standard),
+      color var(--duration-fast) var(--easing-standard),
+      box-shadow var(--duration-fast) var(--easing-standard);
   }
 
-  .button-link:focus-visible {
-    outline: 3px solid var(--color-focus);
-    outline-offset: 3px;
+  .button-link:hover {
+    box-shadow: var(--shadow-card);
+    transform: translateY(-1px);
   }
 
   .button-link-primary {
     background: var(--color-accent-strong);
     border-color: var(--color-accent-strong);
-    color: var(--color-panel);
+    color: var(--color-panel-strong);
+  }
+
+  .button-link-primary:hover {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
   }
 
   .button-link-secondary {
-    background: transparent;
+    background: rgba(255, 250, 244, 0.64);
     color: var(--color-ink);
+  }
+
+  .button-link-secondary:hover {
+    background: var(--color-panel-strong);
+    border-color: var(--color-line-strong);
+  }
+
+  .button-link-compact {
+    min-height: calc(var(--target-size) - 4px);
+    padding: 0.75rem 1rem;
   }
 
   @media (max-width: 640px) {

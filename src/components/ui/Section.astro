@@ -2,17 +2,25 @@
 interface Props {
   class?: string;
   labelledby?: string;
+  spacing?: "default" | "tight";
 }
 
-const { class: className, labelledby } = Astro.props;
+const { class: className, labelledby, spacing = "default" } = Astro.props;
 ---
 
-<section class:list={["section", className]} aria-labelledby={labelledby}>
+<section
+  class:list={["section", `section-${spacing}`, className]}
+  aria-labelledby={labelledby}
+>
   <slot />
 </section>
 
 <style>
   .section {
     padding-block: var(--section-padding);
+  }
+
+  .section-tight {
+    padding-block: var(--section-padding-tight);
   }
 </style>

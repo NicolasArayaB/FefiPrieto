@@ -1,23 +1,89 @@
 @layer tokens {
   :root {
     color-scheme: light;
-    --color-ink: #1f1b18;
-    --color-muted: #675f58;
-    --color-surface: #f7f2ec;
-    --color-panel: #fffaf4;
-    --color-accent: #8f3f34;
-    --color-accent-strong: #5f2922;
-    --color-line: #dfd3c8;
-    --color-focus: #2f6f73;
+    --color-ink: #211c18;
+    --color-ink-soft: #4f4740;
+    --color-muted: #6e665f;
+    --color-surface: #f6f0e8;
+    --color-surface-elevated: #fbf7f2;
+    --color-surface-strong: #efe4d6;
+    --color-panel: rgba(255, 250, 244, 0.82);
+    --color-panel-strong: #fffaf4;
+    --color-accent: #93503f;
+    --color-accent-strong: #643328;
+    --color-accent-soft: #caa28f;
+    --color-line: rgba(62, 45, 35, 0.14);
+    --color-line-strong: rgba(62, 45, 35, 0.24);
+    --color-focus: #1f6d71;
+    --color-shadow: rgba(49, 33, 22, 0.14);
+    --gradient-page:
+      radial-gradient(
+        circle at top,
+        rgba(202, 162, 143, 0.28),
+        transparent 42%
+      ),
+      linear-gradient(180deg, #fbf7f2 0%, #f6f0e8 38%, #f0e7dc 100%);
+    --gradient-hero:
+      linear-gradient(
+        135deg,
+        rgba(255, 250, 244, 0.94),
+        rgba(255, 250, 244, 0.58)
+      ),
+      linear-gradient(180deg, rgba(147, 80, 63, 0.08), rgba(246, 240, 232, 0));
 
-    --font-sans:
-      Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-      "Segoe UI", sans-serif;
+    --font-body:
+      "Avenir Next", Montserrat, "Segoe UI", ui-sans-serif, system-ui,
+      sans-serif;
+    --font-display:
+      "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia,
+      ui-serif, serif;
+    --font-mono:
+      "SFMono-Regular", "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: clamp(1.25rem, 1.7vw, 1.5rem);
+    --font-size-2xl: clamp(1.75rem, 3vw, 2.5rem);
+    --font-size-3xl: clamp(2.5rem, 6vw, 4.75rem);
+    --font-size-4xl: clamp(3.5rem, 9vw, 7.5rem);
+
+    --line-height-tight: 0.95;
+    --line-height-snug: 1.1;
+    --line-height-body: 1.65;
+
+    --tracking-tight: -0.04em;
+    --tracking-soft: -0.02em;
+    --tracking-wide: 0.12em;
+
+    --space-2xs: 0.375rem;
+    --space-xs: 0.75rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --space-2xl: 4rem;
+    --space-3xl: 6rem;
 
     --layout-max-width: 1180px;
+    --layout-narrow-width: 940px;
     --space-page: clamp(1.25rem, 5vw, 5rem);
     --section-padding: clamp(4rem, 9vw, 8rem);
-    --radius-control: 8px;
+    --section-padding-tight: clamp(3rem, 7vw, 5.5rem);
+
+    --radius-sm: 0.75rem;
+    --radius-md: 1rem;
+    --radius-lg: 1.75rem;
+    --radius-pill: 999px;
+    --radius-control: var(--radius-pill);
     --target-size: 44px;
+
+    --shadow-soft: 0 20px 60px -32px var(--color-shadow);
+    --shadow-card: 0 24px 60px -36px rgba(49, 33, 22, 0.28);
+
+    --duration-fast: 180ms;
+    --duration-base: 280ms;
+    --easing-standard: cubic-bezier(0.22, 1, 0.36, 1);
   }
 }

@@ -1,12 +1,13 @@
 ---
 interface Props {
   class?: string;
+  size?: "default" | "narrow";
 }
 
-const { class: className } = Astro.props;
+const { class: className, size = "default" } = Astro.props;
 ---
 
-<div class:list={["container", className]}>
+<div class:list={["container", `container-${size}`, className]}>
   <slot />
 </div>
 
@@ -16,5 +17,9 @@ const { class: className } = Astro.props;
     max-width: var(--layout-max-width);
     padding-inline: var(--space-page);
     width: 100%;
+  }
+
+  .container-narrow {
+    max-width: var(--layout-narrow-width);
   }
 </style>
