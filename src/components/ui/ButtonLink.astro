@@ -19,7 +19,7 @@ const { href, label, variant = "secondary", size = "default" } = Astro.props;
 <style>
   .button-link {
     align-items: center;
-    border: 1px solid var(--color-line);
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-control);
     box-shadow: var(--shadow-soft);
     display: inline-flex;
@@ -45,24 +45,28 @@ const { href, label, variant = "secondary", size = "default" } = Astro.props;
   }
 
   .button-link-primary {
-    background: var(--color-accent-strong);
-    border-color: var(--color-accent-strong);
-    color: var(--color-panel-strong);
+    background: var(--color-brand);
+    border-color: var(--color-brand);
+    color: var(--color-surface-elevated);
   }
 
   .button-link-primary:hover {
-    background: var(--color-accent);
-    border-color: var(--color-accent);
+    background: var(--color-brand-hover);
+    border-color: var(--color-brand-hover);
   }
 
   .button-link-secondary {
-    background: rgba(255, 250, 244, 0.64);
-    color: var(--color-ink);
+    background: color-mix(
+      in srgb,
+      var(--color-surface-elevated) 64%,
+      transparent
+    );
+    color: var(--color-text);
   }
 
   .button-link-secondary:hover {
-    background: var(--color-panel-strong);
-    border-color: var(--color-line-strong);
+    background: var(--color-surface-elevated);
+    border-color: var(--color-border);
   }
 
   .button-link-compact {

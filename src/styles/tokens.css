@@ -1,35 +1,21 @@
 @layer tokens {
   :root {
     color-scheme: light;
-    --color-ink: #211c18;
-    --color-ink-soft: #4f4740;
-    --color-muted: #6e665f;
-    --color-surface: #f6f0e8;
-    --color-surface-elevated: #fbf7f2;
-    --color-surface-strong: #efe4d6;
-    --color-panel: rgba(255, 250, 244, 0.82);
-    --color-panel-strong: #fffaf4;
-    --color-accent: #93503f;
-    --color-accent-strong: #643328;
-    --color-accent-soft: #caa28f;
-    --color-line: rgba(62, 45, 35, 0.14);
-    --color-line-strong: rgba(62, 45, 35, 0.24);
-    --color-focus: #1f6d71;
-    --color-shadow: rgba(49, 33, 22, 0.14);
-    --gradient-page:
-      radial-gradient(
-        circle at top,
-        rgba(202, 162, 143, 0.28),
-        transparent 42%
-      ),
-      linear-gradient(180deg, #fbf7f2 0%, #f6f0e8 38%, #f0e7dc 100%);
-    --gradient-hero:
-      linear-gradient(
-        135deg,
-        rgba(255, 250, 244, 0.94),
-        rgba(255, 250, 244, 0.58)
-      ),
-      linear-gradient(180deg, rgba(147, 80, 63, 0.08), rgba(246, 240, 232, 0));
+    --color-background: #f4f1eb;
+    --color-background-alt: #eae5dc;
+    --color-surface: #faf8f4;
+    --color-surface-elevated: #fffdf9;
+    --color-card: #f7f4ee;
+    --color-text: #252522;
+    --color-text-secondary: #5d5b55;
+    --color-text-muted: #706d66;
+    --color-brand: #4c625a;
+    --color-brand-hover: #3d5049;
+    --color-border: #cbc5bb;
+    --color-border-subtle: #e1ddd5;
+    --color-overlay: rgba(37, 37, 34, 0.72);
+    --color-shadow: rgba(37, 37, 34, 0.14);
+    --color-focus: #2f6a65;
 
     --font-body:
       "Avenir Next", Montserrat, "Segoe UI", ui-sans-serif, system-ui,
@@ -80,7 +66,7 @@
     --target-size: 44px;
 
     --shadow-soft: 0 20px 60px -32px var(--color-shadow);
-    --shadow-card: 0 24px 60px -36px rgba(49, 33, 22, 0.28);
+    --shadow-card: 0 24px 60px -36px var(--color-shadow);
 
     --duration-fast: 180ms;
     --duration-base: 280ms;

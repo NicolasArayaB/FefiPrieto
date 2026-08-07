@@ -51,9 +51,16 @@ Imagery should support the themes of identity, confidence, professional presence
 
 Avoid imagery that makes the brand feel like a generic fashion service, retail catalog, or stock business website.
 
+## Color System
+
+The visual language uses a neutral-first palette: warm off-whites and stone tones create the background and surface hierarchy, while deep charcoal establishes typographic authority. A single subdued green-gray brand color is reserved for purposeful emphasis, interactive states, and focus treatment rather than decorative hierarchy.
+
+Use semantic color tokens from [color-system.md](color-system.md). Components must consume these tokens rather than introducing literal color values. Component-specific gradients and translucent treatments belong with the component that owns them; `tokens.css` contains only reusable color primitives.
+
 ## Related Documents
 
 * [principles.md](principles.md)
+* [color-system.md](color-system.md)
 * [../product/positioning.md](../product/positioning.md)
 * [../product/audience.md](../product/audience.md)
 * [../architecture/frontend-architecture.md](../architecture/frontend-architecture.md)
