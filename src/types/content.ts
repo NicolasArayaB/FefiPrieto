@@ -3,12 +3,25 @@ export interface ActionLink {
   href: string;
 }
 
+export interface HomeMetadata {
+  title: string;
+  description: string;
+}
+
 export interface HeroContent {
   eyebrow: string;
   title: string;
   description: string;
   primaryCta: ActionLink;
   secondaryCta: ActionLink;
+  actionsLabel: string;
+  statement: {
+    label: string;
+    quote: string;
+  };
+  image: {
+    alt: string;
+  };
 }
 
 export interface MethodologyStage {
@@ -20,6 +33,7 @@ export interface MethodologyContent {
   eyebrow: string;
   title: string;
   description: string;
+  stagesLabel: string;
   stages: MethodologyStage[];
 }
 
@@ -27,6 +41,7 @@ export interface Service {
   title: string;
   description: string;
   href: string;
+  entryLabel: string;
 }
 
 export interface ServiceGroup {

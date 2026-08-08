@@ -1,100 +1,120 @@
-import type { HomeContent } from "@app-types/content";
+import type { HomeContent, HomeMetadata } from "@app-types/content";
+
+export const homeMetadata = {
+  title: "Fernanda Prieto",
+  description:
+    "Psicología de la imagen, presencia ejecutiva y transformación personal.",
+} satisfies HomeMetadata;
 
 export const homeContent = {
   hero: {
-    eyebrow: "Image psychology and executive presence",
+    eyebrow: "Psicología de la imagen y presencia ejecutiva",
     title: "Fefi Prieto",
     description:
-      "A premium advisory experience for leaders, teams, and individuals who want their image to communicate with intention.",
+      "Acompañamiento estratégico para personas y equipos que buscan que su imagen exprese quiénes son, con claridad y propósito.",
     primaryCta: {
-      label: "Corporate inquiry",
-      href: "mailto:hello@example.com?subject=Corporate%20inquiry",
+      label: "Hablemos de tu organización",
+      href: "mailto:hello@example.com?subject=Consulta%20corporativa",
     },
     secondaryCta: {
-      label: "Individual consultation",
-      href: "mailto:hello@example.com?subject=Individual%20consultation",
+      label: "Agendar una asesoría",
+      href: "mailto:hello@example.com?subject=Asesoría%20individual",
+    },
+    actionsLabel: "Acciones principales",
+    statement: {
+      label: "Una convicción de partida",
+      quote: "La imagen no es superficial. Es psicológica.",
+    },
+    image: {
+      alt: "Una mujer con blazer oscuro en un estudio de tonos piedra.",
     },
   },
   methodology: {
-    eyebrow: "Methodology",
-    title: "Psychology gives image its meaning.",
+    eyebrow: "Metodología",
+    title: "Comprenderte es el primer paso para proyectarte.",
     description:
-      "A considered process that connects inner identity with the way you choose to be seen—without reducing either to appearance.",
+      "Un proceso que une identidad, percepción y expresión para que lo visible acompañe lo que ya eres y hacia dónde vas.",
+    stagesLabel: "Etapas de la metodología",
     stages: [
       {
         title: "Psychology",
         description:
-          "We begin beneath appearance: with the beliefs, habits, and self-perception that shape how you inhabit a room.",
+          "Comenzamos más allá de la apariencia: en las creencias, hábitos y formas de percibirte que influyen en cómo ocupas un espacio.",
       },
       {
-        title: "Coaching",
+        title: "Acompañamiento",
         description:
-          "We turn insight into practice, building the clarity and confidence to make choices that feel intentional and sustainable.",
+          "Convertimos esa comprensión en decisiones. Construimos la claridad y la confianza necesarias para elegir con intención y sostenerlo en el tiempo.",
       },
       {
-        title: "Image Consulting",
+        title: "Asesoría de imagen",
         description:
-          "We translate that alignment into a visible expression—one that supports your presence, work, and direction without performing a version of someone else.",
+          "Traducimos esa coherencia en una expresión visible que acompañe tu presencia, tu trabajo y tu dirección, sin interpretar a alguien que no eres.",
       },
     ],
   },
   services: {
-    eyebrow: "Services",
-    title: "Support for the way you want to be seen.",
+    eyebrow: "Servicios",
+    title: "Una presencia que se siente propia.",
     description:
-      "Two distinct paths, grounded in the same belief: image can be a practical expression of identity, confidence, and direction.",
+      "Dos formas de trabajar desde una misma convicción: la imagen puede expresar identidad, confianza y dirección de manera concreta.",
     groups: [
       {
-        eyebrow: "For organizations",
-        title: "Corporate",
+        eyebrow: "Para organizaciones",
+        title: "Corporativo",
         description:
-          "Programs for teams and leaders who want presence to support trust, communication, and authority at work.",
+          "Programas para equipos y liderazgos que quieren que su presencia fortalezca la confianza, la comunicación y la autoridad en el trabajo.",
         action: {
-          label: "Discuss corporate needs",
-          href: "mailto:hello@example.com?subject=Corporate%20services",
+          label: "Conversemos sobre tu equipo",
+          href: "mailto:hello@example.com?subject=Servicios%20corporativos",
         },
         services: [
           {
             title: "Presencia Ejecutiva",
             description:
-              "A focused program for leaders who want their external presence to match the clarity of their thinking and role.",
-            href: "mailto:hello@example.com?subject=Presencia%20Ejecutiva",
+              "Un programa para liderazgos que buscan que su presencia exterior esté a la altura de la claridad de su pensamiento y su rol.",
+            href: "mailto:hello@example.com?subject=Presencia%20ejecutiva",
+            entryLabel: "Conocer este servicio",
           },
           {
             title: "Psicología de la Autoridad",
             description:
-              "An applied exploration of the cues that shape credibility, trust, and perceived authority in professional settings.",
+              "Una exploración aplicada de las señales que construyen credibilidad, confianza y autoridad percibida en contextos profesionales.",
             href: "mailto:hello@example.com?subject=Psicolog%C3%ADa%20de%20la%20Autoridad",
+            entryLabel: "Conocer este servicio",
           },
         ],
       },
       {
-        eyebrow: "For individuals",
+        eyebrow: "Para personas",
         title: "Individual",
         description:
-          "One-to-one guidance for making personal style a more useful, confident expression of who you are becoming.",
+          "Acompañamiento uno a uno para que tu estilo sea una expresión más útil, segura y coherente de la persona que estás construyendo.",
         action: {
-          label: "Explore individual services",
-          href: "mailto:hello@example.com?subject=Individual%20services",
+          label: "Explorar servicios individuales",
+          href: "mailto:hello@example.com?subject=Servicios%20individuales",
         },
         services: [
           {
             title: "Colorimetría",
             description:
-              "A considered starting point for understanding the colors that support your natural contrast, energy, and intention.",
+              "Un punto de partida para comprender los colores que acompañan tu contraste natural, tu energía y tu intención.",
             href: "mailto:hello@example.com?subject=Colorimetr%C3%ADa",
+            entryLabel: "Conocer este servicio",
           },
           {
             title: "Asesoría de imagen",
             description:
-              "A practical, psychology-informed process for aligning how you present yourself with your daily life and goals.",
+              "Un proceso práctico, informado por la psicología, para alinear la forma en que te presentas con tu vida diaria y tus objetivos.",
             href: "mailto:hello@example.com?subject=Asesor%C3%ADa%20de%20imagen",
+            entryLabel: "Conocer este servicio",
           },
           {
             title: "Personal shopper",
             description:
-              "A guided selection experience that translates personal clarity into pieces you can use with confidence.",
+              "Una selección acompañada que convierte la claridad personal en prendas que puedes usar con seguridad y sentido.",
             href: "mailto:hello@example.com?subject=Personal%20shopper",
+            entryLabel: "Conocer este servicio",
           },
         ],
       },

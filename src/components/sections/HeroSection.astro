@@ -19,22 +19,22 @@ const { content } = Astro.props;
         <p class="eyebrow type-eyebrow">{content.eyebrow}</p>
         <h1 id="hero-title" class="type-display-xl">{content.title}</h1>
         <p class="hero-description type-lead">{content.description}</p>
-        <div class="hero-actions" aria-label="Primary actions">
+        <div class="hero-actions" aria-label={content.actionsLabel}>
           <ButtonLink {...content.primaryCta} variant="primary" />
           <ButtonLink {...content.secondaryCta} />
         </div>
-        <aside class="hero-statement" aria-label="Brand statement">
-          <p class="hero-statement-label type-label">Foundational belief</p>
-          <p class="type-quote">
-            Image is not superficial. It is psychological.
+        <aside class="hero-statement" aria-label={content.statement.label}>
+          <p class="hero-statement-label type-label">
+            {content.statement.label}
           </p>
+          <p class="type-quote">{content.statement.quote}</p>
         </aside>
       </div>
       <div class="hero-companion">
         <figure class="hero-image">
           <img
             src="/images/hero-editorial-placeholder.webp"
-            alt="Editorial placeholder: a woman in a charcoal blazer in a stone-toned studio."
+            alt={content.image.alt}
             width="1024"
             height="1536"
             decoding="async"

@@ -27,7 +27,7 @@ const { content } = Astro.props;
       </Grid>
     </header>
 
-    <ol class="methodology-stages" aria-label="Methodology stages">
+    <ol class="methodology-stages" aria-label={content.stagesLabel}>
       {
         content.stages.map((stage, index) => (
           <li>

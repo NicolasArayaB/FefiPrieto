@@ -1,8 +1,7 @@
 import { siteUrl } from "@lib/env";
+import { homeMetadata } from "@content/home";
 
 export const siteMetadata = {
-  title: "Fefi Prieto",
-  description:
-    "Psychology-informed image consulting, executive presence, and personal transformation.",
+  ...homeMetadata,
   url: siteUrl,
 };
