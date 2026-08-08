@@ -11,6 +11,19 @@ export interface HeroContent {
   secondaryCta: ActionLink;
 }
 
+export interface MethodologyStage {
+  title: string;
+  description: string;
+}
+
+export interface MethodologyContent {
+  eyebrow: string;
+  title: string;
+  description: string;
+  stages: MethodologyStage[];
+}
+
 export interface HomeContent {
   hero: HeroContent;
+  methodology: MethodologyContent;
 }
