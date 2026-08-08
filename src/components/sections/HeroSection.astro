@@ -15,17 +15,17 @@ const { content } = Astro.props;
   <Container>
     <div class="hero-frame surface-panel">
       <div class="hero-copy">
-        <p class="eyebrow">{content.eyebrow}</p>
-        <h1 id="hero-title">{content.title}</h1>
-        <p class="hero-description">{content.description}</p>
+        <p class="eyebrow type-eyebrow">{content.eyebrow}</p>
+        <h1 id="hero-title" class="type-display-xl">{content.title}</h1>
+        <p class="hero-description type-lead">{content.description}</p>
         <div class="hero-actions" aria-label="Primary actions">
           <ButtonLink {...content.primaryCta} variant="primary" />
           <ButtonLink {...content.secondaryCta} />
         </div>
       </div>
       <aside class="hero-aside" aria-label="Brand statement">
-        <p class="hero-aside-label">Foundational belief</p>
-        <p class="hero-aside-text">
+        <p class="hero-aside-label type-label">Foundational belief</p>
+        <p class="hero-aside-text type-quote">
           Image is not superficial. It is psychological.
         </p>
       </aside>
@@ -76,23 +76,15 @@ const { content } = Astro.props;
 
   .eyebrow {
     color: var(--color-brand);
-    font-size: var(--font-size-xs);
-    font-weight: 700;
-    letter-spacing: var(--tracking-wide);
     margin: 0 0 var(--space-md);
-    text-transform: uppercase;
   }
 
   h1 {
-    font-size: var(--font-size-4xl);
-    line-height: var(--line-height-tight);
     max-width: 10ch;
   }
 
   .hero-description {
     color: var(--color-text-secondary);
-    font-size: var(--font-size-xl);
-    line-height: var(--line-height-body);
     margin-top: var(--space-md);
     max-width: 620px;
   }
@@ -118,19 +110,7 @@ const { content } = Astro.props;
 
   .hero-aside-label {
     color: var(--color-text-muted);
-    font-family: var(--font-body);
-    font-size: var(--font-size-xs);
-    font-weight: 700;
-    letter-spacing: var(--tracking-wide);
     margin-bottom: var(--space-sm);
-    text-transform: uppercase;
-  }
-
-  .hero-aside-text {
-    font-family: var(--font-display);
-    font-size: var(--font-size-2xl);
-    letter-spacing: var(--tracking-soft);
-    line-height: var(--line-height-snug);
   }
 
   @media (max-width: 900px) {
@@ -155,7 +135,7 @@ const { content } = Astro.props;
       padding: 1.25rem;
     }
 
-    h1 {
+    h1.type-display-xl {
       max-width: 8ch;
     }
   }

@@ -34,6 +34,10 @@ The visual system should emphasize:
 
 The site should use storytelling, sequencing, and composition to create authority. It should feel like a thoughtful premium editorial experience that explains a serious psychological and professional concept.
 
+## Typography
+
+Typography is the primary driver of hierarchy. Canela is reserved for editorial emphasis—hero titles, section headlines, and reflective statements—while Inter supports all reading and interface content. Use the semantic styles and reading-rhythm rules in [typography-system.md](typography-system.md); components should not introduce local typography values.
+
 ## Motion Direction
 
 Motion should support:
@@ -61,6 +65,7 @@ Use semantic color tokens from [color-system.md](color-system.md). Components mu
 
 * [principles.md](principles.md)
 * [color-system.md](color-system.md)
+* [typography-system.md](typography-system.md)
 * [../product/positioning.md](../product/positioning.md)
 * [../product/audience.md](../product/audience.md)
 * [../architecture/frontend-architecture.md](../architecture/frontend-architecture.md)

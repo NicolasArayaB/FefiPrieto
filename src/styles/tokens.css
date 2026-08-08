@@ -18,30 +18,64 @@
     --color-focus: #2f6a65;
 
     --font-body:
-      "Avenir Next", Montserrat, "Segoe UI", ui-sans-serif, system-ui,
-      sans-serif;
+      "Inter", "Avenir Next", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
     --font-display:
-      "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia,
-      ui-serif, serif;
+      "Canela", "Iowan Old Style", "Palatino Linotype", "Book Antiqua",
+      Palatino, Georgia, ui-serif, serif;
     --font-mono:
       "SFMono-Regular", "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
 
-    --font-size-xs: 0.75rem;
-    --font-size-sm: 0.875rem;
-    --font-size-md: 1rem;
-    --font-size-lg: 1.125rem;
-    --font-size-xl: clamp(1.25rem, 1.7vw, 1.5rem);
-    --font-size-2xl: clamp(1.75rem, 3vw, 2.5rem);
-    --font-size-3xl: clamp(2.5rem, 6vw, 4.75rem);
-    --font-size-4xl: clamp(3.5rem, 9vw, 7.5rem);
+    --type-display-xl: 400 clamp(3.5rem, 8vw, 7rem) / 0.92 var(--font-display);
+    --type-display-xl-tracking: -0.045em;
+    --type-display-xl-transform: none;
+    --type-display-l: 400 clamp(3rem, 6vw, 5.5rem) / 0.95 var(--font-display);
+    --type-display-l-tracking: -0.04em;
+    --type-display-l-transform: none;
+    --type-display-m: 400 clamp(2.5rem, 4.5vw, 4rem) / 1 var(--font-display);
+    --type-display-m-tracking: -0.035em;
+    --type-display-m-transform: none;
 
-    --line-height-tight: 0.95;
-    --line-height-snug: 1.1;
-    --line-height-body: 1.65;
+    --type-heading-xl: 400 clamp(2.25rem, 3.5vw, 3.5rem) / 1.04
+      var(--font-display);
+    --type-heading-xl-tracking: -0.03em;
+    --type-heading-xl-transform: none;
+    --type-heading-l: 400 clamp(1.75rem, 2.5vw, 2.5rem) / 1.08
+      var(--font-display);
+    --type-heading-l-tracking: -0.025em;
+    --type-heading-l-transform: none;
+    --type-heading-m: 500 clamp(1.375rem, 1.8vw, 1.75rem) / 1.2
+      var(--font-display);
+    --type-heading-m-tracking: -0.02em;
+    --type-heading-m-transform: none;
 
-    --tracking-tight: -0.04em;
-    --tracking-soft: -0.02em;
-    --tracking-wide: 0.12em;
+    --type-lead: 400 clamp(1.125rem, 1.7vw, 1.375rem) / 1.6 var(--font-body);
+    --type-lead-tracking: -0.01em;
+    --type-lead-transform: none;
+    --type-body-l: 400 1.125rem / 1.7 var(--font-body);
+    --type-body-l-tracking: normal;
+    --type-body-l-transform: none;
+    --type-body: 400 1rem / 1.7 var(--font-body);
+    --type-body-tracking: normal;
+    --type-body-transform: none;
+    --type-body-small: 400 0.875rem / 1.6 var(--font-body);
+    --type-body-small-tracking: normal;
+    --type-body-small-transform: none;
+
+    --type-caption: 500 0.75rem / 1.45 var(--font-body);
+    --type-caption-tracking: 0.01em;
+    --type-caption-transform: none;
+    --type-eyebrow: 600 0.75rem / 1.2 var(--font-body);
+    --type-eyebrow-tracking: 0.12em;
+    --type-eyebrow-transform: uppercase;
+    --type-button: 600 0.875rem / 1.2 var(--font-body);
+    --type-button-tracking: 0.02em;
+    --type-button-transform: none;
+    --type-label: 600 0.75rem / 1.2 var(--font-body);
+    --type-label-tracking: 0.08em;
+    --type-label-transform: uppercase;
+    --type-quote: 400 clamp(1.75rem, 3vw, 2.5rem) / 1.1 var(--font-display);
+    --type-quote-tracking: -0.025em;
+    --type-quote-transform: none;
 
     --space-2xs: 0.375rem;
     --space-xs: 0.75rem;

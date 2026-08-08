@@ -10,7 +10,12 @@ const { href, label, variant = "secondary", size = "default" } = Astro.props;
 ---
 
 <a
-  class:list={["button-link", `button-link-${variant}`, `button-link-${size}`]}
+  class:list={[
+    "button-link",
+    "type-button",
+    `button-link-${variant}`,
+    `button-link-${size}`,
+  ]}
   href={href}
 >
   <slot>{label}</slot>
@@ -23,11 +28,8 @@ const { href, label, variant = "secondary", size = "default" } = Astro.props;
     border-radius: var(--radius-control);
     box-shadow: var(--shadow-soft);
     display: inline-flex;
-    font-size: var(--font-size-sm);
-    font-weight: 700;
     gap: var(--space-2xs);
     justify-content: center;
-    letter-spacing: 0.02em;
     min-height: var(--target-size);
     padding: 0.9rem 1.25rem;
     text-decoration: none;
