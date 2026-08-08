@@ -31,11 +31,11 @@ Small spacing means elements belong together; larger spacing signals a new conte
 
 | Token | Intended content |
 | --- | --- |
-| `--width-copy` | Compact supporting copy and asides. |
-| `--width-reading` | Long-form body copy and explanatory text. |
-| `--width-content` | General sections, cards, and service layouts. |
-| `--width-editorial` | Hero compositions, imagery, and multi-column editorial layouts. |
-| `--width-full` | Full-bleed media and intentional edge-to-edge moments. |
+| `--layout-copy` | Compact supporting copy and asides. |
+| `--layout-reading` | Long-form body copy and explanatory text. |
+| `--layout-content` | General sections, cards, and service layouts. |
+| `--layout-wide` | Hero compositions, imagery, and multi-column editorial layouts. |
+| `--layout-full` | Full-bleed media and intentional edge-to-edge moments. |
 
 `Container` exposes these as `reading`, `content` (the default), `wide`, and `full`. The first three preserve `--space-page`; `full` removes the gutter deliberately. A component may use a narrower measure inside a wider container to create editorial asymmetry.
 
@@ -47,7 +47,7 @@ Small spacing means elements belong together; larger spacing signals a new conte
 
 * Use logical properties such as `padding-block` and `margin-inline` for layout spacing.
 * Use `--space-page` for normal horizontal edges; do not introduce section-specific gutters.
-* Keep body text within `--width-reading` unless a deliberate composition calls for a different measure.
+* Keep body text within `--layout-reading` unless a deliberate composition calls for a different measure.
 * Full-bleed elements are exceptions with a defined purpose, not a substitute for missing layout structure.
 * Use one-off values only for a genuine composition decision that cannot be described by the system.
 

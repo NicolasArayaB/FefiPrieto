@@ -102,12 +102,13 @@
     --space-element-tight: var(--space-xs);
     --space-element: var(--space-md);
 
-    /* Content measures. Full-bleed content intentionally has no page gutter. */
-    --width-copy: 32rem;
-    --width-reading: 65ch;
-    --width-content: 75rem;
-    --width-editorial: 90rem;
-    --width-full: none;
+    /* Editorial grid measures. Full-bleed content intentionally has no gutter. */
+    --layout-page: var(--space-page);
+    --layout-copy: 32rem;
+    --layout-reading: 65ch;
+    --layout-content: 75rem;
+    --layout-wide: 90rem;
+    --layout-full: none;
 
     --radius-sm: 0.75rem;
     --radius-md: 1rem;

@@ -15,26 +15,26 @@ const { class: className, size = "content" } = Astro.props;
   .container {
     margin-inline: auto;
     max-width: calc(
-      var(--width-content) + var(--space-page) + var(--space-page)
+      var(--layout-content) + var(--layout-page) + var(--layout-page)
     );
-    padding-inline: var(--space-page);
+    padding-inline: var(--layout-page);
     width: 100%;
   }
 
   .container-reading {
     max-width: calc(
-      var(--width-reading) + var(--space-page) + var(--space-page)
+      var(--layout-reading) + var(--layout-page) + var(--layout-page)
     );
   }
 
   .container-wide {
     max-width: calc(
-      var(--width-editorial) + var(--space-page) + var(--space-page)
+      var(--layout-wide) + var(--layout-page) + var(--layout-page)
     );
   }
 
   .container-full {
-    max-width: var(--width-full);
+    max-width: var(--layout-full);
     padding-inline: 0;
   }
 </style>

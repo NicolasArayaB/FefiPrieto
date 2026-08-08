@@ -1,6 +1,7 @@
 ---
 import ButtonLink from "@components/ui/ButtonLink.astro";
 import Container from "@components/ui/Container.astro";
+import Grid from "@components/ui/Grid.astro";
 import Section from "@components/ui/Section.astro";
 import type { HeroContent } from "@app-types/content";
 
@@ -12,8 +13,8 @@ const { content } = Astro.props;
 ---
 
 <Section class="hero-section" labelledby="hero-title" spacing="hero">
-  <Container size="wide">
-    <div class="hero-frame surface-panel">
+  <Container size="full">
+    <Grid class="hero-layout" variant="editorial" align="center">
       <div class="hero-copy">
         <p class="eyebrow type-eyebrow">{content.eyebrow}</p>
         <h1 id="hero-title" class="type-display-xl">{content.title}</h1>
@@ -22,14 +23,25 @@ const { content } = Astro.props;
           <ButtonLink {...content.primaryCta} variant="primary" />
           <ButtonLink {...content.secondaryCta} />
         </div>
+        <aside class="hero-statement" aria-label="Brand statement">
+          <p class="hero-statement-label type-label">Foundational belief</p>
+          <p class="type-quote">
+            Image is not superficial. It is psychological.
+          </p>
+        </aside>
       </div>
-      <aside class="hero-aside" aria-label="Brand statement">
-        <p class="hero-aside-label type-label">Foundational belief</p>
-        <p class="hero-aside-text type-quote">
-          Image is not superficial. It is psychological.
-        </p>
-      </aside>
-    </div>
+      <div class="hero-companion">
+        <figure class="hero-image">
+          <img
+            src="/images/hero-editorial-placeholder.webp"
+            alt="Editorial placeholder: a woman in a charcoal blazer in a stone-toned studio."
+            width="1024"
+            height="1536"
+            decoding="async"
+          />
+        </figure>
+      </div>
+    </Grid>
   </Container>
 </Section>
 
@@ -37,41 +49,16 @@ const { content } = Astro.props;
   .hero-section {
     align-items: center;
     display: flex;
-    min-height: 92vh;
+    min-block-size: min(48rem, 100svh);
   }
 
-  .hero-frame {
-    border-radius: var(--radius-lg);
-    display: grid;
-    gap: var(--space-content);
-    grid-template-columns: minmax(0, 1.7fr) minmax(240px, 0.8fr);
-    padding: var(--space-content);
-    position: relative;
-    overflow: hidden;
+  .hero-layout {
+    border-block: 1px solid var(--color-border-subtle);
+    padding-block: var(--space-content);
   }
 
-  .hero-frame::after {
-    background:
-      linear-gradient(
-        180deg,
-        color-mix(in srgb, var(--color-brand) 12%, transparent),
-        transparent 46%
-      ),
-      linear-gradient(
-        135deg,
-        color-mix(in srgb, var(--color-surface-elevated) 94%, transparent),
-        color-mix(in srgb, var(--color-surface-elevated) 58%, transparent)
-      );
-    content: "";
-    inset: 0;
-    pointer-events: none;
-    position: absolute;
-  }
-
-  .hero-copy,
-  .hero-aside {
-    position: relative;
-    z-index: 1;
+  .hero-copy {
+    margin-left: var(--space-content-tight);
   }
 
   .eyebrow {
@@ -86,7 +73,7 @@ const { content } = Astro.props;
   .hero-description {
     color: var(--color-text-secondary);
     margin-top: var(--space-heading-to-body);
-    max-width: var(--width-reading);
+    max-width: var(--layout-reading);
   }
 
   .hero-actions {
@@ -96,43 +83,47 @@ const { content } = Astro.props;
     margin-top: var(--space-body-to-action);
   }
 
-  .hero-aside {
-    align-self: end;
-    background: color-mix(
-      in srgb,
-      var(--color-surface-elevated) 72%,
-      transparent
-    );
-    border: 1px solid var(--color-border-subtle);
-    border-radius: var(--radius-md);
-    padding: var(--space-content-tight);
+  .hero-companion {
+    display: grid;
+    gap: var(--space-content);
   }
 
-  .hero-aside-label {
+  .hero-image {
+    aspect-ratio: 3 / 4;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .hero-image img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .hero-statement {
+    border-inline-start: 1px solid var(--color-border);
+    padding-inline-start: var(--space-content-tight);
+    margin-top: var(--space-content-tight);
+  }
+
+  .hero-statement-label {
     color: var(--color-text-muted);
     margin-bottom: var(--space-element-tight);
   }
 
-  @media (max-width: 900px) {
-    .hero-frame {
-      grid-template-columns: 1fr;
+  @media (max-width: 48rem) {
+    .hero-section {
+      min-block-size: auto;
     }
 
-    .hero-aside {
-      max-width: var(--width-copy);
+    .hero-companion {
+      max-width: var(--layout-copy);
     }
   }
 
   @media (max-width: 640px) {
-    .hero-section {
-      align-items: flex-start;
-      min-height: 100vh;
-    }
-
-    .hero-frame {
-      border-radius: var(--radius-md);
-      gap: var(--space-content-tight);
-      padding: var(--space-content-tight);
+    .hero-layout {
+      padding-block: var(--space-content-tight);
     }
 
     h1.type-display-xl {

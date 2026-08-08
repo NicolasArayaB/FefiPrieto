@@ -71,6 +71,7 @@ Use semantic color tokens from [color-system.md](color-system.md). Components mu
 * [color-system.md](color-system.md)
 * [typography-system.md](typography-system.md)
 * [spacing-layout-system.md](spacing-layout-system.md)
+* [grid.md](grid.md)
 * [../product/positioning.md](../product/positioning.md)
 * [../product/audience.md](../product/audience.md)
 * [../architecture/frontend-architecture.md](../architecture/frontend-architecture.md)
