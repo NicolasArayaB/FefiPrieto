@@ -1,0 +1,179 @@
+---
+import ButtonLink from "@components/ui/ButtonLink.astro";
+import Container from "@components/ui/Container.astro";
+import Grid from "@components/ui/Grid.astro";
+import Section from "@components/ui/Section.astro";
+import type { ServicesContent } from "@app-types/content";
+
+interface Props {
+  content: ServicesContent;
+}
+
+const { content } = Astro.props;
+---
+
+<Section
+  class="services-section"
+  labelledby="services-title"
+  spacing="editorial"
+>
+  <Container size="content">
+    <header class="services-intro">
+      <p class="services-eyebrow type-eyebrow">{content.eyebrow}</p>
+      <Grid variant="editorial" align="end">
+        <h2 id="services-title" class="type-display-m">{content.title}</h2>
+        <p class="services-description type-body-l">{content.description}</p>
+      </Grid>
+    </header>
+
+    <div class="service-groups">
+      {
+        content.groups.map((group, index) => (
+          <section
+            class="service-group"
+            aria-labelledby={`service-group-${index}`}
+          >
+            <Grid variant="editorial" align="start">
+              <header class="service-group-intro">
+                <p class="service-group-eyebrow type-eyebrow">
+                  {group.eyebrow}
+                </p>
+                <h3 id={`service-group-${index}`} class="type-heading-xl">
+                  {group.title}
+                </h3>
+                <p class="service-group-description type-body">
+                  {group.description}
+                </p>
+                <ButtonLink
+                  {...group.action}
+                  variant={index === 0 ? "primary" : "secondary"}
+                />
+              </header>
+
+              <ul class="service-list">
+                {group.services.map((service) => (
+                  <li>
+                    <a class="service-link" href={service.href}>
+                      <span class="service-link-copy">
+                        <span class="service-link-title type-heading-m">
+                          {service.title}
+                        </span>
+                        <span class="service-link-description type-body-small">
+                          {service.description}
+                        </span>
+                      </span>
+                      <span class="service-link-entry type-caption">
+                        Discuss service <span aria-hidden="true">↗</span>
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </Grid>
+          </section>
+        ))
+      }
+    </div>
+  </Container>
+</Section>
+
+<style>
+  .services-section {
+    border-block-start: 1px solid var(--color-border-subtle);
+    margin-block-start: var(--space-section);
+  }
+
+  .services-eyebrow,
+  .service-group-eyebrow {
+    color: var(--color-brand);
+  }
+
+  .services-eyebrow {
+    margin-bottom: var(--space-heading);
+  }
+
+  .services-description,
+  .service-group-description,
+  .service-link-description {
+    color: var(--color-text-secondary);
+  }
+
+  .services-description {
+    max-width: var(--layout-reading);
+  }
+
+  .service-groups {
+    display: grid;
+    gap: var(--space-section);
+    margin-top: var(--space-section);
+  }
+
+  .service-group {
+    border-block-start: 1px solid var(--color-border-subtle);
+    padding-block: var(--space-content);
+  }
+
+  .service-group-intro {
+    display: grid;
+    gap: var(--space-element);
+  }
+
+  .service-group-description {
+    max-width: var(--layout-reading);
+  }
+
+  .service-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .service-list > li {
+    border-block-start: 1px solid var(--color-border-subtle);
+  }
+
+  .service-list > li:last-child {
+    border-block-end: 1px solid var(--color-border-subtle);
+  }
+
+  .service-link {
+    align-items: start;
+    display: flex;
+    gap: var(--space-element);
+    justify-content: space-between;
+    padding-block: var(--space-element);
+    text-decoration: none;
+  }
+
+  .service-link-copy {
+    display: grid;
+    gap: var(--space-element-tight);
+  }
+
+  .service-link-entry {
+    color: var(--color-text-muted);
+    flex: none;
+    padding-block-start: var(--space-2xs);
+  }
+
+  .service-link:hover .service-link-title,
+  .service-link:focus-visible .service-link-title {
+    color: var(--color-brand);
+  }
+
+  @media (max-width: 48rem) {
+    .service-groups {
+      gap: var(--space-section-compact);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .service-link {
+      align-items: end;
+    }
+
+    .service-link-entry {
+      white-space: nowrap;
+    }
+  }
+</style>

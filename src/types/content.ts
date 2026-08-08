@@ -23,7 +23,29 @@ export interface MethodologyContent {
   stages: MethodologyStage[];
 }
 
+export interface Service {
+  title: string;
+  description: string;
+  href: string;
+}
+
+export interface ServiceGroup {
+  eyebrow: string;
+  title: string;
+  description: string;
+  action: ActionLink;
+  services: Service[];
+}
+
+export interface ServicesContent {
+  eyebrow: string;
+  title: string;
+  description: string;
+  groups: ServiceGroup[];
+}
+
 export interface HomeContent {
   hero: HeroContent;
   methodology: MethodologyContent;
+  services: ServicesContent;
 }

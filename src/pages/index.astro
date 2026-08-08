@@ -2,14 +2,16 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import HeroSection from "@components/sections/HeroSection.astro";
 import MethodologySection from "@components/sections/MethodologySection.astro";
+import ServicesSection from "@components/sections/ServicesSection.astro";
 import { homeContent } from "@content/home";
 
-const { hero, methodology } = homeContent;
+const { hero, methodology, services } = homeContent;
 ---
 
 <BaseLayout>
   <main class="home-shell">
     <HeroSection content={hero} />
     <MethodologySection content={methodology} />
+    <ServicesSection content={services} />
   </main>
 </BaseLayout>

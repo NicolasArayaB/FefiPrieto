@@ -38,4 +38,66 @@ export const homeContent = {
       },
     ],
   },
+  services: {
+    eyebrow: "Services",
+    title: "Support for the way you want to be seen.",
+    description:
+      "Two distinct paths, grounded in the same belief: image can be a practical expression of identity, confidence, and direction.",
+    groups: [
+      {
+        eyebrow: "For organizations",
+        title: "Corporate",
+        description:
+          "Programs for teams and leaders who want presence to support trust, communication, and authority at work.",
+        action: {
+          label: "Discuss corporate needs",
+          href: "mailto:hello@example.com?subject=Corporate%20services",
+        },
+        services: [
+          {
+            title: "Presencia Ejecutiva",
+            description:
+              "A focused program for leaders who want their external presence to match the clarity of their thinking and role.",
+            href: "mailto:hello@example.com?subject=Presencia%20Ejecutiva",
+          },
+          {
+            title: "Psicología de la Autoridad",
+            description:
+              "An applied exploration of the cues that shape credibility, trust, and perceived authority in professional settings.",
+            href: "mailto:hello@example.com?subject=Psicolog%C3%ADa%20de%20la%20Autoridad",
+          },
+        ],
+      },
+      {
+        eyebrow: "For individuals",
+        title: "Individual",
+        description:
+          "One-to-one guidance for making personal style a more useful, confident expression of who you are becoming.",
+        action: {
+          label: "Explore individual services",
+          href: "mailto:hello@example.com?subject=Individual%20services",
+        },
+        services: [
+          {
+            title: "Colorimetría",
+            description:
+              "A considered starting point for understanding the colors that support your natural contrast, energy, and intention.",
+            href: "mailto:hello@example.com?subject=Colorimetr%C3%ADa",
+          },
+          {
+            title: "Asesoría de imagen",
+            description:
+              "A practical, psychology-informed process for aligning how you present yourself with your daily life and goals.",
+            href: "mailto:hello@example.com?subject=Asesor%C3%ADa%20de%20imagen",
+          },
+          {
+            title: "Personal shopper",
+            description:
+              "A guided selection experience that translates personal clarity into pieces you can use with confidence.",
+            href: "mailto:hello@example.com?subject=Personal%20shopper",
+          },
+        ],
+      },
+    ],
+  },
 } satisfies HomeContent;
