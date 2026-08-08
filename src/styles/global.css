@@ -202,7 +202,7 @@
   }
 
   .measure-reading {
-    max-width: 65ch;
+    max-width: var(--width-reading);
   }
 
   .surface-panel {

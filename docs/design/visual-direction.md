@@ -38,6 +38,10 @@ The site should use storytelling, sequencing, and composition to create authorit
 
 Typography is the primary driver of hierarchy. Canela is reserved for editorial emphasis—hero titles, section headlines, and reflective statements—while Inter supports all reading and interface content. Use the semantic styles and reading-rhythm rules in [typography-system.md](typography-system.md); components should not introduce local typography values.
 
+## Spacing and Layout
+
+Whitespace is structural, not leftover space. Use the semantic rhythm and layout primitives in [spacing-layout-system.md](spacing-layout-system.md) to establish hierarchy, reading comfort, and editorial pacing. Components may make intentional compositional exceptions—such as asymmetry, overlaps, and full-bleed media—but should draw their spacing and measures from that system.
+
 ## Motion Direction
 
 Motion should support:
@@ -66,6 +70,7 @@ Use semantic color tokens from [color-system.md](color-system.md). Components mu
 * [principles.md](principles.md)
 * [color-system.md](color-system.md)
 * [typography-system.md](typography-system.md)
+* [spacing-layout-system.md](spacing-layout-system.md)
 * [../product/positioning.md](../product/positioning.md)
 * [../product/audience.md](../product/audience.md)
 * [../architecture/frontend-architecture.md](../architecture/frontend-architecture.md)

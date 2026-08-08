@@ -2,7 +2,7 @@
 interface Props {
   class?: string;
   labelledby?: string;
-  spacing?: "default" | "tight";
+  spacing?: "default" | "compact" | "editorial" | "hero";
 }
 
 const { class: className, labelledby, spacing = "default" } = Astro.props;
@@ -17,10 +17,18 @@ const { class: className, labelledby, spacing = "default" } = Astro.props;
 
 <style>
   .section {
-    padding-block: var(--section-padding);
+    padding-block: var(--space-section);
   }
 
-  .section-tight {
-    padding-block: var(--section-padding-tight);
+  .section-compact {
+    padding-block: var(--space-section-compact);
+  }
+
+  .section-editorial {
+    padding-block: var(--space-section-editorial);
+  }
+
+  .section-hero {
+    padding-block: var(--space-section-hero);
   }
 </style>

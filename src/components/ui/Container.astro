@@ -1,10 +1,10 @@
 ---
 interface Props {
   class?: string;
-  size?: "default" | "narrow";
+  size?: "content" | "reading" | "wide" | "full";
 }
 
-const { class: className, size = "default" } = Astro.props;
+const { class: className, size = "content" } = Astro.props;
 ---
 
 <div class:list={["container", `container-${size}`, className]}>
@@ -14,12 +14,27 @@ const { class: className, size = "default" } = Astro.props;
 <style>
   .container {
     margin-inline: auto;
-    max-width: var(--layout-max-width);
+    max-width: calc(
+      var(--width-content) + var(--space-page) + var(--space-page)
+    );
     padding-inline: var(--space-page);
     width: 100%;
   }
 
-  .container-narrow {
-    max-width: var(--layout-narrow-width);
+  .container-reading {
+    max-width: calc(
+      var(--width-reading) + var(--space-page) + var(--space-page)
+    );
+  }
+
+  .container-wide {
+    max-width: calc(
+      var(--width-editorial) + var(--space-page) + var(--space-page)
+    );
+  }
+
+  .container-full {
+    max-width: var(--width-full);
+    padding-inline: 0;
   }
 </style>
