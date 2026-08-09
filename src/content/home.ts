@@ -120,4 +120,68 @@ export const homeContent = {
       },
     ],
   },
+  testimonials: {
+    eyebrow: "Experiencias de clientas",
+    title: "Sentirse bien también cambia la manera de estar.",
+    description:
+      "Testimonios publicados por clientas de Dress the City, proyecto fundado por Fefi Prieto, donde recibieron atención y asesoramiento de imagen.",
+    featured: {
+      quote:
+        "Me encantó la atención y asesoramiento personalizado, quede feliz con mi look.",
+      name: "Dani",
+      context: "@danihm",
+      relationship: "Clienta de Dress the City",
+    },
+    supportingLabel: "Más experiencias de clientas de Dress the City",
+    supporting: [
+      {
+        quote:
+          "Me llenaron de piropos, fui la sensación con mi vestido, me preguntaron mucho de donde era.",
+        name: "Sofía",
+        context: "@sofiafrancisca",
+        relationship: "Clienta de Dress the City",
+      },
+      {
+        quote:
+          "Gracias por todo, me encantó la experiencia de arrendar con ustedes.",
+        name: "Francisca",
+        context: "@fran.decastro",
+        relationship: "Clienta de Dress the City",
+      },
+    ],
+  },
+  authority: {
+    eyebrow: "Sobre Fefi",
+    title: "Una mirada que empieza por la persona.",
+    description:
+      "Soy Fernanda Prieto, psicóloga con experiencia clínica y organizacional. Mi trabajo con imagen comienza por entender qué sostiene tu identidad, antes de decidir cómo quieres expresarla.",
+    perspective:
+      "La imagen no comienza en el clóset: comienza en la forma en que te entiendes y eliges estar presente.",
+    relationship: {
+      eyebrow: "Una trayectoria relacionada",
+      title: "Dress the City",
+      description:
+        "Fundé Dress the City como un proyecto independiente ligado a la experiencia de vestir. Ese recorrido con personas y su relación con la imagen acompaña, pero no reemplaza, el foco de Fefi Prieto: psicología, identidad y expresión externa.",
+    },
+    details: [
+      {
+        label: "Formación",
+        value: "Psicología",
+      },
+      {
+        label: "Experiencia",
+        value: "Práctica clínica y organizacional",
+      },
+      {
+        label: "Trayectoria",
+        value: "Fundadora de Dress the City",
+      },
+    ],
+    portrait: {
+      src: "/images/fefi-authority-placeholder.webp",
+      alt: "Retrato editorial de referencia de una mujer de perfil, pendiente de reemplazo por una fotografía de Fernanda Prieto.",
+      caption:
+        "Imagen editorial de referencia. Pendiente de reemplazo por fotografía de Fernanda Prieto.",
+    },
+  },
 } satisfies HomeContent;

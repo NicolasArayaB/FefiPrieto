@@ -1,11 +1,13 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import AuthoritySection from "@components/sections/AuthoritySection.astro";
 import HeroSection from "@components/sections/HeroSection.astro";
 import MethodologySection from "@components/sections/MethodologySection.astro";
 import ServicesSection from "@components/sections/ServicesSection.astro";
+import TestimonialsSection from "@components/sections/TestimonialsSection.astro";
 import { homeContent } from "@content/home";
 
-const { hero, methodology, services } = homeContent;
+const { authority, hero, methodology, services, testimonials } = homeContent;
 ---
 
 <BaseLayout>
@@ -13,5 +15,7 @@ const { hero, methodology, services } = homeContent;
     <HeroSection content={hero} />
     <MethodologySection content={methodology} />
     <ServicesSection content={services} />
+    <TestimonialsSection content={testimonials} />
+    <AuthoritySection content={authority} />
   </main>
 </BaseLayout>

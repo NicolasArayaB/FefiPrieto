@@ -1,0 +1,168 @@
+---
+import Container from "@components/ui/Container.astro";
+import Grid from "@components/ui/Grid.astro";
+import Section from "@components/ui/Section.astro";
+import type { TestimonialsContent } from "@app-types/content";
+
+interface Props {
+  content: TestimonialsContent;
+}
+
+const { content } = Astro.props;
+---
+
+<Section
+  class="testimonials-section"
+  labelledby="testimonials-title"
+  spacing="default"
+>
+  <Container size="content">
+    <header class="testimonials-intro">
+      <p class="testimonials-eyebrow type-eyebrow">{content.eyebrow}</p>
+      <Grid variant="editorial" align="end">
+        <h2 id="testimonials-title" class="type-heading-xl">{content.title}</h2>
+        <p class="testimonials-description type-body">
+          {content.description}
+        </p>
+      </Grid>
+    </header>
+
+    <article class="featured-testimonial">
+      <Grid variant="editorial" align="end">
+        <blockquote class="featured-quote type-quote">
+          <p>{content.featured.quote}</p>
+        </blockquote>
+        <footer class="featured-attribution">
+          {
+            content.featured.name && (
+              <p class="type-body">{content.featured.name}</p>
+            )
+          }
+          {
+            content.featured.context && (
+              <p class="featured-context type-caption">
+                {content.featured.context}
+              </p>
+            )
+          }
+          {
+            content.featured.relationship && (
+              <p class="featured-relationship type-caption">
+                {content.featured.relationship}
+              </p>
+            )
+          }
+        </footer>
+      </Grid>
+    </article>
+
+    <section class="supporting-section" aria-label={content.supportingLabel}>
+      <Grid class="supporting-testimonials" variant="two">
+        {
+          content.supporting.map((testimonial) => (
+            <article class="supporting-testimonial">
+              <blockquote class="supporting-quote type-heading-m">
+                <p>{testimonial.quote}</p>
+              </blockquote>
+              <footer class="supporting-attribution">
+                {testimonial.name && (
+                  <p class="type-body-small">{testimonial.name}</p>
+                )}
+                {testimonial.context && (
+                  <p class="supporting-context type-caption">
+                    {testimonial.context}
+                  </p>
+                )}
+                {testimonial.relationship && (
+                  <p class="supporting-relationship type-caption">
+                    {testimonial.relationship}
+                  </p>
+                )}
+              </footer>
+            </article>
+          ))
+        }
+      </Grid>
+    </section>
+  </Container>
+</Section>
+
+<style>
+  .testimonials-section {
+    border-block-start: 1px solid var(--color-border-subtle);
+    margin-block-start: var(--space-section);
+  }
+
+  .testimonials-eyebrow {
+    color: var(--color-brand);
+    margin-bottom: var(--space-heading);
+  }
+
+  .testimonials-description {
+    color: var(--color-text-secondary);
+    max-width: var(--layout-reading);
+  }
+
+  .featured-testimonial {
+    background: var(--color-brand);
+    color: var(--color-surface-elevated);
+    margin-top: var(--space-section-compact);
+    padding: var(--space-content);
+  }
+
+  .featured-quote,
+  .supporting-quote {
+    margin: 0;
+  }
+
+  .featured-quote {
+    max-width: var(--layout-reading);
+  }
+
+  .featured-attribution,
+  .supporting-attribution {
+    display: grid;
+    gap: var(--space-element-tight);
+  }
+
+  .featured-context,
+  .featured-relationship {
+    color: color-mix(in srgb, var(--color-surface-elevated) 78%, transparent);
+  }
+
+  .supporting-section {
+    margin-top: var(--space-content);
+  }
+
+  .supporting-testimonials {
+    gap: var(--space-content);
+  }
+
+  .supporting-testimonial {
+    border-block-start: 1px solid var(--color-border-subtle);
+    padding-top: var(--space-content-tight);
+  }
+
+  .supporting-attribution {
+    margin-top: var(--space-element);
+  }
+
+  .supporting-context,
+  .supporting-relationship {
+    color: var(--color-text-secondary);
+  }
+
+  @media (max-width: 48rem) {
+    .featured-testimonial {
+      padding: var(--space-content-tight);
+    }
+
+    .supporting-section {
+      margin-top: var(--space-content-tight);
+    }
+
+    .supporting-testimonials {
+      gap: var(--space-section-compact);
+    }
+  }
+</style>

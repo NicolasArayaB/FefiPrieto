@@ -1,0 +1,173 @@
+---
+import Container from "@components/ui/Container.astro";
+import Grid from "@components/ui/Grid.astro";
+import Section from "@components/ui/Section.astro";
+import type { AuthorityContent } from "@app-types/content";
+
+interface Props {
+  content: AuthorityContent;
+}
+
+const { content } = Astro.props;
+---
+
+<Section
+  class="authority-section"
+  labelledby="authority-title"
+  spacing="editorial"
+>
+  <Container size="wide">
+    <Grid class="authority-layout" variant="editorial" align="end">
+      <figure class="authority-portrait">
+        <img
+          src={content.portrait.src}
+          alt={content.portrait.alt}
+          width="1086"
+          height="1448"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption class="authority-portrait-caption type-caption">
+          {content.portrait.caption}
+        </figcaption>
+      </figure>
+
+      <div class="authority-copy">
+        <p class="authority-eyebrow type-eyebrow">{content.eyebrow}</p>
+        <h2 id="authority-title" class="type-display-m">{content.title}</h2>
+        <p class="authority-description type-lead">{content.description}</p>
+        <p class="authority-perspective type-heading-m">
+          {content.perspective}
+        </p>
+
+        <section class="authority-relationship">
+          <p class="authority-relationship-eyebrow type-eyebrow">
+            {content.relationship.eyebrow}
+          </p>
+          <h3 class="type-heading-m">{content.relationship.title}</h3>
+          <p class="authority-relationship-description type-body-small">
+            {content.relationship.description}
+          </p>
+        </section>
+
+        <dl class="authority-details">
+          {
+            content.details.map((detail) => (
+              <div>
+                <dt class="type-eyebrow">{detail.label}</dt>
+                <dd class="type-body-small">{detail.value}</dd>
+              </div>
+            ))
+          }
+        </dl>
+      </div>
+    </Grid>
+  </Container>
+</Section>
+
+<style>
+  .authority-section {
+    border-block-start: 1px solid var(--color-border-subtle);
+    margin-block-start: var(--space-section);
+  }
+
+  .authority-layout {
+    grid-template-columns: minmax(16rem, 0.9fr) minmax(0, 1.1fr);
+  }
+
+  .authority-portrait {
+    margin: 0;
+  }
+
+  .authority-portrait img {
+    aspect-ratio: 3 / 4;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .authority-portrait-caption {
+    color: var(--color-text-muted);
+    margin-top: var(--space-element-tight);
+    max-width: var(--layout-copy);
+  }
+
+  .authority-copy {
+    margin-right: var(--space-content-tight);
+  }
+
+  .authority-eyebrow,
+  .authority-relationship-eyebrow {
+    color: var(--color-brand);
+  }
+
+  .authority-eyebrow {
+    margin-bottom: var(--space-heading);
+  }
+
+  .authority-description {
+    color: var(--color-text-secondary);
+    margin-top: var(--space-heading-to-body);
+    max-width: var(--layout-reading);
+  }
+
+  .authority-perspective {
+    margin-top: var(--space-content-tight);
+    max-width: var(--layout-reading);
+  }
+
+  .authority-relationship {
+    border-block-start: 1px solid var(--color-border-subtle);
+    display: grid;
+    gap: var(--space-element-tight);
+    margin-top: var(--space-content);
+    padding-top: var(--space-content-tight);
+  }
+
+  .authority-relationship-description {
+    color: var(--color-text-secondary);
+    max-width: var(--layout-reading);
+  }
+
+  .authority-details {
+    display: grid;
+    gap: var(--space-element);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin: var(--space-content) 0 0;
+  }
+
+  .authority-details div {
+    border-block-start: 1px solid var(--color-border-subtle);
+    display: grid;
+    gap: var(--space-element-tight);
+    padding-top: var(--space-element-tight);
+  }
+
+  .authority-details dt {
+    color: var(--color-text-muted);
+  }
+
+  .authority-details dd {
+    margin: 0;
+  }
+
+  @media (max-width: 48rem) {
+    .authority-layout {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .authority-copy {
+      margin-right: 0;
+    }
+
+    .authority-portrait {
+      max-width: var(--layout-copy);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .authority-details {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+</style>

@@ -59,8 +59,49 @@ export interface ServicesContent {
   groups: ServiceGroup[];
 }
 
+export interface Testimonial {
+  quote: string;
+  name?: string;
+  context?: string;
+  relationship?: string;
+}
+
+export interface TestimonialsContent {
+  eyebrow: string;
+  title: string;
+  description: string;
+  featured: Testimonial;
+  supportingLabel: string;
+  supporting: Testimonial[];
+}
+
+export interface AuthorityDetail {
+  label: string;
+  value: string;
+}
+
+export interface AuthorityContent {
+  eyebrow: string;
+  title: string;
+  description: string;
+  perspective: string;
+  relationship: {
+    eyebrow: string;
+    title: string;
+    description: string;
+  };
+  details: AuthorityDetail[];
+  portrait: {
+    src: string;
+    alt: string;
+    caption: string;
+  };
+}
+
 export interface HomeContent {
   hero: HeroContent;
   methodology: MethodologyContent;
   services: ServicesContent;
+  testimonials: TestimonialsContent;
+  authority: AuthorityContent;
 }
