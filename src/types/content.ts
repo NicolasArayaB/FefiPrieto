@@ -44,6 +44,11 @@ export interface ServiceGroup {
   description: string;
   action: ActionLink;
   services: Service[];
+  image?: {
+    src: string;
+    alt: string;
+    caption: string;
+  };
 }
 
 export interface ServicesContent {

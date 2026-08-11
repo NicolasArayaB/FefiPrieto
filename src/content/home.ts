@@ -59,6 +59,12 @@ export const homeContent = {
           label: "Conversemos sobre tu equipo",
           href: "mailto:hello@example.com?subject=Servicios%20corporativos",
         },
+        image: {
+          src: "/images/services-corporate-placeholder.webp",
+          alt: "Fotografía editorial de referencia de una mujer con traje oscuro en un espacio arquitectónico, pendiente de reemplazo por fotografía final.",
+          caption:
+            "Imagen editorial de referencia. Pendiente de reemplazo por fotografía final.",
+        },
         services: [
           {
             title: "Presencia Ejecutiva",
@@ -74,6 +80,13 @@ export const homeContent = {
             href: "mailto:hello@example.com?subject=Psicolog%C3%ADa%20de%20la%20Autoridad",
             entryLabel: "Conocer este servicio",
           },
+          {
+            title: "Comunicación de Liderazgo",
+            description:
+              "Un taller para alinear presencia, señales no verbales y comunicación cotidiana en liderazgos que necesitan convocar con claridad.",
+            href: "mailto:hello@example.com?subject=Comunicaci%C3%B3n%20de%20Liderazgo",
+            entryLabel: "Conocer este servicio",
+          },
         ],
       },
       {
@@ -84,6 +97,12 @@ export const homeContent = {
         action: {
           label: "Explorar servicios individuales",
           href: "mailto:hello@example.com?subject=Servicios%20individuales",
+        },
+        image: {
+          src: "/images/services-individual-placeholder.webp",
+          alt: "Fotografía editorial de referencia de una persona de espaldas con vestuario naranja y tela rosa en un interior cálido, pendiente de reemplazo por fotografía final.",
+          caption:
+            "Imagen editorial de referencia. Pendiente de reemplazo por fotografía final.",
         },
         services: [
           {

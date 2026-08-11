@@ -10,6 +10,9 @@ interface Props {
 }
 
 const { content } = Astro.props;
+const [corporate, individual] = content.groups;
+const [featuredCorporateService, ...supportingCorporateServices] =
+  corporate.services;
 ---
 
 <Section
@@ -26,65 +29,139 @@ const { content } = Astro.props;
       </Grid>
     </header>
 
-    <div class="service-groups">
-      {
-        content.groups.map((group, index) => (
-          <section
-            class="service-group"
-            aria-labelledby={`service-group-${index}`}
-          >
-            <Grid variant="editorial" align="start">
-              <header class="service-group-intro">
-                <p class="service-group-eyebrow type-eyebrow">
-                  {group.eyebrow}
-                </p>
-                <h3 id={`service-group-${index}`} class="type-heading-xl">
-                  {group.title}
-                </h3>
-                <p class="service-group-description type-body">
-                  {group.description}
-                </p>
-                <ButtonLink
-                  {...group.action}
-                  variant={index === 0 ? "primary" : "secondary"}
-                />
-              </header>
+    <section
+      class="corporate-services"
+      aria-labelledby="corporate-services-title"
+    >
+      <header class="corporate-intro">
+        <p class="service-group-eyebrow type-eyebrow">{corporate.eyebrow}</p>
+        <h3 id="corporate-services-title" class="type-heading-xl">
+          {corporate.title}
+        </h3>
+      </header>
 
-              <ul class="service-list">
-                {group.services.map((service) => (
-                  <li>
-                    <a class="service-link" href={service.href}>
-                      <span class="service-link-copy">
-                        <span class="service-link-title type-heading-m">
-                          {service.title}
-                        </span>
-                        <span class="service-link-description type-body-small">
-                          {service.description}
-                        </span>
-                      </span>
-                      <span class="service-link-entry type-caption">
-                        {service.entryLabel} <span aria-hidden="true">↗</span>
-                      </span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </Grid>
-          </section>
-        ))
-      }
-    </div>
+      <Grid class="corporate-feature" variant="editorial" align="end">
+        {
+          corporate.image && (
+            <figure class="corporate-image">
+              <img
+                src={corporate.image.src}
+                alt={corporate.image.alt}
+                width="1122"
+                height="1402"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class="corporate-image-caption type-caption">
+                {corporate.image.caption}
+              </figcaption>
+            </figure>
+          )
+        }
+        <div class="featured-service">
+          <h4 class="type-display-l">{featuredCorporateService.title}</h4>
+          <p class="featured-service-description type-body-l">
+            {featuredCorporateService.description}
+          </p>
+          <ButtonLink
+            {...corporate.action}
+            appearance="editorial"
+            variant="primary"
+          >
+            <span>{corporate.action.label}</span>
+            <span aria-hidden="true">↗</span>
+          </ButtonLink>
+        </div>
+      </Grid>
+      <Grid align="end">
+        {
+          supportingCorporateServices &&
+            supportingCorporateServices.map((supportingCorporateService) => (
+              <a
+                class="corporate-support type-body-small"
+                href={supportingCorporateService.href}
+              >
+                <span class="corporate-support-title type-heading-m">
+                  {supportingCorporateService.title}
+                </span>
+                <span>{supportingCorporateService.description}</span>
+                <span class="service-link-entry type-caption">
+                  {supportingCorporateService.entryLabel}
+                  <span aria-hidden="true"> ↗</span>
+                </span>
+              </a>
+            ))
+        }
+      </Grid>
+    </section>
+
+    <section
+      class="individual-services"
+      aria-labelledby="individual-services-title"
+    >
+      <Grid variant="editorial" align="center">
+        <header class="individual-intro">
+          <p class="service-group-eyebrow type-eyebrow">{individual.eyebrow}</p>
+          <h3 id="individual-services-title" class="type-heading-xl">
+            {individual.title}
+          </h3>
+          {
+            individual.image && (
+              <figure class="individual-image">
+                <img
+                  src={individual.image.src}
+                  alt={individual.image.alt}
+                  width="1122"
+                  height="1402"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption class="individual-image-caption type-caption">
+                  {individual.image.caption}
+                </figcaption>
+              </figure>
+            )
+          }
+          <p class="service-group-description type-body">
+            {individual.description}
+          </p>
+          <ButtonLink
+            {...individual.action}
+            appearance="editorial"
+            variant="secondary"
+          >
+            <span>{individual.action.label}</span>
+            <span aria-hidden="true">↗</span>
+          </ButtonLink>
+        </header>
+
+        <ul class="individual-service-list">
+          {
+            individual.services.map((service) => (
+              <li>
+                <a class="individual-service-link" href={service.href}>
+                  <span class="individual-service-title type-heading-m">
+                    {service.title}
+                  </span>
+                  <span class="service-link-description type-body-small">
+                    {service.description}
+                  </span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </Grid>
+    </section>
   </Container>
 </Section>
 
 <style>
   .services-section {
-    border-block-start: 1px solid var(--color-border-subtle);
     margin-block-start: var(--space-section);
   }
 
-  .services-eyebrow,
-  .service-group-eyebrow {
+  .services-eyebrow {
     color: var(--color-brand);
   }
 
@@ -92,9 +169,7 @@ const { content } = Astro.props;
     margin-bottom: var(--space-heading);
   }
 
-  .services-description,
-  .service-group-description,
-  .service-link-description {
+  .services-description {
     color: var(--color-text-secondary);
   }
 
@@ -102,78 +177,149 @@ const { content } = Astro.props;
     max-width: var(--layout-reading);
   }
 
-  .service-groups {
-    display: grid;
-    gap: var(--space-section);
-    margin-top: var(--space-section);
+  .corporate-services,
+  .individual-services {
+    border-block-start: 1px solid var(--color-border);
+    margin-top: var(--space-section-compact);
+    padding-top: var(--space-content-tight);
   }
 
-  .service-group {
-    border-block-start: 1px solid var(--color-border-subtle);
-    padding-block: var(--space-content);
-  }
-
-  .service-group-intro {
+  .corporate-intro,
+  .individual-intro {
     display: grid;
     gap: var(--space-element);
   }
 
-  .service-group-description {
-    max-width: var(--layout-reading);
+  .corporate-feature {
+    margin-top: var(--space-content);
   }
 
-  .service-list {
+  .corporate-image {
+    background: var(--color-expression-blue);
+    margin: 0;
+    padding: var(--space-content-tight) 0 0 var(--space-content-tight);
+  }
+
+  .corporate-image img {
+    aspect-ratio: 4 / 5;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .corporate-image-caption {
+    color: var(--color-on-expression-blue);
+    margin-top: var(--space-element-tight);
+  }
+
+  .featured-service {
+    display: grid;
+    gap: var(--space-element);
+  }
+
+  .service-group-eyebrow {
+    color: var(--color-brand);
+  }
+
+  .featured-service-description,
+  .service-group-description {
+    color: var(--color-text-secondary);
+    max-width: var(--layout-reading);
+    margin-top: var(--space-element);
+  }
+
+  .corporate-support {
+    color: var(--color-text-secondary);
+    display: grid;
+    gap: var(--space-element-tight);
+    margin-top: var(--space-content);
+    max-width: var(--layout-reading);
+    text-decoration: none;
+  }
+
+  .corporate-support-title {
+    color: var(--color-text);
+  }
+
+  .individual-service-list {
+    display: grid;
+    gap: var(--space-content-tight);
     list-style: none;
     margin: 0;
     padding: 0;
   }
 
-  .service-list > li {
-    border-block-start: 1px solid var(--color-border-subtle);
+  .individual-intro h3 {
+    background: var(--color-expression-orange);
+    color: var(--color-on-expression-orange);
+    padding: var(--space-content-tight);
   }
 
-  .service-list > li:last-child {
-    border-block-end: 1px solid var(--color-border-subtle);
+  .individual-image {
+    margin: 0;
   }
 
-  .service-link {
-    align-items: start;
-    display: flex;
-    gap: var(--space-element);
-    justify-content: space-between;
-    padding-block: var(--space-element);
-    text-decoration: none;
+  .individual-image img {
+    aspect-ratio: 4 / 5;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
   }
 
-  .service-link-copy {
+  .individual-image-caption {
+    color: var(--color-text-muted);
+    margin-top: var(--space-element-tight);
+  }
+
+  .individual-service-link {
     display: grid;
     gap: var(--space-element-tight);
+    text-decoration: none;
   }
 
   .service-link-entry {
     color: var(--color-text-muted);
-    flex: none;
-    padding-block-start: var(--space-2xs);
   }
 
-  .service-link:hover .service-link-title,
-  .service-link:focus-visible .service-link-title {
-    color: var(--color-brand);
+  .corporate-support:hover .corporate-support-title,
+  .corporate-support:focus-visible .corporate-support-title,
+  .individual-service-link:hover .individual-service-title,
+  .individual-service-link:focus-visible .individual-service-title {
+    color: currentColor;
   }
 
   @media (max-width: 48rem) {
-    .service-groups {
-      gap: var(--space-section-compact);
+    .services-intro :global(.grid-editorial) {
+      gap: var(--space-heading-to-body);
+    }
+
+    .corporate-feature {
+      gap: var(--space-content-tight);
+      margin-top: var(--space-content-tight);
+    }
+
+    .corporate-support {
+      margin-top: var(--space-content-tight);
+    }
+
+    .individual-services :global(.grid-editorial) {
+      gap: var(--space-content);
     }
   }
 
   @media (max-width: 640px) {
-    .service-link {
-      align-items: end;
+    .corporate-services,
+    .individual-services {
+      margin-top: var(--space-content);
     }
 
-    .service-link-entry {
-      white-space: nowrap;
+    .corporate-image {
+      padding: var(--space-content-tight) 0 0 var(--space-content-tight);
+    }
+
+    .featured-service,
+    .individual-intro {
+      gap: var(--space-element);
     }
   }
 </style>
