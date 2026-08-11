@@ -14,16 +14,16 @@ const { content } = Astro.props;
 <Section
   class="methodology-section"
   labelledby="methodology-title"
-  spacing="editorial"
+  spacing="default"
 >
   <Container size="content">
     <header class="methodology-intro">
       <p class="methodology-eyebrow type-eyebrow">{content.eyebrow}</p>
       <Grid variant="editorial" align="end">
-        <h2 id="methodology-title" class="type-display-m">
+        <h2 id="methodology-title" class="type-heading-xl">
           {content.title}
         </h2>
-        <p class="methodology-description type-body-l">{content.description}</p>
+        <p class="methodology-description type-body">{content.description}</p>
       </Grid>
     </header>
 
@@ -31,17 +31,13 @@ const { content } = Astro.props;
       {
         content.stages.map((stage, index) => (
           <li>
-            <Grid class="methodology-stage" variant="editorial" align="start">
-              <div class="methodology-stage-heading">
-                <p class="methodology-stage-index type-eyebrow">
-                  {String(index + 1).padStart(2, "0")}
-                </p>
-                <h3 class="type-heading-l">{stage.title}</h3>
-              </div>
-              <p class="methodology-stage-description type-body">
-                {stage.description}
-              </p>
-            </Grid>
+            <p class="methodology-stage-index type-eyebrow">
+              {String(index + 1).padStart(2, "0")}
+            </p>
+            <h3 class="type-heading-m">{stage.title}</h3>
+            <p class="methodology-stage-description type-body-small">
+              {stage.description}
+            </p>
           </li>
         ))
       }
@@ -66,23 +62,19 @@ const { content } = Astro.props;
   }
 
   .methodology-stages {
+    display: grid;
+    gap: var(--space-content);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     list-style: none;
-    margin: var(--space-section) 0 0;
+    margin: var(--space-content) 0 0;
     padding: 0;
   }
 
   .methodology-stages > li {
     border-block-start: 1px solid var(--color-border-subtle);
-    padding-block: var(--space-content);
-  }
-
-  .methodology-stages > li:last-child {
-    border-block-end: 1px solid var(--color-border-subtle);
-  }
-
-  .methodology-stage-heading {
     display: grid;
-    gap: var(--space-element-tight);
+    gap: var(--space-element);
+    padding-top: var(--space-content-tight);
   }
 
   .methodology-stage-index {
@@ -91,6 +83,12 @@ const { content } = Astro.props;
 
   .methodology-stage-description {
     color: var(--color-text-secondary);
-    max-width: var(--layout-reading);
+  }
+
+  @media (max-width: 48rem) {
+    .methodology-stages {
+      gap: var(--space-content-tight);
+      grid-template-columns: minmax(0, 1fr);
+    }
   }
 </style>

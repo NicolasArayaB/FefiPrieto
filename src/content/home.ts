@@ -8,22 +8,13 @@ export const homeMetadata = {
 
 export const homeContent = {
   hero: {
-    eyebrow: "Psicología de la imagen y presencia ejecutiva",
+    eyebrow: "Psicología · Coaching · Imagen",
     title: "Fefi Prieto",
     description:
-      "Acompañamiento estratégico para personas y equipos que buscan que su imagen exprese quiénes son, con claridad y propósito.",
+      "Una forma más consciente de habitar tu imagen, tu identidad y tu presencia.",
     primaryCta: {
       label: "Hablemos de tu organización",
       href: "mailto:hello@example.com?subject=Consulta%20corporativa",
-    },
-    secondaryCta: {
-      label: "Agendar una asesoría",
-      href: "mailto:hello@example.com?subject=Asesoría%20individual",
-    },
-    actionsLabel: "Acciones principales",
-    statement: {
-      label: "Una convicción de partida",
-      quote: "La imagen no es superficial. Es psicológica.",
     },
     image: {
       alt: "Una mujer con blazer oscuro en un estudio de tonos piedra.",

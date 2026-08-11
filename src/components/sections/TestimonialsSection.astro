@@ -29,7 +29,7 @@ const { content } = Astro.props;
 
     <article class="featured-testimonial">
       <Grid variant="editorial" align="end">
-        <blockquote class="featured-quote type-quote">
+        <blockquote class="featured-quote type-heading-l">
           <p>{content.featured.quote}</p>
         </blockquote>
         <footer class="featured-attribution">
@@ -59,8 +59,13 @@ const { content } = Astro.props;
     <section class="supporting-section" aria-label={content.supportingLabel}>
       <Grid class="supporting-testimonials" variant="two">
         {
-          content.supporting.map((testimonial) => (
-            <article class="supporting-testimonial">
+          content.supporting.map((testimonial, index) => (
+            <article
+              class:list={[
+                "supporting-testimonial",
+                `supporting-testimonial-${index}`,
+              ]}
+            >
               <blockquote class="supporting-quote type-heading-m">
                 <p>{testimonial.quote}</p>
               </blockquote>
@@ -104,9 +109,9 @@ const { content } = Astro.props;
   }
 
   .featured-testimonial {
-    background: var(--color-brand);
-    color: var(--color-surface-elevated);
-    margin-top: var(--space-section-compact);
+    background: var(--color-expression-orange);
+    color: var(--color-on-expression-orange);
+    margin-top: var(--space-content);
     padding: var(--space-content);
   }
 
@@ -127,7 +132,7 @@ const { content } = Astro.props;
 
   .featured-context,
   .featured-relationship {
-    color: color-mix(in srgb, var(--color-surface-elevated) 78%, transparent);
+    color: var(--color-on-expression-orange);
   }
 
   .supporting-section {

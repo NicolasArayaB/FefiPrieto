@@ -13,12 +13,6 @@ export interface HeroContent {
   title: string;
   description: string;
   primaryCta: ActionLink;
-  secondaryCta: ActionLink;
-  actionsLabel: string;
-  statement: {
-    label: string;
-    quote: string;
-  };
   image: {
     alt: string;
   };
