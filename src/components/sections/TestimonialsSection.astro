@@ -19,12 +19,10 @@ const { content } = Astro.props;
   <Container size="content">
     <header class="testimonials-intro">
       <p class="testimonials-eyebrow type-eyebrow">{content.eyebrow}</p>
-      <Grid variant="editorial" align="end">
-        <h2 id="testimonials-title" class="type-heading-xl">{content.title}</h2>
-        <p class="testimonials-description type-body">
-          {content.description}
-        </p>
-      </Grid>
+      <h2 id="testimonials-title" class="type-heading-xl">{content.title}</h2>
+      <p class="testimonials-description type-body">
+        {content.description}
+      </p>
     </header>
 
     <article class="featured-testimonial">
@@ -103,9 +101,14 @@ const { content } = Astro.props;
     margin-bottom: var(--space-heading);
   }
 
+  .testimonials-intro h2 {
+    max-width: var(--layout-copy);
+  }
+
   .testimonials-description {
     color: var(--color-text-secondary);
-    max-width: var(--layout-reading);
+    margin-top: var(--space-heading-to-body);
+    max-width: var(--layout-copy);
   }
 
   .featured-testimonial {
