@@ -2,17 +2,25 @@
 import type { ActionLink } from "@app-types/content";
 
 interface Props extends ActionLink {
+  appearance?: "button" | "editorial";
   variant?: "primary" | "secondary";
   size?: "default" | "compact";
 }
 
-const { href, label, variant = "secondary", size = "default" } = Astro.props;
+const {
+  appearance = "button",
+  href,
+  label,
+  variant = "secondary",
+  size = "default",
+} = Astro.props;
 ---
 
 <a
   class:list={[
     "button-link",
     "type-button",
+    `button-link-${appearance}`,
     `button-link-${variant}`,
     `button-link-${size}`,
   ]}
@@ -26,7 +34,6 @@ const { href, label, variant = "secondary", size = "default" } = Astro.props;
     align-items: center;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-control);
-    box-shadow: var(--shadow-soft);
     display: inline-flex;
     gap: var(--space-xs);
     justify-content: center;
@@ -34,22 +41,15 @@ const { href, label, variant = "secondary", size = "default" } = Astro.props;
     padding: var(--space-xs) var(--space-md);
     text-decoration: none;
     transition:
-      transform var(--duration-fast) var(--easing-standard),
       background-color var(--duration-fast) var(--easing-standard),
       border-color var(--duration-fast) var(--easing-standard),
-      color var(--duration-fast) var(--easing-standard),
-      box-shadow var(--duration-fast) var(--easing-standard);
-  }
-
-  .button-link:hover {
-    box-shadow: var(--shadow-card);
-    transform: translateY(-1px);
+      color var(--duration-fast) var(--easing-standard);
   }
 
   .button-link-primary {
     background: var(--color-brand);
     border-color: var(--color-brand);
-    color: var(--color-surface-elevated);
+    color: var(--color-surface);
   }
 
   .button-link-primary:hover {
@@ -58,17 +58,42 @@ const { href, label, variant = "secondary", size = "default" } = Astro.props;
   }
 
   .button-link-secondary {
-    background: color-mix(
-      in srgb,
-      var(--color-surface-elevated) 64%,
-      transparent
-    );
+    background: color-mix(in srgb, var(--color-surface) 64%, transparent);
     color: var(--color-text);
   }
 
   .button-link-secondary:hover {
-    background: var(--color-surface-elevated);
+    background: var(--color-surface);
     border-color: var(--color-border);
+  }
+
+  .button-link-editorial {
+    background: transparent;
+    border: 0;
+    border-block-end: 1px solid currentColor;
+    border-radius: 0;
+    justify-content: flex-start;
+    padding: 0 0 var(--space-xs);
+    width: fit-content;
+  }
+
+  .button-link-editorial.button-link-primary {
+    color: var(--color-brand);
+  }
+
+  .button-link-editorial.button-link-secondary {
+    color: var(--color-text);
+  }
+
+  .button-link-editorial:hover,
+  .button-link-editorial.button-link-primary:hover,
+  .button-link-editorial.button-link-secondary:hover {
+    background: transparent;
+  }
+
+  .button-link-editorial.button-link-primary:hover {
+    border-color: var(--color-brand-hover);
+    color: var(--color-brand-hover);
   }
 
   .button-link-compact {
@@ -77,7 +102,7 @@ const { href, label, variant = "secondary", size = "default" } = Astro.props;
   }
 
   @media (max-width: 640px) {
-    .button-link {
+    .button-link:not(.button-link-editorial) {
       width: 100%;
     }
   }

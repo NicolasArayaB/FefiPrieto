@@ -4,17 +4,21 @@
     --color-background: #f4f1eb;
     --color-background-alt: #eae5dc;
     --color-surface: #faf8f4;
-    --color-surface-elevated: #fffdf9;
-    --color-card: #f7f4ee;
     --color-text: #252522;
     --color-text-secondary: #5d5b55;
     --color-text-muted: #706d66;
     --color-brand: #4c625a;
     --color-brand-hover: #3d5049;
+    --color-expression-blue: #304cff;
+    --color-expression-orange: #ff5a1f;
+    --color-expression-pink: #f02d8c;
+    --color-expression-lime: #c7f000;
+    --color-on-expression-blue: var(--color-surface);
+    --color-on-expression-orange: var(--color-text);
+    --color-on-expression-pink: #151513;
+    --color-on-expression-lime: var(--color-text);
     --color-border: #cbc5bb;
     --color-border-subtle: #e1ddd5;
-    --color-overlay: rgba(37, 37, 34, 0.72);
-    --color-shadow: rgba(37, 37, 34, 0.14);
     --color-focus: #2f6a65;
 
     --font-body:
@@ -110,15 +114,8 @@
     --layout-wide: 90rem;
     --layout-full: none;
 
-    --radius-sm: 0.75rem;
-    --radius-md: 1rem;
-    --radius-lg: 1.75rem;
-    --radius-pill: 999px;
-    --radius-control: var(--radius-pill);
+    --radius-control: 999px;
     --target-size: 44px;
-
-    --shadow-soft: 0 20px 60px -32px var(--color-shadow);
-    --shadow-card: 0 24px 60px -36px var(--color-shadow);
 
     --duration-fast: 180ms;
     --duration-base: 280ms;

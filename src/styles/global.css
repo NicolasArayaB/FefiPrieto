@@ -239,17 +239,6 @@
       margin-inline-start: 0;
     }
   }
-
-  .surface-panel {
-    backdrop-filter: blur(14px);
-    background: color-mix(
-      in srgb,
-      var(--color-surface-elevated) 82%,
-      transparent
-    );
-    border: 1px solid var(--color-border-subtle);
-    box-shadow: var(--shadow-soft);
-  }
 }
 
 .home-shell {
