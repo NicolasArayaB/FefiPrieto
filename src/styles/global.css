@@ -79,6 +79,17 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
+    :root {
+      --motion-duration-fast: var(--motion-duration-instant);
+      --motion-duration-standard: var(--motion-duration-instant);
+      --motion-duration-emphasized: var(--motion-duration-instant);
+      --motion-duration-cinematic: var(--motion-duration-instant);
+      --motion-distance-micro: 0px;
+      --motion-distance-small: 0px;
+      --motion-distance-medium: 0px;
+      --motion-distance-large: 0px;
+    }
+
     html {
       scroll-behavior: auto;
     }

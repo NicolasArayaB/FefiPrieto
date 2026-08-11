@@ -53,6 +53,8 @@ Motion should support:
 
 Motion should not exist only because the technology stack supports it.
 
+Use the semantic durations, easing curves, distances, and accessibility rules in [motion-system.md](motion-system.md). Motion intent should be decided before an implementation library is chosen.
+
 ## Imagery Direction
 
 Imagery should support the themes of identity, confidence, professional presence, and transformation.

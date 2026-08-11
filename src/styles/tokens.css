@@ -117,8 +117,21 @@
     --radius-control: 999px;
     --target-size: 44px;
 
-    --duration-fast: 180ms;
-    --duration-base: 280ms;
-    --easing-standard: cubic-bezier(0.22, 1, 0.36, 1);
+    /* Motion stays restrained: semantic values are shared without choosing an engine. */
+    --motion-duration-instant: 0ms;
+    --motion-duration-fast: 180ms;
+    --motion-duration-standard: 280ms;
+    --motion-duration-emphasized: 480ms;
+    --motion-duration-cinematic: 720ms;
+
+    --motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+    --motion-easing-entrance: cubic-bezier(0.22, 1, 0.36, 1);
+    --motion-easing-exit: cubic-bezier(0.4, 0, 1, 1);
+    --motion-easing-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+
+    --motion-distance-micro: var(--space-2xs);
+    --motion-distance-small: var(--space-xs);
+    --motion-distance-medium: var(--space-lg);
+    --motion-distance-large: var(--space-xl);
   }
 }
