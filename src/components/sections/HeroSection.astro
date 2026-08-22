@@ -10,7 +10,7 @@ interface Props {
 const { content } = Astro.props;
 ---
 
-<Section class="hero-section" labelledby="hero-title" spacing="hero">
+<Section id="hero" class="hero-section" labelledby="hero-title" spacing="hero">
   <Container size="content">
     <div class="hero-layout">
       <div class="hero-copy">
@@ -21,10 +21,8 @@ const { content } = Astro.props;
         <div class="hero-actions">
           <ButtonLink {...content.primaryCta} variant="primary" />
         </div>
-        <a
-          class="scroll-indicator"
-          href="#methodology-title"
-          aria-label="Ir a metodología">⌄</a
+        <a class="scroll-indicator" href="#hero" aria-label="Volver al inicio"
+          >⌃</a
         >
       </div>
       <div class="hero-media" aria-hidden="true">
@@ -107,18 +105,25 @@ const { content } = Astro.props;
   }
   .scroll-indicator {
     align-items: center;
-    border: 1.5px solid currentColor;
+    backdrop-filter: blur(2px);
+    background: rgba(255, 255, 255, 0.39);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
+    bottom: var(--space-xl);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     color: var(--color-deep-indigo);
     display: flex;
     font-size: 28px;
-    height: 48px;
+    height: var(--space-3xl);
     justify-content: center;
-    margin-block-start: var(--space-4xl);
+    padding-block-start: var(--space-xs);
+    position: fixed;
+    right: var(--space-xl);
     text-decoration: none;
     transition: transform var(--motion-duration-fast)
       var(--motion-easing-standard);
-    width: 48px;
+    width: var(--space-3xl);
+    -webkit-backdrop-filter: blur(2px);
   }
   .scroll-indicator:hover {
     transform: translateY(4px);
