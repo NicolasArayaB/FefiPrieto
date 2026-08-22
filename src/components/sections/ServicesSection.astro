@@ -12,7 +12,12 @@ const { content } = Astro.props;
 const [, individual] = content.groups;
 ---
 
-<Section class="services-section" labelledby="services-title" spacing="default">
+<Section
+  id="services"
+  class="services-section"
+  labelledby="services-title"
+  spacing="default"
+>
   <svg
     class="services-wave"
     viewBox="0 0 1440 160"

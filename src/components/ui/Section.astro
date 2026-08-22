@@ -1,14 +1,21 @@
 ---
 interface Props {
+  id: string;
   class?: string;
   labelledby?: string;
   spacing?: "default" | "compact" | "editorial" | "hero";
 }
 
-const { class: className, labelledby, spacing = "default" } = Astro.props;
+const {
+  id: id,
+  class: className,
+  labelledby,
+  spacing = "default",
+} = Astro.props;
 ---
 
 <section
+  id={id}
   class:list={["section", `section-${spacing}`, className]}
   aria-labelledby={labelledby}
 >

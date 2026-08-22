@@ -39,21 +39,21 @@ const canonicalUrl = new URL(canonicalPath, siteMetadata.url).toString();
     <title>{pageTitle}</title>
   </head>
   <body class="site-shell">
-    <header class="site-navigation">
+    <header class="site-navigation" data-site-navigation>
       <a class="site-wordmark" href="/" aria-label="Fefi Prieto, inicio"
         >FEFI PRIETO</a
       >
       <nav aria-label="Navegación principal">
-        <a href="#methodology-title">Método</a>
-        <a href="#services-title">Servicios</a>
-        <a href="#authority-title">Sobre Fefi</a>
+        <a href="#methodology">Método</a>
+        <a href="#services">Servicios</a>
+        <a href="#about">Sobre Fefi</a>
       </nav>
       <details class="mobile-navigation">
         <summary class="type-caption">Menú</summary>
         <nav aria-label="Navegación móvil">
-          <a href="#methodology-title">Método</a>
-          <a href="#services-title">Servicios</a>
-          <a href="#authority-title">Sobre Fefi</a>
+          <a href="#methodology">Método</a>
+          <a href="#services">Servicios</a>
+          <a href="#about">Sobre Fefi</a>
         </nav>
       </details>
       <a class="navigation-cta" href="mailto:hello@example.com?subject=Consulta"
@@ -61,6 +61,11 @@ const canonicalUrl = new URL(canonicalPath, siteMetadata.url).toString();
       >
     </header>
     <slot />
+    <script>
+      import { initStickyNavigation } from "@animations/navigation";
+
+      initStickyNavigation();
+    </script>
   </body>
 </html>
 
@@ -77,6 +82,11 @@ const canonicalUrl = new URL(canonicalPath, siteMetadata.url).toString();
     right: 0;
     top: 0;
     z-index: 10;
+    transition:
+      background-color var(--motion-duration-standard)
+        var(--motion-easing-standard),
+      box-shadow var(--motion-duration-standard) var(--motion-easing-standard),
+      padding var(--motion-duration-standard) var(--motion-easing-standard);
   }
   .site-wordmark {
     color: var(--color-deep-indigo);
@@ -107,6 +117,31 @@ const canonicalUrl = new URL(canonicalPath, siteMetadata.url).toString();
   }
   .mobile-navigation {
     display: none;
+  }
+  .site-navigation.is-scrolled {
+    background: var(--color-deep-indigo);
+    border-radius: var(--radius-control);
+    box-shadow: var(--shadow-xl);
+    left: 50%;
+    padding: var(--space-sm) var(--space-xl);
+    position: fixed;
+    right: auto;
+    top: var(--space-md);
+    transform: translateX(-50%);
+    width: max-content;
+  }
+  .site-navigation.is-scrolled .site-wordmark,
+  .site-navigation.is-scrolled .navigation-cta,
+  .site-navigation.is-scrolled .mobile-navigation {
+    display: none;
+  }
+  .site-navigation.is-scrolled nav {
+    display: flex;
+    gap: var(--space-xl);
+  }
+  .site-navigation.is-scrolled nav a {
+    color: var(--color-pure-white);
+    white-space: nowrap;
   }
   @media (max-width: 48rem) {
     .site-navigation {
@@ -157,6 +192,13 @@ const canonicalUrl = new URL(canonicalPath, siteMetadata.url).toString();
     }
     .navigation-cta {
       padding: var(--space-sm) var(--space-md);
+    }
+    .site-navigation.is-scrolled {
+      max-width: calc(100% - var(--space-page) - var(--space-page));
+      padding-inline: var(--space-lg);
+    }
+    .site-navigation.is-scrolled nav {
+      gap: var(--space-md);
     }
   }
 </style>
