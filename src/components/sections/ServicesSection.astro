@@ -258,6 +258,11 @@ const [, individual] = content.groups;
   }
   .individual-intro :global(.button-link) {
     justify-self: start;
+    transition: transform var(--motion-duration-fast)
+      var(--motion-easing-standard);
+  }
+  .individual-intro :global(.button-link):hover {
+    transform: translateY(4px);
   }
   .individual-image {
     margin: var(--space-xl) 0 0;

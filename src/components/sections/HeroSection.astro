@@ -103,6 +103,13 @@ const { content } = Astro.props;
   .hero-actions {
     margin-block-start: var(--space-xl);
   }
+  .hero-actions :global(.button-link) {
+    transition: transform var(--motion-duration-fast)
+      var(--motion-easing-standard);
+  }
+  .hero-actions :global(.button-link):hover {
+    transform: translateY(4px);
+  }
   .scroll-indicator {
     align-items: center;
     backdrop-filter: blur(2px);
