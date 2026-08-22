@@ -1,7 +1,6 @@
 ---
 import ButtonLink from "@components/ui/ButtonLink.astro";
 import Container from "@components/ui/Container.astro";
-import Grid from "@components/ui/Grid.astro";
 import Section from "@components/ui/Section.astro";
 import type { ServicesContent } from "@app-types/content";
 
@@ -10,312 +9,342 @@ interface Props {
 }
 
 const { content } = Astro.props;
-const [corporate, individual] = content.groups;
-const [featuredCorporateService, ...supportingCorporateServices] =
-  corporate.services;
+const [, individual] = content.groups;
 ---
 
 <Section class="services-section" labelledby="services-title" spacing="default">
+  <svg
+    class="services-wave"
+    viewBox="0 0 1440 160"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+    ><path d="M0 0H1440V65C1210 142 1052 132 856 94C612 47 424 178 0 86V0Z"
+    ></path></svg
+  >
   <Container size="content">
     <header class="services-intro">
       <p class="services-eyebrow type-eyebrow">{content.eyebrow}</p>
-      <Grid variant="editorial" align="end">
+      <div class="services-heading-row">
         <h2 id="services-title" class="type-display-m">{content.title}</h2>
-        <p class="services-description type-body-l">{content.description}</p>
-      </Grid>
-    </header>
-
-    <section
-      class="corporate-services"
-      aria-labelledby="corporate-services-title"
-    >
-      <header class="corporate-intro">
-        <p class="service-group-eyebrow type-eyebrow">{corporate.eyebrow}</p>
-        <h3 id="corporate-services-title" class="type-heading-xl">
-          {corporate.title}
-        </h3>
-      </header>
-
-      <Grid class="corporate-feature" variant="editorial" align="end">
-        {
-          corporate.image && (
-            <figure class="corporate-image">
-              <img
-                src={corporate.image.src}
-                alt={corporate.image.alt}
-                width="1122"
-                height="1402"
-                loading="lazy"
-                decoding="async"
-              />
-              <figcaption class="corporate-image-caption type-caption">
-                {corporate.image.caption}
-              </figcaption>
-            </figure>
-          )
-        }
-        <div class="featured-service">
-          <h4 class="type-display-l">{featuredCorporateService.title}</h4>
-          <p class="featured-service-description type-body-l">
-            {featuredCorporateService.description}
-          </p>
-          <ButtonLink
-            {...corporate.action}
-            appearance="editorial"
-            variant="primary"
-          >
-            <span>{corporate.action.label}</span>
-            <span aria-hidden="true">↗</span>
-          </ButtonLink>
+        <div class="services-intro-copy">
+          <p class="services-script">La presencia se construye.</p>
+          <p class="services-description type-body">{content.description}</p>
         </div>
-      </Grid>
-      <Grid align="end">
-        {
-          supportingCorporateServices &&
-            supportingCorporateServices.map((supportingCorporateService) => (
-              <a
-                class="corporate-support type-body-small"
-                href={supportingCorporateService.href}
-              >
-                <span class="corporate-support-title type-heading-m">
-                  {supportingCorporateService.title}
-                </span>
-                <span>{supportingCorporateService.description}</span>
-                <span class="service-link-entry type-caption">
-                  {supportingCorporateService.entryLabel}
-                  <span aria-hidden="true"> ↗</span>
-                </span>
-              </a>
-            ))
-        }
-      </Grid>
-    </section>
+      </div>
+    </header>
 
     <section
       class="individual-services"
       aria-labelledby="individual-services-title"
     >
-      <Grid variant="editorial" align="center">
-        <header class="individual-intro">
-          <p class="service-group-eyebrow type-eyebrow">{individual.eyebrow}</p>
-          <h3 id="individual-services-title" class="type-heading-xl">
-            {individual.title}
-          </h3>
-          {
-            individual.image && (
-              <figure class="individual-image">
-                <img
-                  src={individual.image.src}
-                  alt={individual.image.alt}
-                  width="1122"
-                  height="1402"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <figcaption class="individual-image-caption type-caption">
-                  {individual.image.caption}
-                </figcaption>
-              </figure>
-            )
-          }
-          <p class="service-group-description type-body">
-            {individual.description}
-          </p>
-          <ButtonLink
-            {...individual.action}
-            appearance="editorial"
-            variant="secondary"
+      <div class="individual-intro">
+        <p class="service-group-eyebrow type-eyebrow">{individual.eyebrow}</p>
+        <h3 id="individual-services-title" class="type-heading-xl">
+          {individual.title}
+        </h3>
+        <p class="service-group-description type-body">
+          {individual.description}
+        </p>
+        <ButtonLink {...individual.action} variant="secondary">
+          <span>{individual.action.label}</span><span aria-hidden="true">→</span
           >
-            <span>{individual.action.label}</span>
-            <span aria-hidden="true">↗</span>
-          </ButtonLink>
-        </header>
-
-        <ul class="individual-service-list">
-          {
-            individual.services.map((service) => (
-              <li>
-                <a class="individual-service-link" href={service.href}>
-                  <span class="individual-service-title type-heading-m">
-                    {service.title}
-                  </span>
-                  <span class="service-link-description type-body-small">
-                    {service.description}
-                  </span>
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </Grid>
+        </ButtonLink>
+        {
+          individual.image && (
+            <figure class="individual-image">
+              <img
+                src={individual.image.src}
+                alt={individual.image.alt}
+                width="1122"
+                height="1402"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class="individual-image-caption type-caption">
+                {individual.image.caption}
+              </figcaption>
+            </figure>
+          )
+        }
+      </div>
+      <ol class="individual-service-list">
+        {
+          individual.services.map((service, index) => (
+            <li>
+              <a class="individual-service-link" href={service.href}>
+                <span class="service-number">0{index + 1}</span>
+                <span class="individual-service-title type-heading-m">
+                  {service.title}
+                </span>
+                <span class="service-link-description type-body-small">
+                  {service.description}
+                </span>
+                <span class="service-link-entry type-caption">
+                  {service.entryLabel} <span aria-hidden="true">→</span>
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ol>
     </section>
   </Container>
 </Section>
 
 <style>
-  .services-section {
-    margin-block-start: var(--space-section);
-  }
-
-  .services-eyebrow {
-    color: var(--color-brand);
-  }
-
-  .services-eyebrow {
-    margin-bottom: var(--space-heading);
-  }
-
-  .services-description {
-    color: var(--color-text-secondary);
-  }
-
-  .services-description {
-    max-width: var(--layout-reading);
-  }
-
-  .corporate-services,
-  .individual-services {
-    border-block-start: 1px solid var(--color-border);
-    margin-top: var(--space-section-compact);
-    padding-top: var(--space-content-tight);
-  }
-
-  .corporate-intro,
-  .individual-intro {
-    display: grid;
-    gap: var(--space-element);
-  }
-
-  .corporate-feature {
-    margin-top: var(--space-content);
-  }
-
-  .corporate-image {
-    background: var(--color-expression-blue);
+  :global(.services-section) {
+    background: var(--color-burnt-orange);
+    color: var(--color-ink-black);
     margin: 0;
-    padding: var(--space-content-tight) 0 0 var(--space-content-tight);
+    overflow: hidden;
+    padding-block: var(--space-6xl);
+    position: relative;
   }
-
+  .services-wave {
+    fill: var(--color-cream-paper);
+    height: 120px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  :global(.services-section) :global(.container) {
+    position: relative;
+  }
+  .services-intro {
+    padding-top: var(--space-4xl);
+  }
+  .services-eyebrow,
+  .service-group-eyebrow {
+    color: var(--color-deep-indigo);
+    margin-bottom: var(--space-md);
+  }
+  .services-heading-row {
+    align-items: end;
+    display: grid;
+    gap: var(--space-4xl);
+    grid-template-columns: minmax(0, 1.25fr) minmax(16rem, 0.75fr);
+  }
+  .services-heading-row h2 {
+    color: var(--color-deep-indigo);
+    max-width: 10ch;
+  }
+  .services-intro-copy {
+    display: grid;
+    gap: var(--space-md);
+    max-width: 34rem;
+  }
+  .services-script {
+    color: var(--color-deep-indigo);
+    font: 400 clamp(2rem, 3vw, 2.5rem) / 1 var(--font-script);
+    transform: rotate(-3deg);
+  }
+  .corporate-services {
+    margin-top: var(--space-5xl);
+  }
+  .service-group-heading {
+    border-bottom: 1px solid var(--color-ink-black);
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: var(--space-lg);
+  }
+  .service-group-heading h3 {
+    color: var(--color-deep-indigo);
+  }
+  .corporate-feature {
+    display: grid;
+    grid-template-columns: minmax(18rem, 0.8fr) minmax(0, 1.2fr);
+    margin-top: var(--space-xl);
+  }
+  .corporate-image {
+    background: var(--color-honey-gold);
+    margin: 0;
+    padding: var(--space-md) 0 0 var(--space-md);
+  }
   .corporate-image img {
     aspect-ratio: 4 / 5;
     height: 100%;
     object-fit: cover;
     width: 100%;
   }
-
   .corporate-image-caption {
-    color: var(--color-on-expression-blue);
-    margin-top: var(--space-element-tight);
+    color: var(--color-deep-indigo);
+    display: block;
+    padding: var(--space-md);
   }
-
   .featured-service {
+    background: var(--color-pure-white);
+    border-radius: 0 var(--radius-card) var(--radius-card) 0;
+    box-shadow: var(--shadow-xl-2);
     display: grid;
-    gap: var(--space-element);
+    gap: var(--space-xl);
+    padding: var(--space-4xl);
   }
-
-  .service-group-eyebrow {
-    color: var(--color-brand);
+  .featured-service h4 {
+    color: var(--color-deep-indigo);
+    max-width: 8ch;
   }
-
-  .featured-service-description,
-  .service-group-description {
-    color: var(--color-text-secondary);
-    max-width: var(--layout-reading);
-    margin-top: var(--space-element);
+  .service-number {
+    color: var(--color-deep-indigo);
+    font: 400 46px / 0.86 var(--font-display);
+    letter-spacing: 0.043em;
+    margin: 0;
   }
-
+  .featured-service-description {
+    max-width: 50ch;
+  }
+  .featured-service :global(.button-link) {
+    justify-self: start;
+  }
+  .corporate-supporting {
+    display: grid;
+    gap: var(--space-xl);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: var(--space-xl);
+  }
   .corporate-support {
-    color: var(--color-text-secondary);
+    align-items: start;
+    background: var(--color-pure-white);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-xl);
     display: grid;
-    gap: var(--space-element-tight);
-    margin-top: var(--space-content);
-    max-width: var(--layout-reading);
+    gap: var(--space-md);
+    grid-template-columns: auto 1fr;
+    padding: var(--space-xl);
     text-decoration: none;
+    transition: transform var(--motion-duration-fast)
+      var(--motion-easing-standard);
   }
-
-  .corporate-support-title {
-    color: var(--color-text);
+  .corporate-support:hover,
+  .corporate-support:focus-visible {
+    transform: translateY(-4px);
   }
-
-  .individual-service-list {
+  .corporate-support-content {
     display: grid;
-    gap: var(--space-content-tight);
+    gap: var(--space-sm);
+  }
+  .corporate-support-title {
+    color: var(--color-deep-indigo);
+  }
+  .corporate-support .service-link-entry {
+    grid-column: 2;
+  }
+  .individual-services {
+    background: var(--color-cream-paper);
+    border-radius: var(--radius-card);
+    display: grid;
+    gap: var(--space-4xl);
+    grid-template-columns: minmax(17rem, 0.8fr) minmax(0, 1.2fr);
+    margin-top: var(--space-6xl);
+    padding: var(--space-4xl);
+    position: relative;
+  }
+  .individual-intro {
+    display: grid;
+    align-content: start;
+    text-wrap: pretty;
+    gap: var(--space-lg);
+  }
+  .individual-intro h3 {
+    color: var(--color-deep-indigo);
+  }
+  .service-group-description {
+    max-width: 38ch;
+  }
+  .individual-intro :global(.button-link) {
+    justify-self: start;
+  }
+  .individual-image {
+    margin: var(--space-xl) 0 0;
+  }
+  .individual-image img {
+    aspect-ratio: 4 / 5;
+    height: auto;
+    object-fit: cover;
+    width: 100%;
+  }
+  .individual-image-caption {
+    color: var(--color-ink-black);
+    display: block;
+    margin-top: var(--space-sm);
+  }
+  .individual-service-list {
+    border-top: 1px solid var(--color-ink-black);
+    display: grid;
     list-style: none;
     margin: 0;
     padding: 0;
   }
-
-  .individual-intro h3 {
-    background: var(--color-expression-orange);
-    color: var(--color-on-expression-orange);
-    padding: var(--space-content-tight);
+  .individual-service-list li {
+    border-bottom: 1px solid var(--color-ink-black);
   }
-
-  .individual-image {
-    margin: 0;
-  }
-
-  .individual-image img {
-    aspect-ratio: 4 / 5;
-    height: 100%;
-    object-fit: cover;
-    width: 100%;
-  }
-
-  .individual-image-caption {
-    color: var(--color-text-muted);
-    margin-top: var(--space-element-tight);
-  }
-
   .individual-service-link {
+    align-items: start;
     display: grid;
-    gap: var(--space-element-tight);
+    gap: var(--space-md);
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    padding: var(--space-xl) 0;
     text-decoration: none;
+    transition: color var(--motion-duration-fast) var(--motion-easing-standard);
   }
-
+  .individual-service-link:hover,
+  .individual-service-link:focus-visible {
+    color: var(--color-deep-indigo);
+  }
+  .individual-service-title {
+    color: var(--color-deep-indigo);
+  }
+  .service-link-description {
+    grid-column: 2 / 4;
+    max-width: 52ch;
+  }
+  .individual-service-link .service-link-entry {
+    grid-column: 2 / 4;
+  }
   .service-link-entry {
-    color: var(--color-text-muted);
+    color: var(--color-deep-indigo);
   }
-
-  .corporate-support:hover .corporate-support-title,
-  .corporate-support:focus-visible .corporate-support-title,
-  .individual-service-link:hover .individual-service-title,
-  .individual-service-link:focus-visible .individual-service-title {
-    color: currentColor;
-  }
-
   @media (max-width: 48rem) {
-    .services-intro :global(.grid-editorial) {
-      gap: var(--space-heading-to-body);
+    :global(.services-section) {
+      padding-block: var(--space-5xl);
     }
-
-    .corporate-feature {
-      gap: var(--space-content-tight);
-      margin-top: var(--space-content-tight);
-    }
-
-    .corporate-support {
-      margin-top: var(--space-content-tight);
-    }
-
-    .individual-services :global(.grid-editorial) {
-      gap: var(--space-content);
-    }
-  }
-
-  @media (max-width: 640px) {
-    .corporate-services,
+    .services-heading-row,
+    .corporate-feature,
     .individual-services {
-      margin-top: var(--space-content);
+      gap: var(--space-xl);
+      grid-template-columns: 1fr;
     }
-
-    .corporate-image {
-      padding: var(--space-content-tight) 0 0 var(--space-content-tight);
+    .service-group-heading {
+      align-items: start;
+      display: grid;
+      gap: var(--space-xs);
     }
-
-    .featured-service,
-    .individual-intro {
-      gap: var(--space-element);
+    .corporate-feature {
+      margin-top: var(--space-xl);
+    }
+    .featured-service {
+      border-radius: 0 0 var(--radius-card) var(--radius-card);
+      padding: var(--space-xl);
+    }
+    .corporate-supporting {
+      grid-template-columns: 1fr;
+    }
+    .individual-services {
+      margin-top: var(--space-5xl);
+      padding: var(--space-xl);
+    }
+    .individual-image {
+      max-width: 18rem;
+    }
+    .individual-service-link {
+      grid-template-columns: auto minmax(0, 1fr);
+    }
+    .service-link-description,
+    .individual-service-link .service-link-entry {
+      grid-column: 2;
+    }
+    .services-wave {
+      height: 80px;
     }
   }
 </style>

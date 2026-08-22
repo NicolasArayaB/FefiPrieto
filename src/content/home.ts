@@ -13,8 +13,8 @@ export const homeContent = {
     description:
       "Una forma más consciente de habitar tu imagen, tu identidad y tu presencia.",
     primaryCta: {
-      label: "Hablemos de tu organización",
-      href: "mailto:hello@example.com?subject=Consulta%20corporativa",
+      label: "Hablemos de tu proceso",
+      href: "mailto:hello@example.com?subject=Consulta%20individual",
     },
     image: {
       alt: "Una mujer con blazer oscuro en un estudio de tonos piedra.",
@@ -48,7 +48,7 @@ export const homeContent = {
     eyebrow: "Servicios",
     title: "Una presencia que se siente propia.",
     description:
-      "Dos formas de trabajar desde una misma convicción: la imagen puede expresar identidad, confianza y dirección de manera concreta.",
+      "Un acompañamiento uno a uno para que tu imagen exprese con claridad quién eres, cómo quieres sentirte y hacia dónde vas.",
     groups: [
       {
         eyebrow: "Para organizaciones",
@@ -90,12 +90,12 @@ export const homeContent = {
         ],
       },
       {
-        eyebrow: "Para personas",
-        title: "Individual",
+        eyebrow: "Acompañamiento uno a uno",
+        title: "Para ti",
         description:
-          "Acompañamiento uno a uno para que tu estilo sea una expresión más útil, segura y coherente de la persona que estás construyendo.",
+          "Un proceso personal para que tu estilo sea una expresión más útil, segura y coherente de la persona que estás construyendo.",
         action: {
-          label: "Explorar servicios individuales",
+          label: "Conversemos sobre tu proceso",
           href: "mailto:hello@example.com?subject=Servicios%20individuales",
         },
         image: {

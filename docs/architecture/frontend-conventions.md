@@ -103,6 +103,11 @@ Default requirements:
 * Keep touch targets at least 44px tall.
 * Avoid motion that is required to understand content.
 
+Responsive navigation must keep every primary in-page destination available at
+mobile widths. A compact disclosure menu is acceptable when the desktop link
+row no longer fits; it should use semantic `<details>`/`<summary>` markup and
+preserve the existing link destinations.
+
 ## Animation Conventions
 
 Animation modules belong in `src/animations/` and should be imported only where the related experience requires them.
@@ -114,6 +119,12 @@ Use:
 * Framer Motion for interactive React islands.
 
 Do not add animation code to static content components unless the motion is trivial and component-local.
+
+The testimonial swiper is the current scroll-driven exception. Its direction
+follows the user's scroll direction, retains two visible testimonials, uses a
+guarded transition to avoid overlapping moves, and exits early for reduced
+motion. Keep this behavior in `src/animations/testimonials.ts`; do not add
+scroll lifecycle logic to the section component.
 
 ## State Conventions
 

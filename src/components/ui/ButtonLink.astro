@@ -32,13 +32,13 @@ const {
 <style>
   .button-link {
     align-items: center;
-    border: 1px solid var(--color-border);
+    border: 2px solid var(--color-burnt-orange);
     border-radius: var(--radius-control);
     display: inline-flex;
     gap: var(--space-xs);
     justify-content: center;
     min-height: var(--target-size);
-    padding: var(--space-xs) var(--space-md);
+    padding: var(--space-lg) var(--space-3xl);
     text-decoration: none;
     transition:
       background-color var(--motion-duration-fast) var(--motion-easing-standard),
@@ -47,58 +47,29 @@ const {
   }
 
   .button-link-primary {
-    background: var(--color-brand);
-    border-color: var(--color-brand);
-    color: var(--color-surface);
+    background: var(--color-deep-indigo);
+    border-color: var(--color-deep-indigo);
+    color: var(--color-pure-white);
   }
 
   .button-link-primary:hover {
-    background: var(--color-brand-hover);
-    border-color: var(--color-brand-hover);
+    background: var(--color-deep-indigo);
+    border-color: var(--color-deep-indigo);
   }
 
   .button-link-secondary {
-    background: color-mix(in srgb, var(--color-surface) 64%, transparent);
-    color: var(--color-text);
+    background: transparent;
+    color: var(--color-burnt-orange);
   }
 
   .button-link-secondary:hover {
-    background: var(--color-surface);
-    border-color: var(--color-border);
-  }
-
-  .button-link-editorial {
     background: transparent;
-    border: 0;
-    border-block-end: 1px solid currentColor;
-    border-radius: 0;
-    justify-content: flex-start;
-    padding: 0 0 var(--space-xs);
-    width: fit-content;
-  }
-
-  .button-link-editorial.button-link-primary {
-    color: var(--color-brand);
-  }
-
-  .button-link-editorial.button-link-secondary {
-    color: var(--color-text);
-  }
-
-  .button-link-editorial:hover,
-  .button-link-editorial.button-link-primary:hover,
-  .button-link-editorial.button-link-secondary:hover {
-    background: transparent;
-  }
-
-  .button-link-editorial.button-link-primary:hover {
-    border-color: var(--color-brand-hover);
-    color: var(--color-brand-hover);
+    border-color: var(--color-burnt-orange);
   }
 
   .button-link-compact {
     min-height: calc(var(--target-size) - var(--space-2xs));
-    padding: var(--space-2xs) var(--space-sm);
+    padding: var(--space-md) var(--space-lg);
   }
 
   @media (max-width: 640px) {

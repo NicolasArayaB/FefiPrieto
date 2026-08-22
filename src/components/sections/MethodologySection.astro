@@ -1,6 +1,5 @@
 ---
 import Container from "@components/ui/Container.astro";
-import Grid from "@components/ui/Grid.astro";
 import Section from "@components/ui/Section.astro";
 import type { MethodologyContent } from "@app-types/content";
 
@@ -16,79 +15,203 @@ const { content } = Astro.props;
   labelledby="methodology-title"
   spacing="default"
 >
+  <svg
+    class="methodology-botanical botanical-left"
+    viewBox="0 0 240 320"
+    aria-hidden="true"
+    ><g fill="none" stroke="currentColor" stroke-width="1.25"
+      ><path
+        d="M114 316C101 236 119 158 182 14M128 258C75 233 39 194 29 145C79 141 119 187 128 258ZM145 203C143 147 166 100 212 74C233 126 204 178 145 203ZM115 165C74 131 66 89 88 50C130 79 139 122 115 165ZM175 113C188 72 210 39 237 27"
+      ></path><path
+        d="M34 144C51 114 72 102 91 106M87 49C98 30 113 20 129 21M212 74C218 52 228 38 238 27"
+      ></path></g
+    ></svg
+  >
   <Container size="content">
     <header class="methodology-intro">
-      <p class="methodology-eyebrow type-eyebrow">{content.eyebrow}</p>
-      <Grid variant="editorial" align="end">
-        <h2 id="methodology-title" class="type-heading-xl">
-          {content.title}
-        </h2>
+      <div>
+        <p class="methodology-eyebrow type-eyebrow">{content.eyebrow}</p>
+        <h2 id="methodology-title" class="type-display-m">{content.title}</h2>
+      </div>
+      <div class="methodology-summary">
+        <p class="methodology-script">De adentro hacia afuera.</p>
         <p class="methodology-description type-body">{content.description}</p>
-      </Grid>
+      </div>
     </header>
 
     <ol class="methodology-stages" aria-label={content.stagesLabel}>
       {
         content.stages.map((stage, index) => (
           <li>
-            <p class="methodology-stage-index type-eyebrow">
+            <p class="methodology-stage-index" aria-hidden="true">
               {String(index + 1).padStart(2, "0")}
             </p>
-            <h3 class="type-heading-m">{stage.title}</h3>
-            <p class="methodology-stage-description type-body-small">
-              {stage.description}
-            </p>
+            <div class="methodology-stage-copy">
+              <p class="methodology-stage-label type-eyebrow">
+                Etapa {String(index + 1).padStart(2, "0")}
+              </p>
+              <h3 class="type-heading-l">{stage.title}</h3>
+              <p class="methodology-stage-description type-body-small">
+                {stage.description}
+              </p>
+            </div>
           </li>
         ))
       }
     </ol>
   </Container>
+  <svg
+    class="methodology-botanical botanical-right"
+    viewBox="0 0 240 320"
+    aria-hidden="true"
+    ><g fill="none" stroke="currentColor" stroke-width="1.25"
+      ><path
+        d="M120 319C111 236 99 152 28 17M107 259C159 229 197 188 208 143C157 135 117 181 107 259ZM87 204C91 149 69 102 24 75C3 128 30 181 87 204ZM118 164C157 130 165 87 143 48C102 77 94 122 118 164ZM61 111C49 70 29 37 4 24"
+      ></path><path
+        d="M206 143C188 113 166 102 144 106M143 48C133 29 118 20 102 20M25 75C20 52 11 36 3 24"
+      ></path></g
+    ></svg
+  >
 </Section>
 
 <style>
   .methodology-section {
-    border-block-start: 1px solid var(--color-border-subtle);
-    margin-block-start: var(--space-section);
+    background: var(--color-cream-paper);
+    margin: 0;
+    overflow: hidden;
+    padding-block: var(--space-6xl);
+    position: relative;
   }
-
-  .methodology-eyebrow {
-    color: var(--color-brand);
-    margin-bottom: var(--space-heading);
-  }
-
-  .methodology-description {
-    color: var(--color-text-secondary);
-    max-width: var(--layout-reading);
-  }
-
-  .methodology-stages {
+  .methodology-intro {
+    align-items: end;
     display: grid;
-    gap: var(--space-content);
+    gap: var(--space-4xl);
+    grid-template-columns: minmax(0, 1.25fr) minmax(16rem, 0.75fr);
+  }
+  .methodology-eyebrow {
+    color: var(--color-deep-indigo);
+    margin-bottom: var(--space-md);
+  }
+  .methodology-intro h2 {
+    color: var(--color-deep-indigo);
+    max-width: 11ch;
+  }
+  .methodology-summary {
+    display: grid;
+    gap: var(--space-md);
+    max-width: 34rem;
+  }
+  .methodology-script {
+    color: var(--color-deep-indigo);
+    font: 400 clamp(2rem, 3vw, 2.5rem) / 1 var(--font-script);
+    transform: rotate(-3deg);
+  }
+  .methodology-description,
+  .methodology-stage-description {
+    color: var(--color-ink-black);
+  }
+  .methodology-stages {
+    counter-reset: methodology;
+    display: grid;
+    gap: var(--space-xl);
     grid-template-columns: repeat(3, minmax(0, 1fr));
     list-style: none;
-    margin: var(--space-content) 0 0;
+    margin: var(--space-5xl) 0 0;
     padding: 0;
+    position: relative;
   }
-
+  .methodology-stages::before {
+    background: var(--color-ink-black);
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 76px;
+  }
   .methodology-stages > li {
-    border-block-start: 1px solid var(--color-border-subtle);
     display: grid;
-    gap: var(--space-element);
-    padding-top: var(--space-content-tight);
+    gap: var(--space-lg);
+    min-height: 342px;
+    padding-top: var(--space-md);
+    position: relative;
   }
-
+  .methodology-stages > li:nth-child(2) {
+    margin-top: var(--space-4xl);
+  }
+  .methodology-stages > li:nth-child(3) {
+    margin-top: var(--space-xl);
+  }
   .methodology-stage-index {
-    color: var(--color-text-muted);
+    align-items: center;
+    background: var(--color-cream-paper);
+    color: var(--color-deep-indigo);
+    display: flex;
+    font: 400 88px / 0.82 var(--font-display);
+    letter-spacing: 0.043em;
+    min-height: 120px;
+    padding-right: var(--space-md);
+    position: relative;
+    width: fit-content;
+    z-index: 1;
   }
-
-  .methodology-stage-description {
-    color: var(--color-text-secondary);
+  .methodology-stage-copy {
+    border-top: 1px solid var(--color-ink-black);
+    display: grid;
+    gap: var(--space-md);
+    padding-top: var(--space-lg);
   }
-
+  .methodology-stage-label {
+    color: var(--color-deep-indigo);
+  }
+  .methodology-stage-copy h3 {
+    color: var(--color-deep-indigo);
+  }
+  .methodology-botanical {
+    color: var(--color-sky-blue);
+    height: 320px;
+    position: absolute;
+    width: 240px;
+  }
+  .botanical-left {
+    bottom: -96px;
+    left: 0;
+  }
+  .botanical-right {
+    right: 0;
+    top: 16px;
+  }
   @media (max-width: 48rem) {
+    .methodology-section {
+      padding-block: var(--space-5xl);
+    }
+    .methodology-intro {
+      gap: var(--space-xl);
+      grid-template-columns: 1fr;
+    }
     .methodology-stages {
-      gap: var(--space-content-tight);
-      grid-template-columns: minmax(0, 1fr);
+      gap: var(--space-xl);
+      grid-template-columns: 1fr;
+      margin-top: var(--space-4xl);
+    }
+    .methodology-stages::before {
+      display: none;
+    }
+    .methodology-stages > li,
+    .methodology-stages > li:nth-child(2),
+    .methodology-stages > li:nth-child(3) {
+      margin: 0;
+      min-height: auto;
+    }
+    .methodology-stage-index {
+      font-size: 64px;
+      min-height: auto;
+    }
+    .botanical-right {
+      display: none;
+    }
+    .botanical-left {
+      display: none;
     }
   }
 </style>

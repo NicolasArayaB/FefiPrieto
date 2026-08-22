@@ -70,3 +70,14 @@ Content, focus order, interaction targets, and conversion paths must remain full
 CSS consumers use the custom properties directly. GSAP, Framer Motion, and Astro View Transitions may map their timing values from these tokens at the animation boundary, but the tokens themselves do not encode library-specific APIs or lifecycle behavior.
 
 No section animation is introduced by this system. Individual animation work should define its chosen primitive, token combination, trigger, and reduced-motion fallback before implementation.
+
+### Current testimonial carousel
+
+The testimonial section is the single scroll-driven editorial interaction on
+the homepage. It advances one card at a time after a deliberate scroll
+threshold: downward scrolling moves the paired cards right-to-left, and upward
+scrolling reverses that direction. The transition is intentionally slow and
+must never skip the middle pair, so adjacent cards always alternate mint,
+honey, and mint. The implementation lives in
+`src/animations/testimonials.ts` and must remain disabled for reduced-motion
+preferences.

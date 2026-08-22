@@ -1,6 +1,5 @@
 ---
 import Container from "@components/ui/Container.astro";
-import Grid from "@components/ui/Grid.astro";
 import Section from "@components/ui/Section.astro";
 import type { AuthorityContent } from "@app-types/content";
 
@@ -16,9 +15,42 @@ const { content } = Astro.props;
   labelledby="authority-title"
   spacing="editorial"
 >
-  <Container size="wide">
-    <Grid class="authority-layout" variant="editorial" align="stretch">
+  <Container size="content">
+    <header class="authority-heading">
+      <p class="authority-eyebrow type-eyebrow">{content.eyebrow}</p>
+      <h2 id="authority-title" class="type-display-xl">{content.title}</h2>
+    </header>
+
+    <div class="authority-main">
+      <div class="authority-introduction">
+        <p class="authority-description type-lead">{content.description}</p>
+        <p class="authority-perspective">{content.perspective}</p>
+      </div>
+
       <figure class="authority-portrait">
+        <svg
+          class="authority-portrait-shape"
+          viewBox="0 0 600 720"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M46 58C138 4 285 17 405 37C529 57 582 135 558 263C532 404 600 584 478 667C352 751 197 702 93 642C-8 584 1 425 23 300C43 185-52 115 46 58Z"
+          ></path>
+        </svg>
+        <svg
+          class="authority-portrait-line"
+          viewBox="0 0 360 360"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path d="M42 272C85 236 89 169 139 130C187 93 244 102 282 53"></path>
+          <path d="M94 309C126 267 162 236 218 218C272 201 299 166 313 117"
+          ></path>
+          <path d="M116 187C150 165 154 128 147 90C141 55 157 29 192 14"></path>
+          <circle cx="282" cy="53" r="10"></circle>
+          <circle cx="116" cy="187" r="7"></circle>
+        </svg>
         <img
           src={content.portrait.src}
           alt={content.portrait.alt}
@@ -31,141 +63,187 @@ const { content } = Astro.props;
           {content.portrait.caption}
         </figcaption>
       </figure>
+    </div>
 
-      <div class="authority-copy">
-        <p class="authority-eyebrow type-eyebrow">{content.eyebrow}</p>
-        <h2 id="authority-title" class="type-display-m">{content.title}</h2>
-        <p class="authority-description type-lead">{content.description}</p>
-        <p class="authority-perspective type-heading-m">
-          {content.perspective}
+    <div class="authority-ledger">
+      <section class="authority-relationship">
+        <p class="authority-relationship-eyebrow type-eyebrow">
+          {content.relationship.eyebrow}
         </p>
+        <h3 class="type-heading-l">{content.relationship.title}</h3>
+        <p class="authority-relationship-description type-body-small">
+          {content.relationship.description}
+        </p>
+      </section>
 
-        <section class="authority-relationship">
-          <p class="authority-relationship-eyebrow type-eyebrow">
-            {content.relationship.eyebrow}
-          </p>
-          <h3 class="type-heading-m">{content.relationship.title}</h3>
-          <p class="authority-relationship-description type-body-small">
-            {content.relationship.description}
-          </p>
-        </section>
-
-        <dl class="authority-details">
-          {
-            content.details.map((detail) => (
-              <div>
-                <dt class="type-eyebrow">{detail.label}</dt>
-                <dd class="type-body-small">{detail.value}</dd>
-              </div>
-            ))
-          }
-        </dl>
-      </div>
-    </Grid>
+      <dl class="authority-details">
+        {
+          content.details.map((detail) => (
+            <div>
+              <dt class="type-eyebrow">{detail.label}</dt>
+              <dd class="type-body-small">{detail.value}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
   </Container>
 </Section>
 
 <style>
-  .authority-section {
-    border-block-start: 1px solid var(--color-border-subtle);
-    margin-block-start: var(--space-section);
-  }
-
-  .authority-layout {
-    grid-template-columns: minmax(16rem, 0.9fr) minmax(0, 1.1fr);
-  }
-
-  .authority-portrait {
+  :global(.authority-section) {
+    background: var(--color-cream-paper);
     margin: 0;
+    overflow: hidden;
+    padding-block: var(--space-6xl);
   }
-
+  .authority-heading {
+    align-items: end;
+    display: grid;
+    gap: var(--space-xl);
+    grid-template-columns: minmax(0, 7fr) minmax(12rem, 5fr);
+  }
+  .authority-eyebrow,
+  .authority-relationship-eyebrow,
+  .authority-details dt {
+    color: var(--color-deep-indigo);
+  }
+  .authority-heading h2 {
+    color: var(--color-deep-indigo);
+    grid-column: 1;
+    max-width: 9ch;
+  }
+  .authority-main {
+    align-items: center;
+    display: grid;
+    gap: clamp(var(--space-4xl), 10vw, var(--space-6xl));
+    grid-template-columns: minmax(0, 0.8fr) minmax(20rem, 1.2fr);
+    margin-top: var(--space-4xl);
+  }
+  .authority-introduction {
+    display: grid;
+    gap: var(--space-xl);
+    max-width: 28rem;
+  }
+  .authority-description {
+    color: var(--color-ink-black);
+    max-width: 34ch;
+  }
+  .authority-perspective {
+    color: var(--color-deep-indigo);
+    font: 400 clamp(2.125rem, 4vw, 3.25rem) / 0.96 var(--font-script);
+    margin: 0;
+    max-width: 15ch;
+    transform: rotate(-3deg);
+  }
+  .authority-portrait {
+    isolation: isolate;
+    margin: 0;
+    max-width: 38rem;
+    position: relative;
+    z-index: 0;
+  }
+  .authority-portrait-shape {
+    fill: var(--color-honey-gold);
+    height: 106%;
+    left: -12%;
+    position: absolute;
+    top: -4%;
+    width: 110%;
+    z-index: -1;
+  }
+  .authority-portrait-line {
+    bottom: 12%;
+    color: var(--color-sky-blue);
+    height: 58%;
+    position: absolute;
+    right: -15%;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    width: 58%;
+    z-index: 2;
+  }
   .authority-portrait img {
     aspect-ratio: 3 / 4;
-    height: 100%;
+    border-radius: var(--radius-card);
+    display: block;
+    margin-left: 12%;
     object-fit: cover;
-    width: 100%;
+    position: relative;
+    width: 80%;
+    z-index: 1;
   }
-
   .authority-portrait-caption {
-    color: var(--color-text-muted);
-    margin-top: var(--space-element-tight);
-    max-width: var(--layout-copy);
+    color: var(--color-deep-indigo);
+    margin: var(--space-sm) 0 0 12%;
+    max-width: 34ch;
+    position: relative;
+    z-index: 1;
   }
-
-  .authority-copy {
-    margin-right: var(--space-content-tight);
-  }
-
-  .authority-eyebrow,
-  .authority-relationship-eyebrow {
-    color: var(--color-brand);
-  }
-
-  .authority-eyebrow {
-    margin-bottom: var(--space-heading);
-  }
-
-  .authority-description {
-    color: var(--color-text-secondary);
-    margin-top: var(--space-content-tight);
-    max-width: var(--layout-reading);
-  }
-
-  .authority-perspective {
-    margin-top: var(--space-content-tight);
-    max-width: var(--layout-reading);
-  }
-
-  .authority-relationship {
-    border-block-start: 1px solid var(--color-border-subtle);
+  .authority-ledger {
+    border-top: 1px solid var(--color-deep-indigo);
     display: grid;
-    gap: var(--space-element-tight);
-    margin-top: var(--space-content);
-    padding-top: var(--space-content-tight);
+    gap: var(--space-4xl);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+    margin-top: var(--space-5xl);
+    padding-top: var(--space-xl);
   }
-
+  .authority-relationship {
+    display: grid;
+    gap: var(--space-sm);
+    max-width: 27rem;
+  }
+  .authority-relationship h3 {
+    color: var(--color-deep-indigo);
+  }
   .authority-relationship-description {
-    color: var(--color-text-secondary);
-    max-width: var(--layout-reading);
+    color: var(--color-ink-black);
   }
-
   .authority-details {
     display: grid;
-    gap: var(--space-element);
+    gap: var(--space-lg);
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    margin: var(--space-content) 0 0;
-  }
-
-  .authority-details div {
-    border-block-start: 1px solid var(--color-border-subtle);
-    display: grid;
-    gap: var(--space-element-tight);
-    padding-top: var(--space-element-tight);
-  }
-
-  .authority-details dt {
-    color: var(--color-text-muted);
-  }
-
-  .authority-details dd {
     margin: 0;
   }
-
+  .authority-details div {
+    border-top: 1px solid var(--color-deep-indigo);
+    display: grid;
+    gap: var(--space-xs);
+    padding-top: var(--space-sm);
+  }
+  .authority-details dd {
+    color: var(--color-deep-indigo);
+    margin: 0;
+  }
   @media (max-width: 48rem) {
-    .authority-layout {
+    :global(.authority-section) {
+      padding-block: var(--space-5xl);
+    }
+    .authority-heading,
+    .authority-main,
+    .authority-ledger {
       grid-template-columns: minmax(0, 1fr);
     }
-
-    .authority-copy {
-      margin-right: 0;
+    .authority-heading {
+      gap: 0;
     }
-
+    .authority-main {
+      gap: var(--space-4xl);
+      margin-top: var(--space-3xl);
+    }
+    .authority-introduction {
+      max-width: 34rem;
+    }
     .authority-portrait {
-      max-width: var(--layout-copy);
+      justify-self: center;
+      width: min(100%, 28rem);
+    }
+    .authority-ledger {
+      gap: var(--space-3xl);
+      margin-top: var(--space-4xl);
     }
   }
-
-  @media (max-width: 640px) {
+  @media (max-width: 40rem) {
     .authority-details {
       grid-template-columns: minmax(0, 1fr);
     }

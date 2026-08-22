@@ -1,14 +1,18 @@
 ---
 import Container from "@components/ui/Container.astro";
-import Grid from "@components/ui/Grid.astro";
 import Section from "@components/ui/Section.astro";
-import type { TestimonialsContent } from "@app-types/content";
+import type { Testimonial, TestimonialsContent } from "@app-types/content";
 
 interface Props {
   content: TestimonialsContent;
 }
 
 const { content } = Astro.props;
+const testimonials: Testimonial[] = [content.featured, ...content.supporting];
+const testimonialCards = testimonials.map((testimonial, index) => ({
+  testimonial,
+  tone: (["sage", "gold", "sage"] as const)[index] ?? "sage",
+}));
 ---
 
 <Section
@@ -18,159 +22,221 @@ const { content } = Astro.props;
 >
   <Container size="content">
     <header class="testimonials-intro">
-      <p class="testimonials-eyebrow type-eyebrow">{content.eyebrow}</p>
-      <h2 id="testimonials-title" class="type-heading-xl">{content.title}</h2>
-      <p class="testimonials-description type-body">
-        {content.description}
-      </p>
+      <div>
+        <p class="testimonials-eyebrow type-eyebrow">{content.eyebrow}</p>
+        <h2 id="testimonials-title" class="type-display-m">{content.title}</h2>
+      </div>
+      <div class="testimonials-intro-copy">
+        <p class="testimonials-script">Lo que cambia cuando te reconoces.</p>
+        <p class="testimonials-description type-body">{content.description}</p>
+      </div>
     </header>
-
-    <article class="featured-testimonial">
-      <Grid variant="editorial" align="end">
-        <blockquote class="featured-quote type-heading-l">
-          <p>{content.featured.quote}</p>
-        </blockquote>
-        <footer class="featured-attribution">
-          {
-            content.featured.name && (
-              <p class="type-body">{content.featured.name}</p>
-            )
-          }
-          {
-            content.featured.context && (
-              <p class="featured-context type-caption">
-                {content.featured.context}
-              </p>
-            )
-          }
-          {
-            content.featured.relationship && (
-              <p class="featured-relationship type-caption">
-                {content.featured.relationship}
-              </p>
-            )
-          }
-        </footer>
-      </Grid>
-    </article>
-
-    <section class="supporting-section" aria-label={content.supportingLabel}>
-      <Grid class="supporting-testimonials" variant="two">
-        {
-          content.supporting.map((testimonial, index) => (
-            <article
-              class:list={[
-                "supporting-testimonial",
-                `supporting-testimonial-${index}`,
-              ]}
-            >
-              <blockquote class="supporting-quote type-heading-m">
-                <p>{testimonial.quote}</p>
-              </blockquote>
-              <footer class="supporting-attribution">
-                {testimonial.name && (
-                  <p class="type-body-small">{testimonial.name}</p>
-                )}
-                {testimonial.context && (
-                  <p class="supporting-context type-caption">
-                    {testimonial.context}
-                  </p>
-                )}
-                {testimonial.relationship && (
-                  <p class="supporting-relationship type-caption">
-                    {testimonial.relationship}
-                  </p>
-                )}
-              </footer>
-            </article>
-          ))
-        }
-      </Grid>
-    </section>
   </Container>
+
+  <div
+    class="testimonial-swiper"
+    data-testimonial-swiper
+    data-slide-count={testimonialCards.length}
+    aria-label={content.supportingLabel}
+  >
+    <div class="testimonial-track" data-testimonial-track>
+      {
+        testimonialCards.map((item, index) => (
+          <article
+            class:list={["testimonial-card", `testimonial-card-${item.tone}`]}
+            aria-hidden={index !== 0 && index !== 1}
+            data-testimonial-slide
+          >
+            <blockquote class="testimonial-quote type-heading-l">
+              <p>{item.testimonial.quote}</p>
+            </blockquote>
+            <footer class="testimonial-attribution">
+              {item.testimonial.name && (
+                <p class="testimonial-name type-body">
+                  {item.testimonial.name}
+                </p>
+              )}
+              {item.testimonial.context && (
+                <p class="testimonial-context type-caption">
+                  {item.testimonial.context}
+                </p>
+              )}
+              {item.testimonial.relationship && (
+                <p class="testimonial-relationship type-caption">
+                  {item.testimonial.relationship}
+                </p>
+              )}
+            </footer>
+          </article>
+        ))
+      }
+      <svg
+        class="testimonial-divider testimonial-divider-sage"
+        viewBox="0 0 480 560"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        <path d="M0 0h240c-20 112-35 194 45 320 45 86-10 182-45 280H0z"></path>
+      </svg>
+      <svg
+        class="testimonial-divider testimonial-divider-gold"
+        viewBox="0 0 480 560"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        <path d="M0 0H240C220 112 205 194 265 280C330 366 275 462 240 560H0V0Z"
+        ></path>
+      </svg>
+    </div>
+  </div>
 </Section>
 
+<script>
+  import { initTestimonialSwiper } from "@animations/testimonials";
+  initTestimonialSwiper();
+</script>
+
 <style>
-  .testimonials-section {
-    border-block-start: 1px solid var(--color-border-subtle);
-    margin-block-start: var(--space-section);
+  :global(.testimonials-section) {
+    background: var(--color-cream-paper);
+    margin: 0;
+    overflow: hidden;
+    padding-block: var(--space-6xl);
   }
-
+  .testimonials-intro {
+    align-items: end;
+    display: grid;
+    gap: var(--space-4xl);
+    grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr);
+  }
   .testimonials-eyebrow {
-    color: var(--color-brand);
-    margin-bottom: var(--space-heading);
+    color: var(--color-deep-indigo);
+    margin-bottom: var(--space-md);
   }
-
   .testimonials-intro h2 {
-    max-width: var(--layout-copy);
+    color: var(--color-deep-indigo);
+    max-width: 11ch;
   }
-
-  .testimonials-description {
-    color: var(--color-text-secondary);
-    margin-top: var(--space-content-tight);
-    max-width: var(--layout-copy);
+  .testimonials-intro-copy {
+    display: grid;
+    gap: var(--space-md);
+    max-width: 34rem;
   }
-
-  .featured-testimonial {
-    background: var(--color-expression-orange);
-    color: var(--color-on-expression-orange);
-    margin-top: var(--space-content);
-    padding: var(--space-content);
+  .testimonials-script {
+    color: var(--color-deep-indigo);
+    font: 400 clamp(2rem, 3vw, 2.5rem) / 1 var(--font-script);
+    transform: rotate(-3deg);
   }
-
-  .featured-quote,
-  .supporting-quote {
+  .testimonial-swiper {
+    margin-top: var(--space-5xl);
+    overflow: hidden;
+  }
+  .testimonial-track {
+    display: flex;
+    position: relative;
+    transform: translateX(0);
+    width: 150%;
+    will-change: transform;
+  }
+  .testimonial-card {
+    color: var(--color-deep-indigo);
+    display: grid;
+    flex: 0 0 calc(100% / 3);
+    gap: var(--space-xl);
+    grid-template-rows: 1fr auto;
+    min-height: 560px;
+    overflow: hidden;
+    padding: var(--space-4xl)
+      max(var(--space-page), calc((100vw - var(--layout-content)) / 2));
+    position: relative;
+    z-index: 1;
+  }
+  .testimonial-card-sage {
+    background: var(--color-mint-sage);
+    padding-right: calc(var(--space-page) + var(--space-5xl));
+    padding-left: var(--space-6xl);
+  }
+  .testimonial-card-gold {
+    background: var(--color-honey-gold);
+    padding-left: calc(var(--space-page) + var(--space-5xl));
+  }
+  .testimonial-quote {
+    margin: 0;
+    max-width: 15ch;
+    position: relative;
+    z-index: 5;
+  }
+  .testimonial-attribution {
+    border-top: 1px solid var(--color-deep-indigo);
+    display: grid;
+    gap: var(--space-xs);
+    padding-top: var(--space-md);
+    position: relative;
+    z-index: 5;
+  }
+  .testimonial-name,
+  .testimonial-context,
+  .testimonial-relationship {
     margin: 0;
   }
-
-  .featured-quote {
-    max-width: var(--layout-reading);
+  .testimonial-divider {
+    height: 100%;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 180px;
+    z-index: 2;
   }
-
-  .featured-attribution,
-  .supporting-attribution {
-    display: grid;
-    gap: var(--space-element-tight);
+  .testimonial-divider-sage {
+    fill: var(--color-mint-sage);
+    left: calc(43.333% - 240px);
   }
-
-  .featured-context,
-  .featured-relationship {
-    color: var(--color-on-expression-orange);
+  .testimonial-divider-gold {
+    fill: var(--color-honey-gold);
+    left: calc(76.666% - 240px);
   }
-
-  .supporting-section {
-    margin-top: var(--space-content);
-  }
-
-  .supporting-testimonials {
-    gap: var(--space-content);
-  }
-
-  .supporting-testimonial {
-    border-block-start: 1px solid var(--color-border-subtle);
-    padding-top: var(--space-content-tight);
-  }
-
-  .supporting-attribution {
-    margin-top: var(--space-element);
-  }
-
-  .supporting-context,
-  .supporting-relationship {
-    color: var(--color-text-secondary);
-  }
-
   @media (max-width: 48rem) {
-    .featured-testimonial {
-      padding: var(--space-content-tight);
+    :global(.testimonials-section) {
+      padding-block: var(--space-5xl);
     }
-
-    .supporting-section {
-      margin-top: var(--space-content-tight);
+    .testimonials-intro {
+      gap: var(--space-xl);
+      grid-template-columns: 1fr;
     }
-
-    .supporting-testimonials {
-      gap: var(--space-section-compact);
+    .testimonial-swiper {
+      margin-top: var(--space-4xl);
+    }
+    .testimonial-card {
+      gap: var(--space-md);
+      min-height: 500px;
+      padding: var(--space-xl) var(--space-md);
+    }
+    .testimonial-card-sage {
+      padding-right: var(--space-lg);
+    }
+    .testimonial-card-gold {
+      padding-left: var(--space-lg);
+    }
+    .testimonial-quote {
+      font-size: clamp(1.5rem, 7vw, 2rem);
+      line-height: 0.95;
+    }
+    .testimonial-name {
+      font-size: 0.875rem;
+    }
+    .testimonial-context,
+    .testimonial-relationship {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+    }
+    .testimonial-divider {
+      width: 150px;
+    }
+    .testimonial-divider-sage {
+      left: calc(33.333% - 75px);
+    }
+    .testimonial-divider-gold {
+      left: calc(66.666% - 75px);
     }
   }
 </style>

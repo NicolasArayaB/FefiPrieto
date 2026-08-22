@@ -1,29 +1,49 @@
 ---
 import ButtonLink from "@components/ui/ButtonLink.astro";
 import Container from "@components/ui/Container.astro";
-import Grid from "@components/ui/Grid.astro";
 import Section from "@components/ui/Section.astro";
 import type { HeroContent } from "@app-types/content";
 
 interface Props {
   content: HeroContent;
 }
-
 const { content } = Astro.props;
 ---
 
 <Section class="hero-section" labelledby="hero-title" spacing="hero">
-  <Container size="full">
-    <Grid class="hero-layout" variant="editorial" align="center">
+  <Container size="content">
+    <div class="hero-layout">
       <div class="hero-copy">
         <p class="eyebrow type-eyebrow">{content.eyebrow}</p>
         <h1 id="hero-title" class="type-display-xl">{content.title}</h1>
+        <p class="hero-tagline">La imagen empieza por dentro.</p>
         <p class="hero-description type-lead">{content.description}</p>
         <div class="hero-actions">
           <ButtonLink {...content.primaryCta} variant="primary" />
         </div>
+        <a
+          class="scroll-indicator"
+          href="#methodology-title"
+          aria-label="Ir a metodología">⌄</a
+        >
       </div>
-      <div class="hero-companion">
+      <div class="hero-media" aria-hidden="true">
+        <svg
+          class="hero-gold-blob"
+          viewBox="0 0 500 700"
+          preserveAspectRatio="none"
+          ><path
+            d="M55 0H500V700H92C157 606 41 526 104 410C178 273 13 155 55 0Z"
+          ></path></svg
+        >
+        <svg
+          class="hero-sage-blob"
+          viewBox="0 0 500 700"
+          preserveAspectRatio="none"
+          ><path
+            d="M0 274C118 212 130 104 230 80C354 50 411 115 500 40V700H0V274Z"
+          ></path></svg
+        >
         <figure class="hero-image">
           <img
             src="/images/hero-editorial-placeholder.webp"
@@ -33,8 +53,15 @@ const { content } = Astro.props;
             decoding="async"
           />
         </figure>
+        <svg class="hero-leaves" viewBox="0 0 220 220" aria-hidden="true"
+          ><g fill="none" stroke="currentColor" stroke-width="1.5"
+            ><path
+              d="M23 204C33 119 71 58 184 12M61 172C31 132 25 93 48 68C81 87 85 126 61 172ZM105 126C91 76 105 41 138 27C157 66 144 105 105 126ZM139 88C153 49 177 26 208 21C209 55 181 82 139 88Z"
+            ></path></g
+          ></svg
+        >
       </div>
-    </Grid>
+    </div>
   </Container>
 </Section>
 
@@ -44,73 +71,124 @@ const { content } = Astro.props;
     display: flex;
     min-block-size: 100vh;
     min-block-size: 100dvh;
-  }
-
-  .hero-layout {
-    padding-block: var(--space-content);
-  }
-
-  .hero-copy {
-    margin-left: var(--space-content);
-  }
-
-  .eyebrow {
-    color: var(--color-brand);
-    margin: 0 0 var(--space-heading);
-  }
-
-  h1 {
-    max-width: 10ch;
-  }
-
-  .hero-description {
-    color: var(--color-text-secondary);
-    margin-top: var(--space-heading-to-body);
-    max-width: var(--layout-reading);
-  }
-
-  .hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-element-tight);
-    margin-top: var(--space-body-to-action);
-  }
-
-  .hero-companion {
-    background: var(--color-expression-orange);
-    padding: var(--space-content-tight) 0 0 var(--space-content-tight);
-  }
-
-  .hero-image {
-    aspect-ratio: 3 / 4;
-    margin: 0;
     overflow: hidden;
   }
-
+  .hero-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(20rem, 0.82fr);
+    gap: var(--space-4xl);
+    align-items: center;
+    width: 100%;
+  }
+  .hero-copy {
+    color: var(--color-deep-indigo);
+    padding-block: var(--space-4xl);
+    position: relative;
+    z-index: 2;
+  }
+  .eyebrow {
+    margin-block-end: var(--space-md);
+  }
+  h1 {
+    max-width: 7ch;
+  }
+  .hero-tagline {
+    font: 400 clamp(2rem, 3vw, 2.5rem) / 1 var(--font-script);
+    margin-block-start: var(--space-md);
+    transform: rotate(-3deg);
+  }
+  .hero-description {
+    color: var(--color-ink-black);
+    margin-block-start: var(--space-xl);
+    max-width: 48ch;
+  }
+  .hero-actions {
+    margin-block-start: var(--space-xl);
+  }
+  .scroll-indicator {
+    align-items: center;
+    border: 1.5px solid currentColor;
+    border-radius: 50%;
+    color: var(--color-deep-indigo);
+    display: flex;
+    font-size: 28px;
+    height: 48px;
+    justify-content: center;
+    margin-block-start: var(--space-4xl);
+    text-decoration: none;
+    transition: transform var(--motion-duration-fast)
+      var(--motion-easing-standard);
+    width: 48px;
+  }
+  .scroll-indicator:hover {
+    transform: translateY(4px);
+  }
+  .hero-media {
+    align-self: stretch;
+    min-height: 580px;
+    overflow: hidden;
+    position: relative;
+  }
+  .hero-image {
+    height: 100%;
+    margin: 0 0 0 15%;
+    padding: var(--space-xl) 0 0 var(--space-xl);
+    position: relative;
+    z-index: 1;
+  }
   .hero-image img {
     height: 100%;
+    min-height: 580px;
     object-fit: cover;
     width: 100%;
   }
-
+  .hero-gold-blob,
+  .hero-sage-blob {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  .hero-gold-blob {
+    fill: var(--color-honey-gold);
+  }
+  .hero-sage-blob {
+    fill: var(--color-mint-sage);
+    opacity: 0.92;
+  }
+  .hero-leaves {
+    bottom: 0;
+    color: var(--color-deep-indigo);
+    height: 180px;
+    position: absolute;
+    right: -24px;
+    transform: rotate(-7deg);
+    width: 180px;
+    z-index: 2;
+  }
   @media (max-width: 48rem) {
     .hero-section {
       min-block-size: auto;
     }
-
-    .hero-companion {
-      max-width: var(--layout-copy);
-      padding: var(--space-content-tight) 0 0 var(--space-content-tight);
-    }
-  }
-
-  @media (max-width: 640px) {
     .hero-layout {
-      padding-block: var(--space-content-tight);
+      grid-template-columns: 1fr;
+      gap: var(--space-xl);
     }
-
-    h1.type-display-xl {
-      max-width: 8ch;
+    .hero-copy {
+      padding-block: var(--space-4xl) 0;
+    }
+    .hero-media {
+      min-height: 420px;
+    }
+    .hero-image img {
+      min-height: 420px;
+    }
+    .scroll-indicator {
+      display: none;
+    }
+    .hero-leaves {
+      display: none;
     }
   }
 </style>

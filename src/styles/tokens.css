@@ -1,137 +1,115 @@
 @layer tokens {
   :root {
     color-scheme: light;
-    --color-background: #f4f1eb;
-    --color-background-alt: #eae5dc;
-    --color-surface: #faf8f4;
-    --color-text: #252522;
-    --color-text-secondary: #5d5b55;
-    --color-text-muted: #706d66;
-    --color-brand: #4c625a;
-    --color-brand-hover: #3d5049;
-    --color-expression-blue: #304cff;
-    --color-expression-orange: #ff5a1f;
-    --color-expression-pink: #f02d8c;
-    --color-expression-lime: #c7f000;
-    --color-on-expression-blue: var(--color-surface);
-    --color-on-expression-orange: var(--color-text);
-    --color-on-expression-pink: #151513;
-    --color-on-expression-lime: var(--color-text);
-    --color-border: #cbc5bb;
-    --color-border-subtle: #e1ddd5;
-    --color-focus: #2f6a65;
-
-    --font-body:
-      "Inter", "Avenir Next", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
-    --font-display:
-      "Canela", "Iowan Old Style", "Palatino Linotype", "Book Antiqua",
-      Palatino, Georgia, ui-serif, serif;
-    --font-mono:
-      "SFMono-Regular", "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
-
-    --type-display-xl: 400 clamp(3.5rem, 8vw, 7rem) / 0.92 var(--font-display);
-    --type-display-xl-tracking: -0.045em;
-    --type-display-xl-transform: none;
-    --type-display-l: 400 clamp(3rem, 6vw, 5.5rem) / 0.95 var(--font-display);
-    --type-display-l-tracking: -0.04em;
-    --type-display-l-transform: none;
-    --type-display-m: 400 clamp(2.5rem, 4.5vw, 4rem) / 1 var(--font-display);
-    --type-display-m-tracking: -0.035em;
-    --type-display-m-transform: none;
-
-    --type-heading-xl: 400 clamp(2.25rem, 3.5vw, 3.5rem) / 1.04
-      var(--font-display);
-    --type-heading-xl-tracking: -0.03em;
-    --type-heading-xl-transform: none;
-    --type-heading-l: 400 clamp(1.75rem, 2.5vw, 2.5rem) / 1.08
-      var(--font-display);
-    --type-heading-l-tracking: -0.025em;
-    --type-heading-l-transform: none;
-    --type-heading-m: 500 clamp(1.375rem, 1.8vw, 1.75rem) / 1.2
-      var(--font-display);
-    --type-heading-m-tracking: -0.02em;
-    --type-heading-m-transform: none;
-
-    --type-lead: 400 clamp(1.125rem, 1.7vw, 1.375rem) / 1.6 var(--font-body);
-    --type-lead-tracking: -0.01em;
+    --color-deep-indigo: #234386;
+    --color-honey-gold: #ffc400;
+    --color-burnt-orange: #ed7328;
+    --color-sky-blue: #6aa8dc;
+    --color-warm-sand: #d2b68c;
+    --color-mint-sage: #a2d3a6;
+    --color-ink-black: #000000;
+    --color-pure-white: #ffffff;
+    --color-cream-paper: #fbf9f6;
+    --color-soft-shadow: #d6d6d6;
+    --color-background: var(--color-cream-paper);
+    --color-surface: var(--color-pure-white);
+    --color-text: var(--color-ink-black);
+    --color-text-secondary: var(--color-ink-black);
+    --color-text-muted: var(--color-deep-indigo);
+    --color-brand: var(--color-deep-indigo);
+    --color-brand-hover: var(--color-deep-indigo);
+    --color-border: var(--color-ink-black);
+    --color-border-subtle: var(--color-ink-black);
+    --color-focus: var(--color-burnt-orange);
+    --font-display: "Bebas Neue", "Oswald", sans-serif;
+    --font-display-loud: "Oswald", "Bebas Neue", sans-serif;
+    --font-body: "Inter", sans-serif;
+    --font-label: "Jost", "Inter", sans-serif;
+    --font-script: "Caveat", cursive;
+    --type-display-xl: 400 clamp(4rem, 9vw, 5.5rem) / 0.82 var(--font-display);
+    --type-display-xl-tracking: 0.043em;
+    --type-display-xl-transform: uppercase;
+    --type-display-l: 400 clamp(3.5rem, 7vw, 5.5rem) / 0.86 var(--font-display);
+    --type-display-l-tracking: 0.043em;
+    --type-display-l-transform: uppercase;
+    --type-display-m: 400 clamp(2.875rem, 5vw, 3.625rem) / 0.9
+      var(--font-display-loud);
+    --type-display-m-tracking: 0.031em;
+    --type-display-m-transform: uppercase;
+    --type-heading-xl: 400 clamp(2.875rem, 5vw, 3.625rem) / 0.86
+      var(--font-display-loud);
+    --type-heading-xl-tracking: 0.031em;
+    --type-heading-xl-transform: uppercase;
+    --type-heading-l: 400 clamp(2rem, 4vw, 2.875rem) / 0.9 var(--font-display);
+    --type-heading-l-tracking: 0.043em;
+    --type-heading-l-transform: uppercase;
+    --type-heading-m: 400 2rem / 0.9 var(--font-display);
+    --type-heading-m-tracking: 0.043em;
+    --type-heading-m-transform: uppercase;
+    --type-lead: 400 1rem / 1.7 var(--font-body);
+    --type-lead-tracking: 0.02em;
     --type-lead-transform: none;
-    --type-body-l: 400 1.125rem / 1.7 var(--font-body);
-    --type-body-l-tracking: normal;
+    --type-body-l: 400 1rem / 1.7 var(--font-body);
+    --type-body-l-tracking: 0.02em;
     --type-body-l-transform: none;
     --type-body: 400 1rem / 1.7 var(--font-body);
-    --type-body-tracking: normal;
+    --type-body-tracking: 0.02em;
     --type-body-transform: none;
-    --type-body-small: 400 0.875rem / 1.6 var(--font-body);
-    --type-body-small-tracking: normal;
+    --type-body-small: 400 0.875rem / 1.67 var(--font-body);
+    --type-body-small-tracking: 0.071em;
     --type-body-small-transform: none;
-
-    --type-caption: 500 0.75rem / 1.45 var(--font-body);
-    --type-caption-tracking: 0.01em;
-    --type-caption-transform: none;
-    --type-eyebrow: 600 0.75rem / 1.2 var(--font-body);
-    --type-eyebrow-tracking: 0.12em;
+    --type-caption: 400 0.75rem / 1.6 var(--font-label);
+    --type-caption-tracking: 0.133em;
+    --type-caption-transform: uppercase;
+    --type-eyebrow: 400 0.75rem / 1.6 var(--font-label);
+    --type-eyebrow-tracking: 0.2em;
     --type-eyebrow-transform: uppercase;
-    --type-button: 600 0.875rem / 1.2 var(--font-body);
-    --type-button-tracking: 0.02em;
-    --type-button-transform: none;
-    --type-label: 600 0.75rem / 1.2 var(--font-body);
-    --type-label-tracking: 0.08em;
+    --type-button: 400 0.8125rem / 1.2 var(--font-body);
+    --type-button-tracking: 0.1em;
+    --type-button-transform: uppercase;
+    --type-label: 400 0.75rem / 1.6 var(--font-label);
+    --type-label-tracking: 0.2em;
     --type-label-transform: uppercase;
-    --type-quote: 400 clamp(1.75rem, 3vw, 2.5rem) / 1.1 var(--font-display);
-    --type-quote-tracking: -0.025em;
-    --type-quote-transform: none;
-
-    /* Base spacing: compact relationships stay stable; larger pauses scale. */
-    --space-2xs: 0.25rem;
-    --space-xs: clamp(0.5rem, 0.4rem + 0.25vw, 0.75rem);
-    --space-sm: clamp(0.75rem, 0.6rem + 0.5vw, 1rem);
-    --space-md: clamp(1rem, 0.75rem + 0.75vw, 1.5rem);
-    --space-lg: clamp(1.5rem, 1.1rem + 1vw, 2.25rem);
-    --space-xl: clamp(2.25rem, 1.65rem + 1.75vw, 3.75rem);
-    --space-2xl: clamp(3rem, 2.1rem + 2.75vw, 5.5rem);
-    --space-3xl: clamp(4.5rem, 3rem + 4.5vw, 8rem);
-    --space-4xl: clamp(6rem, 4rem + 6vw, 11rem);
-
-    /* Semantic layout relationships. */
-    --space-page: clamp(1.25rem, 0.75rem + 2vw, 3.5rem);
+    --type-quote: 400 clamp(2rem, 4vw, 2.875rem) / 0.9 var(--font-display);
+    --type-quote-tracking: 0.043em;
+    --type-quote-transform: uppercase;
+    --space-2xs: 4px;
+    --space-xs: 8px;
+    --space-sm: 12px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 40px;
+    --space-3xl: 48px;
+    --space-4xl: 64px;
+    --space-5xl: 80px;
+    --space-6xl: 128px;
+    --space-page: clamp(16px, 4vw, 40px);
     --space-content-tight: var(--space-lg);
     --space-content: var(--space-xl);
-    --space-section-compact: var(--space-2xl);
-    --space-section: var(--space-3xl);
-    --space-section-editorial: var(--space-4xl);
-    --space-section-hero: clamp(5rem, 7vh + 2rem, 9rem);
+    --space-section-compact: var(--space-3xl);
+    --space-section: var(--space-4xl);
+    --space-section-editorial: var(--space-5xl);
+    --space-section-hero: var(--space-6xl);
     --space-heading: var(--space-md);
-    --space-heading-to-body: var(--space-sm);
-    --space-body-to-action: var(--space-lg);
+    --space-heading-to-body: var(--space-md);
+    --space-body-to-action: var(--space-xl);
     --space-element-tight: var(--space-xs);
     --space-element: var(--space-md);
-
-    /* Editorial grid measures. Full-bleed content intentionally has no gutter. */
     --layout-page: var(--space-page);
     --layout-copy: 32rem;
     --layout-reading: 65ch;
     --layout-content: 75rem;
-    --layout-wide: 90rem;
+    --layout-wide: 75rem;
     --layout-full: none;
-
-    --radius-control: 999px;
-    --target-size: 44px;
-
-    /* Motion stays restrained: semantic values are shared without choosing an engine. */
+    --radius-card: 8px;
+    --radius-control: 32px;
+    --target-size: 48px;
+    --shadow-xl: rgba(0, 0, 0, 0.05) 0 20px 27px 0;
+    --shadow-xl-2: rgba(0, 0, 0, 0.16) -14px 10px 49px 0;
     --motion-duration-instant: 0ms;
     --motion-duration-fast: 180ms;
     --motion-duration-standard: 280ms;
-    --motion-duration-emphasized: 480ms;
-    --motion-duration-cinematic: 720ms;
-
     --motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
-    --motion-easing-entrance: cubic-bezier(0.22, 1, 0.36, 1);
-    --motion-easing-exit: cubic-bezier(0.4, 0, 1, 1);
-    --motion-easing-editorial: cubic-bezier(0.16, 1, 0.3, 1);
-
-    --motion-distance-micro: var(--space-2xs);
-    --motion-distance-small: var(--space-xs);
-    --motion-distance-medium: var(--space-lg);
-    --motion-distance-large: var(--space-xl);
   }
 }

@@ -28,7 +28,7 @@ const canonicalUrl = new URL(canonicalPath, siteMetadata.url).toString();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@400;500&family=Inter:wght@400;500&family=Jost:wght@400;500&family=Oswald:wght@400&display=swap"
     />
     <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -39,6 +39,124 @@ const canonicalUrl = new URL(canonicalPath, siteMetadata.url).toString();
     <title>{pageTitle}</title>
   </head>
   <body class="site-shell">
+    <header class="site-navigation">
+      <a class="site-wordmark" href="/" aria-label="Fefi Prieto, inicio"
+        >FEFI PRIETO</a
+      >
+      <nav aria-label="Navegación principal">
+        <a href="#methodology-title">Método</a>
+        <a href="#services-title">Servicios</a>
+        <a href="#authority-title">Sobre Fefi</a>
+      </nav>
+      <details class="mobile-navigation">
+        <summary class="type-caption">Menú</summary>
+        <nav aria-label="Navegación móvil">
+          <a href="#methodology-title">Método</a>
+          <a href="#services-title">Servicios</a>
+          <a href="#authority-title">Sobre Fefi</a>
+        </nav>
+      </details>
+      <a class="navigation-cta" href="mailto:hello@example.com?subject=Consulta"
+        >Conversemos</a
+      >
+    </header>
     <slot />
   </body>
 </html>
+
+<style>
+  .site-navigation {
+    align-items: center;
+    background: var(--color-cream-paper);
+    display: flex;
+    gap: var(--space-xl);
+    justify-content: space-between;
+    left: 0;
+    padding: var(--space-md) var(--space-page);
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10;
+  }
+  .site-wordmark {
+    color: var(--color-deep-indigo);
+    font: 400 32px / 0.9 var(--font-display);
+    letter-spacing: 0.043em;
+    text-decoration: none;
+  }
+  nav {
+    display: flex;
+    gap: var(--space-2xl);
+  }
+  nav a {
+    color: var(--color-deep-indigo);
+    font: var(--type-caption);
+    letter-spacing: 0.133em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .navigation-cta {
+    background: var(--color-deep-indigo);
+    border-radius: var(--radius-control);
+    color: var(--color-pure-white);
+    font: var(--type-button);
+    letter-spacing: 0.1em;
+    padding: var(--space-md) var(--space-xl);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .mobile-navigation {
+    display: none;
+  }
+  @media (max-width: 48rem) {
+    .site-navigation {
+      padding-block: var(--space-sm);
+    }
+    nav {
+      display: none;
+    }
+    .mobile-navigation {
+      display: block;
+      position: relative;
+    }
+    .mobile-navigation summary {
+      align-items: center;
+      border: 1px solid var(--color-deep-indigo);
+      border-radius: var(--radius-card);
+      color: var(--color-deep-indigo);
+      cursor: pointer;
+      display: flex;
+      height: var(--target-size);
+      justify-content: center;
+      list-style: none;
+      width: var(--target-size);
+    }
+    .mobile-navigation summary::-webkit-details-marker {
+      display: none;
+    }
+    .mobile-navigation[open] summary {
+      background: var(--color-deep-indigo);
+      color: var(--color-pure-white);
+    }
+    .mobile-navigation nav {
+      background: var(--color-cream-paper);
+      border: 1px solid var(--color-deep-indigo);
+      border-radius: var(--radius-card);
+      display: grid;
+      gap: var(--space-md);
+      min-width: 11rem;
+      padding: var(--space-lg);
+      position: absolute;
+      left: 0;
+      top: calc(100% + var(--space-xs));
+      z-index: 1;
+    }
+    .mobile-navigation nav a {
+      min-height: var(--target-size);
+      padding-block: var(--space-md);
+    }
+    .navigation-cta {
+      padding: var(--space-sm) var(--space-md);
+    }
+  }
+</style>
