@@ -50,7 +50,6 @@ export interface ServiceGroup {
   image?: {
     src: ImageMetadata;
     alt: string;
-    caption: string;
   };
 }
 
@@ -96,7 +95,6 @@ export interface AuthorityContent {
   portrait: {
     src: ImageMetadata;
     alt: string;
-    caption: string;
   };
 }
 

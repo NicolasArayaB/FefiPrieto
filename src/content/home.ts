@@ -67,8 +67,6 @@ export const homeContent = {
         image: {
           src: corporateServicesImage,
           alt: "Fotografía editorial de referencia de una mujer con traje oscuro en un espacio arquitectónico, pendiente de reemplazo por fotografía final.",
-          caption:
-            "Imagen editorial de referencia. Pendiente de reemplazo por fotografía final.",
         },
         services: [
           {
@@ -106,8 +104,6 @@ export const homeContent = {
         image: {
           src: individualServicesImage,
           alt: "Fotografía editorial de referencia de una persona de espaldas con vestuario naranja y tela rosa en un interior cálido, pendiente de reemplazo por fotografía final.",
-          caption:
-            "Imagen editorial de referencia. Pendiente de reemplazo por fotografía final.",
         },
         services: [
           {
@@ -195,8 +191,6 @@ export const homeContent = {
     portrait: {
       src: authorityPortrait,
       alt: "Retrato editorial de referencia de una mujer de perfil, pendiente de reemplazo por una fotografía de Fernanda Prieto.",
-      caption:
-        "Imagen editorial de referencia. Pendiente de reemplazo por fotografía de Fernanda Prieto.",
     },
   },
 } satisfies HomeContent;
