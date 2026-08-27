@@ -1,3 +1,5 @@
+import type { ImageMetadata } from "astro";
+
 export interface ActionLink {
   label: string;
   href: string;
@@ -14,6 +16,7 @@ export interface HeroContent {
   description: string;
   primaryCta: ActionLink;
   image: {
+    src: ImageMetadata;
     alt: string;
   };
 }
@@ -45,7 +48,7 @@ export interface ServiceGroup {
   action: ActionLink;
   services: Service[];
   image?: {
-    src: string;
+    src: ImageMetadata;
     alt: string;
     caption: string;
   };
@@ -91,7 +94,7 @@ export interface AuthorityContent {
   };
   details: AuthorityDetail[];
   portrait: {
-    src: string;
+    src: ImageMetadata;
     alt: string;
     caption: string;
   };

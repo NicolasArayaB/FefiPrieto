@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import ButtonLink from "@components/ui/ButtonLink.astro";
 import Container from "@components/ui/Container.astro";
 import Section from "@components/ui/Section.astro";
@@ -57,7 +58,7 @@ const [, individual] = content.groups;
         {
           individual.image && (
             <figure class="individual-image">
-              <img
+              <Image
                 src={individual.image.src}
                 alt={individual.image.alt}
                 width="1122"

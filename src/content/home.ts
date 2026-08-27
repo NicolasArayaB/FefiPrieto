@@ -1,4 +1,8 @@
 import type { HomeContent, HomeMetadata } from "@app-types/content";
+import authorityPortrait from "../assets/images/fefi-authority.webp";
+import heroImage from "../assets/images/fefi-editorial.webp";
+import individualServicesImage from "../assets/images/fefi-editorial-2.webp";
+import corporateServicesImage from "../assets/images/services-corporate-placeholder.webp";
 
 export const homeMetadata = {
   title: "Fernanda Prieto",
@@ -17,6 +21,7 @@ export const homeContent = {
       href: "mailto:hello@example.com?subject=Consulta%20individual",
     },
     image: {
+      src: heroImage,
       alt: "Una mujer con blazer oscuro en un estudio de tonos piedra.",
     },
   },
@@ -60,7 +65,7 @@ export const homeContent = {
           href: "mailto:hello@example.com?subject=Servicios%20corporativos",
         },
         image: {
-          src: "/images/services-corporate-placeholder.webp",
+          src: corporateServicesImage,
           alt: "Fotografía editorial de referencia de una mujer con traje oscuro en un espacio arquitectónico, pendiente de reemplazo por fotografía final.",
           caption:
             "Imagen editorial de referencia. Pendiente de reemplazo por fotografía final.",
@@ -99,7 +104,7 @@ export const homeContent = {
           href: "mailto:hello@example.com?subject=Servicios%20individuales",
         },
         image: {
-          src: "/images/fefi-editorial-2.webp",
+          src: individualServicesImage,
           alt: "Fotografía editorial de referencia de una persona de espaldas con vestuario naranja y tela rosa en un interior cálido, pendiente de reemplazo por fotografía final.",
           caption:
             "Imagen editorial de referencia. Pendiente de reemplazo por fotografía final.",
@@ -188,7 +193,7 @@ export const homeContent = {
       },
     ],
     portrait: {
-      src: "/images/fefi-authority.webp",
+      src: authorityPortrait,
       alt: "Retrato editorial de referencia de una mujer de perfil, pendiente de reemplazo por una fotografía de Fernanda Prieto.",
       caption:
         "Imagen editorial de referencia. Pendiente de reemplazo por fotografía de Fernanda Prieto.",
