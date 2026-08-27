@@ -99,7 +99,7 @@ export const homeContent = {
           href: "mailto:hello@example.com?subject=Servicios%20individuales",
         },
         image: {
-          src: "/images/services-individual-placeholder.webp",
+          src: "/images/fefi-editorial-2.webp",
           alt: "Fotografía editorial de referencia de una persona de espaldas con vestuario naranja y tela rosa en un interior cálido, pendiente de reemplazo por fotografía final.",
           caption:
             "Imagen editorial de referencia. Pendiente de reemplazo por fotografía final.",
@@ -188,7 +188,7 @@ export const homeContent = {
       },
     ],
     portrait: {
-      src: "/images/fefi-authority-placeholder.webp",
+      src: "/images/fefi-authority.webp",
       alt: "Retrato editorial de referencia de una mujer de perfil, pendiente de reemplazo por una fotografía de Fernanda Prieto.",
       caption:
         "Imagen editorial de referencia. Pendiente de reemplazo por fotografía de Fernanda Prieto.",
