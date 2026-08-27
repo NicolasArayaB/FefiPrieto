@@ -165,29 +165,30 @@ export const homeContent = {
     eyebrow: "Sobre Fefi",
     title: "Una mirada que empieza por la persona.",
     description:
-      "Soy Fernanda Prieto, psicóloga con experiencia clínica y organizacional. Mi trabajo con imagen comienza por entender qué sostiene tu identidad, antes de decidir cómo quieres expresarla.",
+      "Soy Fernanda Prieto, psicóloga, asesora de imagen y coach. Abordo la imagen desde una mirada psicológica: entender quién eres, qué quieres expresar y la relación que quieres construir con tu propia imagen.",
     perspective:
       "La imagen no comienza en el clóset: comienza en la forma en que te entiendes y eliges estar presente.",
     relationship: {
-      eyebrow: "Una trayectoria relacionada",
-      title: "Dress the City",
+      eyebrow: "Trayectoria",
+      title: "Todo empezó por las personas.",
       description:
-        "Fundé Dress the City como un proyecto independiente ligado a la experiencia de vestir. Ese recorrido con personas y su relación con la imagen acompaña, pero no reemplaza, el foco de Fefi Prieto: psicología, identidad y expresión externa.",
+        "Mi recorrido profesional ha pasado por distintos mundos, pero siempre ha tenido un punto en común: el interés por las personas, su identidad y la manera en que se expresan en cada contexto.",
     },
-    details: [
-      {
-        label: "Formación",
-        value: "Psicología",
-      },
-      {
-        label: "Experiencia",
-        value: "Práctica clínica y organizacional",
-      },
-      {
-        label: "Trayectoria",
-        value: "Fundadora de Dress the City",
-      },
-    ],
+    journey: {
+      moments: [
+        {
+          text: "Mi formación en psicología es el punto de partida desde el que comprendo la identidad, la conducta y la relación que construimos con nosotras mismas y con los demás. La práctica clínica y el trabajo en procesos de selección me enseñaron que la confianza y la forma de presentarnos adquieren sentidos distintos según el contexto.",
+        },
+        {
+          text: "Durante cinco años trabajé como tripulante de cabina en LATAM Airlines, en contacto permanente con personas, culturas y realidades diversas. Allí la presencia, la comunicación y la adaptación eran parte de lo cotidiano; también vi de cerca cómo la moda y las tendencias cambian alrededor del mundo.",
+        },
+        {
+          text: "Más tarde, desde el emprendimiento, cofundé y desarrollé Tweens Dresses durante cuatro años. Esa experiencia me acercó al vestir desde la vida real de mujeres que buscan sentirse cómodas, seguras y representadas por lo que llevan puesto. Con Dress the City profundicé ese vínculo con la imagen y con la experiencia personal de elegir cómo habitarla.",
+        },
+      ],
+      conclusion:
+        "Hoy integro estas experiencias desde una misma mirada: la imagen no es solo lo que mostramos. También es una forma de expresar quiénes somos, cómo queremos sentirnos y cómo elegimos relacionarnos con el mundo.",
+    },
     portrait: {
       src: authorityPortrait,
       alt: "Retrato editorial de referencia de una mujer de perfil, pendiente de reemplazo por una fotografía de Fernanda Prieto.",

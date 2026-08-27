@@ -65,6 +65,19 @@ const { content } = Astro.props;
     </div>
 
     <div class="authority-ledger">
+      <svg
+        class="authority-botanical authority-botanical-top"
+        viewBox="0 0 260 260"
+        fill="none"
+        aria-hidden="true"
+      >
+        <path d="M36 242C74 159 116 80 230 22"></path>
+        <path d="M84 173C49 159 35 127 41 98C77 104 95 134 84 173Z"></path>
+        <path d="M124 117C96 84 101 51 124 29C154 51 153 87 124 117Z"></path>
+        <path d="M165 75C166 40 191 22 222 20C219 52 194 75 165 75Z"></path>
+        <circle cx="84" cy="173" r="5"></circle>
+        <circle cx="124" cy="117" r="4"></circle>
+      </svg>
       <section class="authority-relationship">
         <p class="authority-relationship-eyebrow type-eyebrow">
           {content.relationship.eyebrow}
@@ -75,16 +88,32 @@ const { content } = Astro.props;
         </p>
       </section>
 
-      <dl class="authority-details">
-        {
-          content.details.map((detail) => (
-            <div>
-              <dt class="type-eyebrow">{detail.label}</dt>
-              <dd class="type-body-small">{detail.value}</dd>
-            </div>
-          ))
-        }
-      </dl>
+      <div class="authority-journey">
+        <div class="authority-journey-story">
+          {
+            content.journey.moments.map((moment) => (
+              <p class="type-body">{moment.text}</p>
+            ))
+          }
+        </div>
+        <p class="authority-journey-conclusion type-quote">
+          {content.journey.conclusion}
+        </p>
+      </div>
+      <svg
+        class="authority-botanical authority-botanical-bottom"
+        viewBox="0 0 240 240"
+        fill="none"
+        aria-hidden="true"
+      >
+        <path d="M25 18C89 74 133 125 178 226"></path>
+        <path d="M76 67C44 61 26 38 24 12C53 12 77 34 76 67Z"></path>
+        <path d="M115 112C143 89 176 94 202 113C179 138 142 137 115 112Z"
+        ></path>
+        <path d="M146 162C125 187 126 217 143 238C169 218 172 185 146 162Z"
+        ></path>
+        <circle cx="115" cy="112" r="5"></circle>
+      </svg>
     </div>
   </Container>
 </Section>
@@ -103,8 +132,7 @@ const { content } = Astro.props;
     grid-template-columns: minmax(0, 7fr) minmax(12rem, 5fr);
   }
   .authority-eyebrow,
-  .authority-relationship-eyebrow,
-  .authority-details dt {
+  .authority-relationship-eyebrow {
     color: var(--color-deep-indigo);
   }
   .authority-heading h2 {
@@ -186,11 +214,36 @@ const { content } = Astro.props;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
     margin-top: var(--space-5xl);
     padding-top: var(--space-xl);
+    position: relative;
+  }
+  .authority-botanical {
+    color: var(--color-mint-sage);
+    opacity: 0.72;
+    pointer-events: none;
+    position: absolute;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    z-index: 0;
+  }
+  .authority-botanical-top {
+    height: 12rem;
+    right: 14rem;
+    top: 8rem;
+    width: 12rem;
+  }
+  .authority-botanical-bottom {
+    bottom: 16rem;
+    height: 10rem;
+    left: 0;
+    transform: rotate(18deg);
+    width: 10rem;
   }
   .authority-relationship {
     display: grid;
     gap: var(--space-sm);
     max-width: 27rem;
+    position: relative;
+    z-index: 1;
   }
   .authority-relationship h3 {
     color: var(--color-deep-indigo);
@@ -198,21 +251,27 @@ const { content } = Astro.props;
   .authority-relationship-description {
     color: var(--color-ink-black);
   }
-  .authority-details {
+  .authority-journey {
     display: grid;
     gap: var(--space-lg);
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    margin: 0;
+    position: relative;
+    z-index: 1;
   }
-  .authority-details div {
-    border-top: 1px solid var(--color-deep-indigo);
+  .authority-journey-story {
     display: grid;
-    gap: var(--space-xs);
-    padding-top: var(--space-sm);
-  }
-  .authority-details dd {
-    color: var(--color-deep-indigo);
+    gap: var(--space-lg);
     margin: 0;
+    padding: 0;
+  }
+  .authority-journey-story p {
+    color: var(--color-ink-black);
+    margin: 0;
+    max-width: 58ch;
+  }
+  .authority-journey-conclusion {
+    color: var(--color-deep-indigo);
+    margin: var(--space-xl) 0 0;
+    max-width: 25ch;
   }
   @media (max-width: 48rem) {
     :global(.authority-section) {
@@ -241,10 +300,15 @@ const { content } = Astro.props;
       gap: var(--space-3xl);
       margin-top: var(--space-4xl);
     }
+    .authority-botanical-top {
+      right: -1rem;
+      top: 8rem;
+    }
+    .authority-botanical-bottom {
+      bottom: 37rem;
+      left: 0;
+    }
   }
   @media (max-width: 40rem) {
-    .authority-details {
-      grid-template-columns: minmax(0, 1fr);
-    }
   }
 </style>

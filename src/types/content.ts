@@ -76,9 +76,8 @@ export interface TestimonialsContent {
   supporting: Testimonial[];
 }
 
-export interface AuthorityDetail {
-  label: string;
-  value: string;
+export interface AuthorityJourneyMoment {
+  text: string;
 }
 
 export interface AuthorityContent {
@@ -91,7 +90,10 @@ export interface AuthorityContent {
     title: string;
     description: string;
   };
-  details: AuthorityDetail[];
+  journey: {
+    moments: AuthorityJourneyMoment[];
+    conclusion: string;
+  };
   portrait: {
     src: ImageMetadata;
     alt: string;
