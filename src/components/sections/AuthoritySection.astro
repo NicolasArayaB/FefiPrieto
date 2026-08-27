@@ -194,6 +194,7 @@ const { content } = Astro.props;
     aspect-ratio: 3 / 4;
     border-radius: var(--radius-card);
     display: block;
+    height: auto;
     margin-left: 12%;
     object-fit: cover;
     position: relative;
@@ -293,8 +294,9 @@ const { content } = Astro.props;
       max-width: 34rem;
     }
     .authority-portrait {
+      block-size: min(36rem, 148vw);
       justify-self: center;
-      width: min(100%, 28rem);
+      width: min(100%, 32rem);
     }
     .authority-ledger {
       gap: var(--space-3xl);
