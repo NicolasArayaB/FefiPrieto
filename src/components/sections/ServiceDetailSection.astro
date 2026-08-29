@@ -4,8 +4,6 @@ import ButtonLink from "@components/ui/ButtonLink.astro";
 import Container from "@components/ui/Container.astro";
 import Section from "@components/ui/Section.astro";
 import type { ServiceDetail } from "@app-types/services";
-import botanicalEucalyptus from "../../assets/images/botanical-eucalyptus.png";
-import botanicalLily from "../../assets/images/botanical-lily.png";
 import serviceDetailHero from "../../assets/images/service-detail-hero.png";
 
 interface Props {
@@ -53,267 +51,281 @@ const deliverablesId = `${service.slug}-deliverables`;
     <Container size="content">
       <div class="service-overview">
         <p class="service-description type-body-l">{service.description}</p>
-        <Image
-          class="botanical botanical-eucalyptus"
-          src={botanicalEucalyptus}
-          alt=""
+        <svg
+          class="service-botanical botanical-overview"
+          viewBox="0 0 240 320"
           aria-hidden="true"
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
-      <div class="service-details-layout">
-        <header class="service-details-heading">
-          <p class="type-eyebrow">Un proceso pensado para ti</p>
-          <h2 id={deliverablesId} class="type-heading-xl">
-            {service.deliverablesLabel}
-          </h2>
-        </header>
-        <ol class="deliverables-list">
-          {
-            service.deliverables.map((deliverable, index) => (
-              <li>
-                <span class="deliverable-number" aria-hidden="true">
-                  0{index + 1}
-                </span>
-                <p class="type-body">{deliverable}</p>
-              </li>
-            ))
-          }
-        </ol>
-      </div>
-
-      {
-        service.recommendation && (
-          <aside
-            class="service-recommendation"
-            aria-labelledby={`${service.slug}-recommendation`}
-          >
-            <p class="type-eyebrow">Recomendación</p>
-            <h2 id={`${service.slug}-recommendation`} class="type-heading-m">
-              {service.recommendation.title}
+          ><g fill="none" stroke="currentColor" stroke-width="1.25"
+            ><path
+              d="M120 319C111 236 99 152 28 17M107 259C159 229 197 188 208 143C157 135 117 181 107 259ZM87 204C91 149 69 102 24 75C3 128 30 181 87 204ZM118 164C157 130 165 87 143 48C102 77 94 122 118 164ZM61 111C49 70 29 37 4 24"
+            ></path><path
+              d="M206 143C188 113 166 102 144 106M143 48C133 29 118 20 102 20M25 75C20 52 11 36 3 24"
+            ></path></g
+          ></svg
+        >
+        <div class="service-details-layout">
+          <header class="service-details-heading">
+            <p class="type-eyebrow">Un proceso pensado para ti</p>
+            <h2 id={deliverablesId} class="type-heading-xl">
+              {service.deliverablesLabel}
             </h2>
-            <p class="type-body">{service.recommendation.description}</p>
-          </aside>
-        )
-      }
+          </header>
+          <ol class="deliverables-list">
+            {
+              service.deliverables.map((deliverable, index) => (
+                <li>
+                  <span class="deliverable-number" aria-hidden="true">
+                    0{index + 1}
+                  </span>
+                  <p class="type-body">{deliverable}</p>
+                </li>
+              ))
+            }
+          </ol>
+        </div>
 
-      <div class="service-action" aria-label="Contacto">
-        <p class="type-heading-m">¿Quieres comenzar?</p>
-        <p class="type-body">
-          Conversemos sobre el servicio que puede acompañarte mejor en este
-          momento.
-        </p>
-        <ButtonLink {...service.action} variant="primary" />
-        <Image
-          class="botanical botanical-lily"
-          src={botanicalLily}
-          alt=""
-          aria-hidden="true"
-          loading="lazy"
-          decoding="async"
-        />
+        {
+          service.recommendation && (
+            <aside
+              class="service-recommendation"
+              aria-labelledby={`${service.slug}-recommendation`}
+            >
+              <p class="type-eyebrow">Recomendación</p>
+              <h2 id={`${service.slug}-recommendation`} class="type-heading-m">
+                {service.recommendation.title}
+              </h2>
+              <p class="type-body">{service.recommendation.description}</p>
+            </aside>
+          )
+        }
+
+        <div class="service-action" aria-label="Contacto">
+          <p class="type-heading-m">¿Quieres comenzar?</p>
+          <p class="type-body">
+            Conversemos sobre el servicio que puede acompañarte mejor en este
+            momento.
+          </p>
+          <ButtonLink {...service.action} variant="primary" />
+          <svg
+            class="service-botanical botanical-action"
+            viewBox="0 0 260 260"
+            fill="none"
+            aria-hidden="true"
+            ><path d="M36 242C74 159 116 80 230 22"></path><path
+              d="M84 173C49 159 35 127 41 98C77 104 95 134 84 173Z"></path><path
+              d="M124 117C96 84 101 51 124 29C154 51 153 87 124 117Z"
+            ></path><path d="M165 75C166 40 191 22 222 20C219 52 194 75 165 75Z"
+            ></path><circle cx="84" cy="173" r="5"></circle><circle
+              cx="124"
+              cy="117"
+              r="4"></circle></svg
+          >
+        </div>
       </div>
     </Container>
+
+    <style>
+      :global(.section.service-hero) {
+        --service-hero-min-block: min(44rem, 78vh);
+        background: var(--color-cream-paper);
+        padding-block: 0;
+      }
+
+      .service-hero-media {
+        min-height: var(--service-hero-min-block);
+        overflow: hidden;
+        position: relative;
+      }
+
+      .service-hero-media > :global(img) {
+        height: 100%;
+        inset: 0;
+        object-fit: cover;
+        position: absolute;
+        width: 100%;
+        z-index: 0;
+      }
+
+      .service-hero-content {
+        align-items: center;
+        display: flex;
+        min-height: var(--service-hero-min-block);
+        padding-block: calc(var(--space-6xl) + var(--target-size));
+        position: relative;
+        z-index: 1;
+      }
+
+      .service-details-layout {
+        display: grid;
+        gap: var(--space-4xl);
+        grid-template-columns: minmax(0, 1.1fr) minmax(16rem, 0.9fr);
+      }
+
+      .service-hero-intro,
+      .service-details-heading {
+        display: grid;
+        gap: var(--space-lg);
+      }
+
+      .service-hero h1,
+      .service-details h2,
+      .service-lead {
+        color: var(--color-deep-indigo);
+      }
+
+      .service-hero h1 {
+        max-width: 11ch;
+      }
+
+      .service-lead {
+        max-width: 20ch;
+      }
+
+      :global(.service-details) {
+        background: var(--color-pure-white);
+        overflow: hidden;
+        position: relative;
+      }
+
+      .service-overview {
+        border-bottom: 1px solid var(--color-ink-black);
+        margin-bottom: var(--space-5xl);
+        max-width: var(--layout-reading);
+        padding-bottom: var(--space-3xl);
+        position: relative;
+      }
+
+      .service-description {
+        max-width: 42ch;
+      }
+
+      .service-details-heading h2 {
+        max-width: 12ch;
+      }
+
+      .deliverables-list {
+        border-top: 1px solid var(--color-ink-black);
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .deliverables-list li {
+        align-items: start;
+        border-bottom: 1px solid var(--color-ink-black);
+        display: grid;
+        gap: var(--space-lg);
+        grid-template-columns: auto minmax(0, 1fr);
+        padding: var(--space-xl) 0;
+      }
+
+      .deliverable-number {
+        color: var(--color-deep-indigo);
+        font: var(--type-heading-m);
+        letter-spacing: var(--type-heading-m-tracking);
+      }
+
+      .service-recommendation {
+        background: var(--color-honey-gold);
+        display: grid;
+        gap: var(--space-md);
+        margin: var(--space-5xl) 0 0 auto;
+        max-width: 44rem;
+        padding: var(--space-3xl);
+      }
+
+      .service-recommendation h2 {
+        color: var(--color-deep-indigo);
+      }
+
+      .service-action {
+        display: grid;
+        gap: var(--space-md);
+        margin-top: var(--space-5xl);
+        max-width: 34rem;
+        position: relative;
+      }
+
+      .service-action p:first-child {
+        color: var(--color-deep-indigo);
+      }
+
+      .service-action :global(.button-link) {
+        justify-self: start;
+        margin-top: var(--space-md);
+      }
+
+      .service-botanical {
+        color: var(--color-sky-blue);
+        fill: none;
+        height: auto;
+        opacity: 0.72;
+        pointer-events: none;
+        position: absolute;
+        stroke: currentColor;
+        stroke-width: 1.5;
+        user-select: none;
+        width: auto;
+      }
+
+      .botanical-overview {
+        right: -8rem;
+        top: 0;
+        width: 15rem;
+      }
+
+      .botanical-action {
+        bottom: calc(var(--space-4xl) * -1);
+        left: min(39rem, calc(100vw - 17rem));
+        width: 12rem;
+        color: var(--color-mint-sage);
+      }
+
+      @media (max-width: 48rem) {
+        :global(.section.service-hero) {
+          --service-hero-min-block: 34rem;
+        }
+
+        .service-details-layout {
+          gap: var(--space-xl);
+          grid-template-columns: 1fr;
+        }
+
+        .service-hero-content {
+          align-items: end;
+          padding-block: calc(var(--space-5xl) + var(--target-size));
+        }
+
+        .service-hero-intro {
+          max-width: 22rem;
+        }
+
+        .service-overview {
+          margin-bottom: var(--space-4xl);
+          padding-bottom: var(--space-2xl);
+        }
+
+        .service-recommendation {
+          margin-top: var(--space-4xl);
+          padding: var(--space-xl);
+        }
+
+        .service-action {
+          margin-top: var(--space-4xl);
+        }
+
+        .botanical-overview {
+          right: -4rem;
+          top: var(--space-lg);
+          width: 11rem;
+        }
+
+        .botanical-action {
+          bottom: calc(var(--space-3xl) * -1);
+          left: min(16rem, calc(100vw - 9rem));
+          width: 9rem;
+        }
+      }
+    </style>
   </Section>
 </main>
-
-<style>
-  :global(.section.service-hero) {
-    --service-hero-min-block: min(44rem, 78vh);
-    background: var(--color-cream-paper);
-    padding-block: 0;
-  }
-
-  .service-hero-media {
-    min-height: var(--service-hero-min-block);
-    overflow: hidden;
-    position: relative;
-  }
-
-  .service-hero-media > :global(img) {
-    height: 100%;
-    inset: 0;
-    object-fit: cover;
-    position: absolute;
-    width: 100%;
-    z-index: 0;
-  }
-
-  .service-hero-content {
-    align-items: center;
-    display: flex;
-    min-height: var(--service-hero-min-block);
-    padding-block: calc(var(--space-6xl) + var(--target-size));
-    position: relative;
-    z-index: 1;
-  }
-
-  .service-details-layout {
-    display: grid;
-    gap: var(--space-4xl);
-    grid-template-columns: minmax(0, 1.1fr) minmax(16rem, 0.9fr);
-  }
-
-  .service-hero-intro,
-  .service-details-heading {
-    display: grid;
-    gap: var(--space-lg);
-  }
-
-  .service-hero h1,
-  .service-details h2,
-  .service-lead {
-    color: var(--color-deep-indigo);
-  }
-
-  .service-hero h1 {
-    max-width: 11ch;
-  }
-
-  .service-lead {
-    max-width: 20ch;
-  }
-
-  :global(.service-details) {
-    background: var(--color-pure-white);
-    overflow: hidden;
-    position: relative;
-  }
-
-  .service-overview {
-    border-bottom: 1px solid var(--color-ink-black);
-    margin-bottom: var(--space-5xl);
-    max-width: var(--layout-reading);
-    padding-bottom: var(--space-3xl);
-    position: relative;
-  }
-
-  .service-description {
-    max-width: 42ch;
-  }
-
-  .service-details-heading h2 {
-    max-width: 12ch;
-  }
-
-  .deliverables-list {
-    border-top: 1px solid var(--color-ink-black);
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .deliverables-list li {
-    align-items: start;
-    border-bottom: 1px solid var(--color-ink-black);
-    display: grid;
-    gap: var(--space-lg);
-    grid-template-columns: auto minmax(0, 1fr);
-    padding: var(--space-xl) 0;
-  }
-
-  .deliverable-number {
-    color: var(--color-deep-indigo);
-    font: var(--type-heading-m);
-    letter-spacing: var(--type-heading-m-tracking);
-  }
-
-  .service-recommendation {
-    background: var(--color-honey-gold);
-    display: grid;
-    gap: var(--space-md);
-    margin: var(--space-5xl) 0 0 auto;
-    max-width: 44rem;
-    padding: var(--space-3xl);
-  }
-
-  .service-recommendation h2 {
-    color: var(--color-deep-indigo);
-  }
-
-  .service-action {
-    display: grid;
-    gap: var(--space-md);
-    margin-top: var(--space-5xl);
-    max-width: 34rem;
-    position: relative;
-  }
-
-  .service-action p:first-child {
-    color: var(--color-deep-indigo);
-  }
-
-  .service-action :global(.button-link) {
-    justify-self: start;
-    margin-top: var(--space-md);
-  }
-
-  .botanical {
-    height: auto;
-    pointer-events: none;
-    position: absolute;
-    user-select: none;
-    width: auto;
-  }
-
-  .botanical-eucalyptus {
-    opacity: 0.88;
-    right: -17rem;
-    top: 0;
-    width: 21rem;
-  }
-
-  .botanical-lily {
-    bottom: calc(var(--space-4xl) * -1);
-    left: min(39rem, calc(100vw - 17rem));
-    opacity: 0.86;
-    width: 13rem;
-  }
-
-  @media (max-width: 48rem) {
-    :global(.section.service-hero) {
-      --service-hero-min-block: 34rem;
-    }
-
-    .service-details-layout {
-      gap: var(--space-xl);
-      grid-template-columns: 1fr;
-    }
-
-    .service-hero-content {
-      align-items: end;
-      padding-block: calc(var(--space-5xl) + var(--target-size));
-    }
-
-    .service-hero-intro {
-      max-width: 22rem;
-    }
-
-    .service-overview {
-      margin-bottom: var(--space-4xl);
-      padding-bottom: var(--space-2xl);
-    }
-
-    .service-recommendation {
-      margin-top: var(--space-4xl);
-      padding: var(--space-xl);
-    }
-
-    .service-action {
-      margin-top: var(--space-4xl);
-    }
-
-    .botanical-eucalyptus {
-      right: -10rem;
-      top: var(--space-lg);
-      width: 15rem;
-    }
-
-    .botanical-lily {
-      bottom: calc(var(--space-3xl) * -1);
-      left: min(16rem, calc(100vw - 9rem));
-      width: 9rem;
-    }
-  }
-</style>
