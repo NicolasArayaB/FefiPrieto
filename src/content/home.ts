@@ -51,12 +51,20 @@ export const homeContent = {
   },
   services: {
     eyebrow: "Servicios",
-    title: "Una imagen que se siente propia.",
+    title: "Una presencia que se siente propia.",
     description:
-      "Acompañamientos personales para entender lo que te favorece y elegir cómo quieres habitar tu imagen, con más claridad y seguridad.",
+      "Un acompañamiento uno a uno para que tu imagen exprese con claridad quién eres, cómo quieres sentirte y hacia dónde vas.",
+    groupEyebrow: "Acompañamiento uno a uno",
+    groupTitle: "Para ti",
+    groupDescription:
+      "Un proceso personal para que tu estilo sea una expresión más útil, segura y coherente de la persona que estás construyendo.",
+    action: {
+      label: "Conversemos sobre tu proceso",
+      href: "mailto:hello@example.com?subject=Servicios%20individuales",
+    },
     image: {
       src: individualServicesImage,
-      alt: "Persona de espaldas con vestuario naranja y tela rosa en un interior cálido.",
+      alt: "Fotografía editorial de referencia de una persona de espaldas con vestuario naranja y tela rosa en un interior cálido, pendiente de reemplazo por fotografía final.",
     },
     services: services.map((service) => ({
       title: service.title,

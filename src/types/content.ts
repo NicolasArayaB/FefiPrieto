@@ -45,6 +45,10 @@ export interface ServicesContent {
   eyebrow: string;
   title: string;
   description: string;
+  groupEyebrow: string;
+  groupTitle: string;
+  groupDescription: string;
+  action: ActionLink;
   image?: {
     src: ImageMetadata;
     alt: string;
