@@ -1,6 +1,5 @@
 ---
 import { Image } from "astro:assets";
-import ButtonLink from "@components/ui/ButtonLink.astro";
 import Container from "@components/ui/Container.astro";
 import Section from "@components/ui/Section.astro";
 import type { ServicesContent } from "@app-types/content";
@@ -10,7 +9,6 @@ interface Props {
 }
 
 const { content } = Astro.props;
-const [, individual] = content.groups;
 ---
 
 <Section
@@ -33,50 +31,34 @@ const [, individual] = content.groups;
       <div class="services-heading-row">
         <h2 id="services-title" class="type-display-m">{content.title}</h2>
         <div class="services-intro-copy">
-          <p class="services-script">La presencia se construye.</p>
+          <p class="services-script">Vestirte también puede sentirse fácil.</p>
           <p class="services-description type-body">{content.description}</p>
         </div>
       </div>
     </header>
 
-    <section
-      class="individual-services"
-      aria-labelledby="individual-services-title"
-    >
-      <div class="individual-intro">
-        <p class="service-group-eyebrow type-eyebrow">{individual.eyebrow}</p>
-        <h3 id="individual-services-title" class="type-heading-xl">
-          {individual.title}
-        </h3>
-        <p class="service-group-description type-body">
-          {individual.description}
-        </p>
-        <ButtonLink {...individual.action} variant="secondary">
-          <span>{individual.action.label}</span><span aria-hidden="true">→</span
-          >
-        </ButtonLink>
+    <div class="services-content">
+      {
+        content.image && (
+          <figure class="services-image">
+            <Image
+              src={content.image.src}
+              alt={content.image.alt}
+              width="1122"
+              height="1402"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+        )
+      }
+      <ol class="service-list" aria-label="Servicios de asesoría de imagen">
         {
-          individual.image && (
-            <figure class="individual-image">
-              <Image
-                src={individual.image.src}
-                alt={individual.image.alt}
-                width="1122"
-                height="1402"
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-          )
-        }
-      </div>
-      <ol class="individual-service-list">
-        {
-          individual.services.map((service, index) => (
+          content.services.map((service, index) => (
             <li>
-              <a class="individual-service-link" href={service.href}>
+              <a class="service-link" href={service.href}>
                 <span class="service-number">0{index + 1}</span>
-                <span class="individual-service-title type-heading-m">
+                <span class="service-title type-heading-m">
                   {service.title}
                 </span>
                 <span class="service-link-description type-body-small">
@@ -90,7 +72,7 @@ const [, individual] = content.groups;
           ))
         }
       </ol>
-    </section>
+    </div>
   </Container>
 </Section>
 
@@ -103,6 +85,7 @@ const [, individual] = content.groups;
     padding-block: var(--space-6xl);
     position: relative;
   }
+
   .services-wave {
     fill: var(--color-cream-paper);
     height: 120px;
@@ -111,182 +94,75 @@ const [, individual] = content.groups;
     top: 0;
     width: 100%;
   }
+
   :global(.services-section) :global(.container) {
     position: relative;
   }
+
   .services-intro {
     padding-top: var(--space-4xl);
   }
-  .services-eyebrow,
-  .service-group-eyebrow {
+
+  .services-eyebrow {
     color: var(--color-deep-indigo);
     margin-bottom: var(--space-md);
   }
+
   .services-heading-row {
     align-items: end;
     display: grid;
     gap: var(--space-4xl);
     grid-template-columns: minmax(0, 1.25fr) minmax(16rem, 0.75fr);
   }
+
   .services-heading-row h2 {
     color: var(--color-deep-indigo);
     max-width: 10ch;
   }
+
   .services-intro-copy {
     display: grid;
     gap: var(--space-md);
     max-width: 34rem;
   }
+
   .services-script {
     color: var(--color-deep-indigo);
     font: 400 clamp(2rem, 3vw, 2.5rem) / 1 var(--font-script);
     transform: rotate(-3deg);
   }
-  .corporate-services {
-    margin-top: var(--space-5xl);
-  }
-  .service-group-heading {
-    border-bottom: 1px solid var(--color-ink-black);
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: var(--space-lg);
-  }
-  .service-group-heading h3 {
-    color: var(--color-deep-indigo);
-  }
-  .corporate-feature {
-    display: grid;
-    grid-template-columns: minmax(18rem, 0.8fr) minmax(0, 1.2fr);
-    margin-top: var(--space-xl);
-  }
-  .corporate-image {
-    background: var(--color-honey-gold);
-    margin: 0;
-    padding: var(--space-md) 0 0 var(--space-md);
-  }
-  .corporate-image img {
-    aspect-ratio: 4 / 5;
-    height: 100%;
-    object-fit: cover;
-    width: 100%;
-  }
-  .corporate-image-caption {
-    color: var(--color-deep-indigo);
-    display: block;
-    padding: var(--space-md);
-  }
-  .featured-service {
-    background: var(--color-pure-white);
-    border-radius: 0 var(--radius-card) var(--radius-card) 0;
-    box-shadow: var(--shadow-xl-2);
-    display: grid;
-    gap: var(--space-xl);
-    padding: var(--space-4xl);
-  }
-  .featured-service h4 {
-    color: var(--color-deep-indigo);
-    max-width: 8ch;
-  }
-  .service-number {
-    color: var(--color-deep-indigo);
-    font: 400 46px / 0.86 var(--font-display);
-    letter-spacing: 0.043em;
-    margin: 0;
-  }
-  .featured-service-description {
-    max-width: 50ch;
-  }
-  .featured-service :global(.button-link) {
-    justify-self: start;
-  }
-  .corporate-supporting {
-    display: grid;
-    gap: var(--space-xl);
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    margin-top: var(--space-xl);
-  }
-  .corporate-support {
-    align-items: start;
-    background: var(--color-pure-white);
-    border-radius: var(--radius-card);
-    box-shadow: var(--shadow-xl);
-    display: grid;
-    gap: var(--space-md);
-    grid-template-columns: auto 1fr;
-    padding: var(--space-xl);
-    text-decoration: none;
-    transition: transform var(--motion-duration-fast)
-      var(--motion-easing-standard);
-  }
-  .corporate-support:hover,
-  .corporate-support:focus-visible {
-    transform: translateY(-4px);
-  }
-  .corporate-support-content {
-    display: grid;
-    gap: var(--space-sm);
-  }
-  .corporate-support-title {
-    color: var(--color-deep-indigo);
-  }
-  .corporate-support .service-link-entry {
-    grid-column: 2;
-  }
-  .individual-services {
-    background: var(--color-cream-paper);
-    border-radius: var(--radius-card);
+
+  .services-content {
     display: grid;
     gap: var(--space-4xl);
-    grid-template-columns: minmax(17rem, 0.8fr) minmax(0, 1.2fr);
-    margin-top: var(--space-6xl);
-    padding: var(--space-4xl);
-    position: relative;
+    grid-template-columns: minmax(16rem, 0.7fr) minmax(0, 1.3fr);
+    margin-top: var(--space-5xl);
   }
-  .individual-intro {
-    display: grid;
-    align-content: start;
-    text-wrap: pretty;
-    gap: var(--space-lg);
+
+  .services-image {
+    margin: 0;
   }
-  .individual-intro h3 {
-    color: var(--color-deep-indigo);
-  }
-  .service-group-description {
-    max-width: 38ch;
-  }
-  .individual-intro :global(.button-link) {
-    justify-self: start;
-    transition: transform var(--motion-duration-fast)
-      var(--motion-easing-standard);
-  }
-  .individual-intro :global(.button-link):hover {
-    transform: translateY(4px);
-  }
-  .individual-image {
-    margin: var(--space-xl) 0 0;
-  }
-  .individual-image img {
+
+  .services-image img {
     aspect-ratio: 4 / 5;
     height: auto;
     object-fit: cover;
     width: 100%;
   }
-  .individual-image-caption {
-    color: var(--color-ink-black);
-    display: block;
-    margin-top: var(--space-sm);
-  }
-  .individual-service-list {
+
+  .service-list {
     border-top: 1px solid var(--color-ink-black);
     display: grid;
     list-style: none;
     margin: 0;
     padding: 0;
   }
-  .individual-service-list li {
+
+  .service-list li {
     border-bottom: 1px solid var(--color-ink-black);
   }
-  .individual-service-link {
+
+  .service-link {
     align-items: start;
     display: grid;
     gap: var(--space-md);
@@ -295,62 +171,57 @@ const [, individual] = content.groups;
     text-decoration: none;
     transition: color var(--motion-duration-fast) var(--motion-easing-standard);
   }
-  .individual-service-link:hover,
-  .individual-service-link:focus-visible {
+
+  .service-link:hover,
+  .service-link:focus-visible {
     color: var(--color-deep-indigo);
   }
-  .individual-service-title {
-    color: var(--color-deep-indigo);
-  }
-  .service-link-description {
-    grid-column: 2 / 4;
-    max-width: 52ch;
-  }
-  .individual-service-link .service-link-entry {
-    grid-column: 2 / 4;
-  }
+
+  .service-number,
+  .service-title,
   .service-link-entry {
     color: var(--color-deep-indigo);
   }
+
+  .service-number {
+    font: 400 46px / 0.86 var(--font-display);
+    letter-spacing: 0.043em;
+    margin: 0;
+  }
+
+  .service-link-description,
+  .service-link .service-link-entry {
+    grid-column: 2 / 4;
+  }
+
+  .service-link-description {
+    max-width: 52ch;
+  }
+
   @media (max-width: 48rem) {
     :global(.services-section) {
       padding-block: var(--space-5xl);
     }
+
     .services-heading-row,
-    .corporate-feature,
-    .individual-services {
+    .services-content {
       gap: var(--space-xl);
       grid-template-columns: 1fr;
     }
-    .service-group-heading {
-      align-items: start;
-      display: grid;
-      gap: var(--space-xs);
-    }
-    .corporate-feature {
-      margin-top: var(--space-xl);
-    }
-    .featured-service {
-      border-radius: 0 0 var(--radius-card) var(--radius-card);
-      padding: var(--space-xl);
-    }
-    .corporate-supporting {
-      grid-template-columns: 1fr;
-    }
-    .individual-services {
-      margin-top: var(--space-5xl);
-      padding: var(--space-xl);
-    }
-    .individual-image {
+
+    .services-image {
       max-width: 18rem;
     }
-    .individual-service-link {
+
+    .service-link {
       grid-template-columns: auto minmax(0, 1fr);
     }
+
     .service-link-description,
-    .individual-service-link .service-link-entry {
+    .service-link .service-link-entry {
       grid-column: 2;
     }
+
     .services-wave {
       height: 80px;
     }

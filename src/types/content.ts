@@ -41,23 +41,15 @@ export interface Service {
   entryLabel: string;
 }
 
-export interface ServiceGroup {
-  eyebrow: string;
-  title: string;
-  description: string;
-  action: ActionLink;
-  services: Service[];
-  image?: {
-    src: ImageMetadata;
-    alt: string;
-  };
-}
-
 export interface ServicesContent {
   eyebrow: string;
   title: string;
   description: string;
-  groups: ServiceGroup[];
+  image?: {
+    src: ImageMetadata;
+    alt: string;
+  };
+  services: Service[];
 }
 
 export interface Testimonial {

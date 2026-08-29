@@ -2,7 +2,6 @@ import type { HomeContent, HomeMetadata } from "@app-types/content";
 import authorityPortrait from "../assets/images/fefi-authority.webp";
 import heroImage from "../assets/images/fefi-editorial.webp";
 import individualServicesImage from "../assets/images/fefi-editorial-2.webp";
-import corporateServicesImage from "../assets/images/services-corporate-placeholder.webp";
 
 export const homeMetadata = {
   title: "Fernanda Prieto",
@@ -51,83 +50,41 @@ export const homeContent = {
   },
   services: {
     eyebrow: "Servicios",
-    title: "Una presencia que se siente propia.",
+    title: "Una imagen que se siente propia.",
     description:
-      "Un acompañamiento uno a uno para que tu imagen exprese con claridad quién eres, cómo quieres sentirte y hacia dónde vas.",
-    groups: [
+      "Acompañamientos personales para entender lo que te favorece y elegir cómo quieres habitar tu imagen, con más claridad y seguridad.",
+    image: {
+      src: individualServicesImage,
+      alt: "Persona de espaldas con vestuario naranja y tela rosa en un interior cálido.",
+    },
+    services: [
       {
-        eyebrow: "Para organizaciones",
-        title: "Corporativo",
+        title: "Closet Detox",
         description:
-          "Programas para equipos y liderazgos que quieren que su presencia fortalezca la confianza, la comunicación y la autoridad en el trabajo.",
-        action: {
-          label: "Conversemos sobre tu equipo",
-          href: "mailto:hello@example.com?subject=Servicios%20corporativos",
-        },
-        image: {
-          src: corporateServicesImage,
-          alt: "Fotografía editorial de referencia de una mujer con traje oscuro en un espacio arquitectónico, pendiente de reemplazo por fotografía final.",
-        },
-        services: [
-          {
-            title: "Presencia Ejecutiva",
-            description:
-              "Un programa para liderazgos que buscan que su presencia exterior esté a la altura de la claridad de su pensamiento y su rol.",
-            href: "mailto:hello@example.com?subject=Presencia%20ejecutiva",
-            entryLabel: "Conocer este servicio",
-          },
-          {
-            title: "Psicología de la Autoridad",
-            description:
-              "Una exploración aplicada de las señales que construyen credibilidad, confianza y autoridad percibida en contextos profesionales.",
-            href: "mailto:hello@example.com?subject=Psicolog%C3%ADa%20de%20la%20Autoridad",
-            entryLabel: "Conocer este servicio",
-          },
-          {
-            title: "Comunicación de Liderazgo",
-            description:
-              "Un taller para alinear presencia, señales no verbales y comunicación cotidiana en liderazgos que necesitan convocar con claridad.",
-            href: "mailto:hello@example.com?subject=Comunicaci%C3%B3n%20de%20Liderazgo",
-            entryLabel: "Conocer este servicio",
-          },
-        ],
+          "Haz espacio para una imagen que sí te represente. Revisamos tu clóset prenda por prenda para decidir qué conservar y cómo volver a aprovechar lo que ya tienes.",
+        href: "/servicios/closet-detox",
+        entryLabel: "Conocer el servicio",
       },
       {
-        eyebrow: "Acompañamiento uno a uno",
-        title: "Para ti",
+        title: "Colorimetría",
         description:
-          "Un proceso personal para que tu estilo sea una expresión más útil, segura y coherente de la persona que estás construyendo.",
-        action: {
-          label: "Conversemos sobre tu proceso",
-          href: "mailto:hello@example.com?subject=Servicios%20individuales",
-        },
-        image: {
-          src: individualServicesImage,
-          alt: "Fotografía editorial de referencia de una persona de espaldas con vestuario naranja y tela rosa en un interior cálido, pendiente de reemplazo por fotografía final.",
-        },
-        services: [
-          {
-            title: "Colorimetría",
-            description:
-              "Un punto de partida para comprender los colores que acompañan tu contraste natural, tu energía y tu intención.",
-            href: "mailto:hello@example.com?subject=Colorimetr%C3%ADa",
-            entryLabel: "Conocer este servicio",
-          },
-          {
-            title: "Asesoría de imagen",
-            description:
-              "Un proceso práctico, informado por la psicología, para alinear la forma en que te presentas con tu vida diaria y tus objetivos.",
-            href: "mailto:hello@example.com?subject=Asesor%C3%ADa%20de%20imagen",
-            entryLabel: "Conocer este servicio",
-          },
-          {
-            title: "Personal shopper",
-            description:
-              "Una selección acompañada que convierte la claridad personal en prendas que puedes usar con seguridad y sentido.",
-            href: "mailto:hello@example.com?subject=Personal%20shopper",
-            entryLabel: "Conocer este servicio",
-          },
-        ],
+          "Descubre los colores que acompañan tu energía y realzan tu belleza natural. Una guía para elegir con intención y sentirte más tú en lo que llevas.",
+        href: "/servicios/colorimetria",
+        entryLabel: "Conocer el servicio",
+      },
+      {
+        title: "Colorimetría + Morfología",
+        description:
+          "Entiende tu color y tu forma para elegir con más seguridad. Un análisis integral para reconocer las prendas, los cortes y los tonos que acompañan tu cuerpo y tu identidad.",
+        href: "/servicios/colorimetria-morfologia",
+        entryLabel: "Conocer el servicio",
+      },
+      {
+        title: "Asesoría de Imagen Full",
+        description:
+          "Un proceso para llevar tu imagen hacia donde quieres ir y vestir de una forma más simple, auténtica y alineada contigo.",
+        href: "/servicios/asesoria-de-imagen-full",
+        entryLabel: "Conocer el servicio",
       },
     ],
   },
