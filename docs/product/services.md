@@ -29,7 +29,7 @@ Observaremos tu clóset desde tu vida real, tu estilo y la forma en que hoy quie
 
 ### Recomendación
 
-Para profundizar el proceso, puedes complementarlo con un análisis de Colorimetría o Colorimetría + Morfología.
+Para profundizar el proceso, puedes complementarlo con un análisis de Colorimetría o Asesoría de Imagen Básica.
 
 ## Colorimetría
 
@@ -50,7 +50,7 @@ Identificaremos tu paleta personal y la llevaremos a decisiones concretas: combi
 * Guía para escoger accesorios, maquillaje y colores de cabello.
 * Informe personalizado.
 
-## Colorimetría + Morfología
+## Asesoría de Imagen Básica
 
 ### Resumen
 
@@ -94,7 +94,7 @@ Usar de forma consistente estos nombres y rutas:
 
 * Closet Detox — `/servicios/closet-detox`
 * Colorimetría — `/servicios/colorimetria`
-* Colorimetría + Morfología — `/servicios/colorimetria-morfologia`
+* Asesoría de Imagen Básica — `/servicios/asesoria-de-imagen-basica`
 * Asesoría de Imagen Full — `/servicios/asesoria-de-imagen-full`
 
 Las páginas deben usar el canal de contacto configurado en el sitio. Hasta que exista una herramienta de reservas confirmada, no deben prometer una reserva inmediata.

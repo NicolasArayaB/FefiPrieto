@@ -23,7 +23,7 @@ export const services = [
     recommendation: {
       title: "Para profundizar aún más",
       description:
-        "Este servicio se complementa especialmente bien con Colorimetría o Colorimetría + Morfología: dos herramientas para reconocer por qué ciertas elecciones te hacen sentir más tú.",
+        "Este servicio se complementa especialmente bien con Colorimetría o Asesoría de Imagen Básica: dos herramientas para reconocer por qué ciertas elecciones te hacen sentir más tú.",
     },
     action: contactAction,
     metadata: {
@@ -56,9 +56,9 @@ export const services = [
     },
   },
   {
-    slug: "colorimetria-morfologia",
+    slug: "asesoria-de-imagen-basica",
     eyebrow: "Acompañamiento uno a uno",
-    title: "Colorimetría + Morfología",
+    title: "Asesoría de Imagen Básica",
     lead: "Entender tu color y tu forma para elegir con más seguridad.",
     description:
       "Un análisis integral para reconocer los colores, cortes y proporciones que acompañan tu cuerpo, tu identidad y la manera en que quieres estar presente.",
@@ -73,7 +73,7 @@ export const services = [
     ],
     action: contactAction,
     metadata: {
-      title: "Colorimetría + Morfología",
+      title: "Asesoría de Imagen Básica",
       description:
         "Un análisis personal de color y morfología para elegir prendas, cortes y combinaciones con claridad y autenticidad.",
     },
