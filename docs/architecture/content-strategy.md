@@ -78,6 +78,7 @@ Do not add CMS infrastructure during MVP unless a documented decision changes th
 ## Related Documents
 
 * [../product/positioning.md](../product/positioning.md)
+* [../product/services.md](../product/services.md)
 * [../business/business-rules.md](../business/business-rules.md)
 * [frontend-architecture.md](frontend-architecture.md)
 * [frontend-conventions.md](frontend-conventions.md)
@@ -86,7 +87,6 @@ Do not add CMS infrastructure during MVP unless a documented decision changes th
 ## Missing Information / Clarifications
 
 * Final copy deck is not available.
-* Final service catalog is not confirmed.
 * Testimonials and credentials are not documented.
 * Brand voice examples are not documented.
 * CMS decision criteria are not defined.

@@ -68,8 +68,9 @@ For detailed relationship guidance, use [vision.md](vision.md).
 
 ## Missing Information / Clarifications
 
-* Final service names are not confirmed.
 * Brand voice examples are not documented.
 * Proof points, credentials, testimonials, or case studies are not documented.
 * Competitive landscape is not documented.
 * Dress the City cross-promotion rules need concrete examples.
+
+The confirmed individual MVP service catalog and its content guidance live in [services.md](services.md).
