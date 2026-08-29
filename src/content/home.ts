@@ -2,6 +2,7 @@ import type { HomeContent, HomeMetadata } from "@app-types/content";
 import authorityPortrait from "../assets/images/fefi-authority.webp";
 import heroImage from "../assets/images/fefi-editorial.webp";
 import individualServicesImage from "../assets/images/fefi-editorial-2.webp";
+import { services } from "./services";
 
 export const homeMetadata = {
   title: "Fernanda Prieto",
@@ -57,36 +58,12 @@ export const homeContent = {
       src: individualServicesImage,
       alt: "Persona de espaldas con vestuario naranja y tela rosa en un interior cálido.",
     },
-    services: [
-      {
-        title: "Closet Detox",
-        description:
-          "Haz espacio para una imagen que sí te represente. Revisamos tu clóset prenda por prenda para decidir qué conservar y cómo volver a aprovechar lo que ya tienes.",
-        href: "/servicios/closet-detox",
-        entryLabel: "Conocer el servicio",
-      },
-      {
-        title: "Colorimetría",
-        description:
-          "Descubre los colores que acompañan tu energía y realzan tu belleza natural. Una guía para elegir con intención y sentirte más tú en lo que llevas.",
-        href: "/servicios/colorimetria",
-        entryLabel: "Conocer el servicio",
-      },
-      {
-        title: "Colorimetría + Morfología",
-        description:
-          "Entiende tu color y tu forma para elegir con más seguridad. Un análisis integral para reconocer las prendas, los cortes y los tonos que acompañan tu cuerpo y tu identidad.",
-        href: "/servicios/colorimetria-morfologia",
-        entryLabel: "Conocer el servicio",
-      },
-      {
-        title: "Asesoría de Imagen Full",
-        description:
-          "Un proceso para llevar tu imagen hacia donde quieres ir y vestir de una forma más simple, auténtica y alineada contigo.",
-        href: "/servicios/asesoria-de-imagen-full",
-        entryLabel: "Conocer el servicio",
-      },
-    ],
+    services: services.map((service) => ({
+      title: service.title,
+      description: service.lead,
+      href: `/servicios/${service.slug}`,
+      entryLabel: "Conocer el servicio",
+    })),
   },
   testimonials: {
     eyebrow: "Experiencias de clientas",
