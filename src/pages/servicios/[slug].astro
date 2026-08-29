@@ -1,0 +1,22 @@
+---
+import ServiceDetailSection from "@components/sections/ServiceDetailSection.astro";
+import { services } from "@content/services";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+export function getStaticPaths() {
+  return services.map((service) => ({
+    params: { slug: service.slug },
+    props: { service },
+  }));
+}
+
+const { service } = Astro.props;
+---
+
+<BaseLayout
+  title={service.metadata.title}
+  description={service.metadata.description}
+  canonicalPath={`/servicios/${service.slug}`}
+>
+  <ServiceDetailSection service={service} />
+</BaseLayout>

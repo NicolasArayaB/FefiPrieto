@@ -1,0 +1,208 @@
+---
+import ButtonLink from "@components/ui/ButtonLink.astro";
+import Container from "@components/ui/Container.astro";
+import Section from "@components/ui/Section.astro";
+import type { ServiceDetail } from "@app-types/services";
+
+interface Props {
+  service: ServiceDetail;
+}
+
+const { service } = Astro.props;
+const deliverablesId = `${service.slug}-deliverables`;
+---
+
+<main>
+  <Section
+    id={`${service.slug}-intro`}
+    class="service-hero"
+    labelledby={`${service.slug}-title`}
+    spacing="default"
+  >
+    <Container size="content">
+      <div class="service-hero-layout">
+        <div class="service-hero-intro">
+          <p class="type-eyebrow">{service.eyebrow}</p>
+          <h1 id={`${service.slug}-title`} class="type-display-l">
+            {service.title}
+          </h1>
+          <p class="service-lead type-heading-m">{service.lead}</p>
+        </div>
+        <p class="service-description type-body-l">{service.description}</p>
+      </div>
+    </Container>
+  </Section>
+
+  <Section
+    id={`${service.slug}-details`}
+    class="service-details"
+    labelledby={deliverablesId}
+    spacing="default"
+  >
+    <Container size="content">
+      <div class="service-details-layout">
+        <header class="service-details-heading">
+          <p class="type-eyebrow">Un proceso pensado para ti</p>
+          <h2 id={deliverablesId} class="type-heading-xl">
+            {service.deliverablesLabel}
+          </h2>
+        </header>
+        <ol class="deliverables-list">
+          {
+            service.deliverables.map((deliverable, index) => (
+              <li>
+                <span class="deliverable-number" aria-hidden="true">
+                  0{index + 1}
+                </span>
+                <p class="type-body">{deliverable}</p>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+
+      {
+        service.recommendation && (
+          <aside
+            class="service-recommendation"
+            aria-labelledby={`${service.slug}-recommendation`}
+          >
+            <p class="type-eyebrow">Recomendación</p>
+            <h2 id={`${service.slug}-recommendation`} class="type-heading-m">
+              {service.recommendation.title}
+            </h2>
+            <p class="type-body">{service.recommendation.description}</p>
+          </aside>
+        )
+      }
+
+      <div class="service-action" aria-label="Contacto">
+        <p class="type-heading-m">¿Quieres comenzar?</p>
+        <p class="type-body">
+          Conversemos sobre el servicio que puede acompañarte mejor en este
+          momento.
+        </p>
+        <ButtonLink {...service.action} variant="primary" />
+      </div>
+    </Container>
+  </Section>
+</main>
+
+<style>
+  .service-hero {
+    background: var(--color-cream-paper);
+    padding-top: calc(var(--space-6xl) + var(--target-size));
+  }
+
+  .service-hero-layout,
+  .service-details-layout {
+    display: grid;
+    gap: var(--space-4xl);
+    grid-template-columns: minmax(0, 1.1fr) minmax(16rem, 0.9fr);
+  }
+
+  .service-hero-intro,
+  .service-details-heading {
+    display: grid;
+    gap: var(--space-lg);
+  }
+
+  .service-hero h1,
+  .service-details h2,
+  .service-lead {
+    color: var(--color-deep-indigo);
+  }
+
+  .service-hero h1 {
+    max-width: 11ch;
+  }
+
+  .service-lead {
+    max-width: 20ch;
+  }
+
+  .service-description {
+    align-self: end;
+    max-width: 40ch;
+  }
+
+  .service-details {
+    background: var(--color-pure-white);
+  }
+
+  .service-details-heading h2 {
+    max-width: 12ch;
+  }
+
+  .deliverables-list {
+    border-top: 1px solid var(--color-ink-black);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .deliverables-list li {
+    align-items: start;
+    border-bottom: 1px solid var(--color-ink-black);
+    display: grid;
+    gap: var(--space-lg);
+    grid-template-columns: auto minmax(0, 1fr);
+    padding: var(--space-xl) 0;
+  }
+
+  .deliverable-number {
+    color: var(--color-deep-indigo);
+    font: var(--type-heading-m);
+    letter-spacing: var(--type-heading-m-tracking);
+  }
+
+  .service-recommendation {
+    background: var(--color-honey-gold);
+    display: grid;
+    gap: var(--space-md);
+    margin: var(--space-5xl) 0 0 auto;
+    max-width: 44rem;
+    padding: var(--space-3xl);
+  }
+
+  .service-recommendation h2 {
+    color: var(--color-deep-indigo);
+  }
+
+  .service-action {
+    display: grid;
+    gap: var(--space-md);
+    margin-top: var(--space-5xl);
+    max-width: 34rem;
+  }
+
+  .service-action p:first-child {
+    color: var(--color-deep-indigo);
+  }
+
+  .service-action :global(.button-link) {
+    justify-self: start;
+    margin-top: var(--space-md);
+  }
+
+  @media (max-width: 48rem) {
+    .service-hero {
+      padding-top: calc(var(--space-5xl) + var(--target-size));
+    }
+
+    .service-hero-layout,
+    .service-details-layout {
+      gap: var(--space-xl);
+      grid-template-columns: 1fr;
+    }
+
+    .service-recommendation {
+      margin-top: var(--space-4xl);
+      padding: var(--space-xl);
+    }
+
+    .service-action {
+      margin-top: var(--space-4xl);
+    }
+  }
+</style>
