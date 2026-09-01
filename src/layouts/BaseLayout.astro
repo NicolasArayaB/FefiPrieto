@@ -127,6 +127,9 @@ const isHomePage = Astro.url.pathname === "/";
   .mobile-navigation {
     display: none;
   }
+  .site-navigation[data-homepage="false"] > nav {
+    display: none;
+  }
   .site-navigation.is-scrolled {
     background: var(--color-deep-indigo);
     border-radius: var(--radius-control);
