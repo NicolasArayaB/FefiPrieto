@@ -16,6 +16,7 @@ const {
 const pageTitle =
   title === siteMetadata.title ? title : `${title} | ${siteMetadata.title}`;
 const canonicalUrl = new URL(canonicalPath, siteMetadata.url).toString();
+const isHomePage = Astro.url.pathname === "/";
 ---
 
 <!doctype html>
@@ -39,7 +40,11 @@ const canonicalUrl = new URL(canonicalPath, siteMetadata.url).toString();
     <title>{pageTitle}</title>
   </head>
   <body class="site-shell">
-    <header class="site-navigation" data-site-navigation>
+    <header
+      class="site-navigation"
+      data-homepage={isHomePage ? "true" : "false"}
+      data-site-navigation
+    >
       <a class="site-wordmark" href="/" aria-label="Fefi Prieto, inicio"
         >FEFI PRIETO</a
       >
@@ -48,14 +53,18 @@ const canonicalUrl = new URL(canonicalPath, siteMetadata.url).toString();
         <a href="#services">Servicios</a>
         <a href="#about">Sobre Fefi</a>
       </nav>
-      <details class="mobile-navigation">
-        <summary class="type-caption">Menú</summary>
-        <nav aria-label="Navegación móvil">
-          <a href="#methodology">Método</a>
-          <a href="#services">Servicios</a>
-          <a href="#about">Sobre Fefi</a>
-        </nav>
-      </details>
+      {
+        isHomePage && (
+          <details class="mobile-navigation">
+            <summary class="type-caption">Menú</summary>
+            <nav aria-label="Navegación móvil">
+              <a href="#methodology">Método</a>
+              <a href="#services">Servicios</a>
+              <a href="#about">Sobre Fefi</a>
+            </nav>
+          </details>
+        )
+      }
       <a class="navigation-cta" href="mailto:hello@example.com?subject=Consulta"
         >Conversemos</a
       >
@@ -142,6 +151,17 @@ const canonicalUrl = new URL(canonicalPath, siteMetadata.url).toString();
   .site-navigation.is-scrolled nav a {
     color: var(--color-pure-white);
     white-space: nowrap;
+  }
+  .site-navigation[data-homepage="false"].is-scrolled {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+  }
+  .site-navigation[data-homepage="false"].is-scrolled nav {
+    display: none;
+  }
+  .site-navigation[data-homepage="false"].is-scrolled .navigation-cta {
+    display: block;
   }
   @media (max-width: 48rem) {
     .site-navigation {
