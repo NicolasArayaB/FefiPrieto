@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Spacing is a primary part of Fefi Prieto's editorial voice. The system creates calm, hierarchy, and confidence through a small set of predictable relationships rather than component-specific values.
+Spacing is a primary part of Fernanda Prieto's editorial voice. The system creates calm, hierarchy, and confidence through a small set of predictable relationships rather than component-specific values.
 
 ## Base Scale
 

@@ -18,7 +18,7 @@ This file is intentionally concise. Load additional documentation only when requ
 
 # Project Role
 
-Act as a pragmatic staff engineer and product-aware implementation partner for the Fefi Prieto platform.
+Act as a pragmatic staff engineer and product-aware implementation partner for the Fernanda Prieto platform.
 
 Prioritize:
 

@@ -4,17 +4,17 @@
 
 To transform how individuals and organizations understand image and presence by positioning personal presentation as a psychological, strategic, and developmental tool rather than a superficial concern.
 
-Fefi Prieto exists to demonstrate that the way we present ourselves influences how we think, feel, behave, and are perceived by others. Through psychology, coaching, and image strategy, the brand seeks to help people align identity and external expression in ways that foster confidence, authenticity, and professional growth.
+Fernanda Prieto exists to demonstrate that the way we present ourselves influences how we think, feel, behave, and are perceived by others. Through psychology, coaching, and image strategy, the brand seeks to help people align identity and external expression in ways that foster confidence, authenticity, and professional growth.
 
 ---
 
-# What is Fefi Prieto
+# What is Fernanda Prieto
 
-Fefi Prieto is a premium personal brand positioned at the intersection of psychology, identity, image, and executive presence.
+Fernanda Prieto is a premium personal brand positioned at the intersection of psychology, identity, image, and executive presence.
 
 The brand is founded on the belief that personal image is not a superficial concern but a psychological and strategic tool that influences confidence, behavior, perception, and authority.
 
-Through psychology-informed consulting, coaching, and image strategy, Fefi Prieto helps individuals and organizations align internal identity with external expression.
+Through psychology-informed consulting, coaching, and image strategy, Fernanda Prieto helps individuals and organizations align internal identity with external expression.
 
 The platform aims to challenge the traditional perception of fashion and image as merely aesthetic pursuits and instead present them as meaningful instruments for self-awareness, personal transformation, and professional development.
 
@@ -90,7 +90,7 @@ The platform should never sacrifice clarity around psychology and image consulti
 
 # Relationship with Dress the City
 
-Fefi Prieto and Dress the City are complementary but independent brands.
+Fernanda Prieto and Dress the City are complementary but independent brands.
 
 ## Dress the City
 
@@ -105,7 +105,7 @@ Core question:
 
 > What should I wear?
 
-## Fefi Prieto
+## Fernanda Prieto
 
 Focuses on:
 
@@ -124,7 +124,7 @@ The relationship between both brands should feel intentional and mutually reinfo
 
 Dress the City introduces people to the transformative power of clothing and personal presentation.
 
-Fefi Prieto explores the deeper psychological dimension behind image, confidence, self-perception, and authority.
+Fernanda Prieto explores the deeper psychological dimension behind image, confidence, self-perception, and authority.
 
 The brands should support one another through thoughtful cross-promotion while maintaining clear positioning and avoiding audience confusion.
 
@@ -136,13 +136,13 @@ The long-term objective is to create a coherent ecosystem where both businesses 
 
 # Long-Term Vision
 
-The long-term vision is to establish Fefi Prieto as a recognized authority in image psychology, executive presence, and personal transformation.
+The long-term vision is to establish Fernanda Prieto as a recognized authority in image psychology, executive presence, and personal transformation.
 
 The business should become a reference point for understanding the relationship between identity, psychology, confidence, and external presentation.
 
 The vision is not to become another generic coaching or consulting brand.
 
-Instead, Fefi Prieto should occupy a differentiated space that combines:
+Instead, Fernanda Prieto should occupy a differentiated space that combines:
 
 * Psychology
 * Coaching
@@ -170,7 +170,7 @@ Success should not be measured solely by services sold or leads generated, but b
 
 # Non-Goals
 
-Fefi Prieto is not:
+Fernanda Prieto is not:
 
 * A fashion e-commerce brand
 * A clothing retailer

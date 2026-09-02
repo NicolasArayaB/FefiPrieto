@@ -6,7 +6,7 @@ This file gives AI coding assistants and human contributors a compact project br
 
 ## Initial Content
 
-Fefi Prieto is a premium personal brand website for psychology-informed image consulting, executive presence, and personal transformation.
+Fernanda Prieto is a premium personal brand website for psychology-informed image consulting, executive presence, and personal transformation.
 
 The platform exists to generate qualified corporate leads and individual bookings while establishing the brand as an authority in image psychology and executive presence.
 

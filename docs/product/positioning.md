@@ -8,7 +8,7 @@ This document translates the product vision into practical positioning guidance 
 
 ## Positioning Statement
 
-Fefi Prieto is a premium psychology-informed image consulting brand that helps individuals and organizations align identity, confidence, and external expression to strengthen presence, authority, and personal transformation.
+Fernanda Prieto is a premium psychology-informed image consulting brand that helps individuals and organizations align identity, confidence, and external expression to strengthen presence, authority, and personal transformation.
 
 ## Primary Positioning
 
@@ -20,7 +20,7 @@ Executive presence and leadership development should appear as natural extension
 
 ## Differentiation
 
-Fefi Prieto should be differentiated from:
+Fernanda Prieto should be differentiated from:
 
 * Generic styling services
 * Traditional image consulting marketplaces
@@ -55,7 +55,7 @@ Avoid leading with:
 
 ## Relationship to Dress the City
 
-Dress the City and Fefi Prieto are complementary but independent. Dress the City addresses what someone should wear for important moments. Fefi Prieto addresses who someone becomes through image, confidence, and identity alignment.
+Dress the City and Fernanda Prieto are complementary but independent. Dress the City addresses what someone should wear for important moments. Fernanda Prieto addresses who someone becomes through image, confidence, and identity alignment.
 
 For detailed relationship guidance, use [vision.md](vision.md).
 

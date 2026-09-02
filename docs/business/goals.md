@@ -10,7 +10,7 @@ This document defines the business outcomes the platform should support. It shou
 
 1. Generate qualified B2B leads for workshops, executive presence programs, and corporate training services.
 2. Generate individual bookings for colorimetry, image consulting, personal branding, and personal shopping.
-3. Establish Fefi Prieto as an authority in image psychology, executive presence, and personal transformation.
+3. Establish Fernanda Prieto as an authority in image psychology, executive presence, and personal transformation.
 
 ## Business Role of the Website
 

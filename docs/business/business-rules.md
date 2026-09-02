@@ -14,11 +14,11 @@ Every major decision should reinforce the foundational belief:
 
 ## Positioning Rules
 
-* Position Fefi Prieto primarily around psychology and image consulting.
+* Position Fernanda Prieto primarily around psychology and image consulting.
 * Treat executive presence as a natural extension of image psychology.
 * Treat leadership development as a longer-term evolution, not the initial center of gravity.
 * Avoid positioning the brand as generic fashion, coaching, or leadership consulting.
-* Maintain clear distinction between Fefi Prieto and Dress the City.
+* Maintain clear distinction between Fernanda Prieto and Dress the City.
 
 ## Conversion Rules
 

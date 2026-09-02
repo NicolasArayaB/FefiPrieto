@@ -2,19 +2,19 @@
 
 ## Purpose
 
-FEF-19 introduces Fefi Prieto as the person behind the methodology. It gives the homepage an intimate, portrait-led authority moment without turning the page into a conventional biography or résumé.
+FEF-19 introduces Fernanda Prieto as the person behind the methodology. It gives the homepage an intimate, portrait-led authority moment without turning the page into a conventional biography or résumé.
 
 ## Content Condition
 
 The section uses the public biographical information available for Fernanda Prieto: she is a psychologist with clinical and organizational experience, and the founder of Dress the City. It deliberately excludes dates, client lists, outcomes, awards, and further credentials.
 
-Dress the City is presented as an independent, related project. Its experience with image and clothing informs the trajectory, while Fefi Prieto remains focused on psychology, identity, and external expression.
+Dress the City is presented as an independent, related project. Its experience with image and clothing informs the trajectory, while Fernanda Prieto remains focused on psychology, identity, and external expression.
 
 The portrait is an original editorial reference image generated for this prototype. Its visible caption and alt text state that it must be replaced with approved photography of Fernanda Prieto before launch.
 
 ## Decisions Validated
 
-* A portrait establishes Fefi as a person before the supporting details appear.
+* A portrait establishes Fernanda as a person before the supporting details appear.
 * The asymmetric editorial grid places visual weight on the portrait while keeping the explanatory content in a readable companion column.
 * A short reflective statement communicates the point of view more effectively than an extended biography.
 * Three concise details establish the relevant foundation without creating a résumé.

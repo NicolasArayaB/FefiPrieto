@@ -2,7 +2,7 @@
 
 ## Purpose
 
-The editorial grid provides a shared grammar for positioning content while preserving the asymmetry, variable measure, and visual pauses that give Fefi Prieto its calm, premium character. It is structural rather than decorative: spacing continues to come from the system in [spacing-layout-system.md](spacing-layout-system.md).
+The editorial grid provides a shared grammar for positioning content while preserving the asymmetry, variable measure, and visual pauses that give Fernanda Prieto its calm, premium character. It is structural rather than decorative: spacing continues to come from the system in [spacing-layout-system.md](spacing-layout-system.md).
 
 ## Page Container and Widths
 

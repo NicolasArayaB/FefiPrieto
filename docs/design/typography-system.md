@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Typography is the primary source of hierarchy in the Fefi Prieto interface. It should feel editorial, calm, and authoritative, letting whitespace and composition do more work than decorative color or ornament.
+Typography is the primary source of hierarchy in the Fernanda Prieto interface. It should feel editorial, calm, and authoritative, letting whitespace and composition do more work than decorative color or ornament.
 
 ## Typeface Roles
 

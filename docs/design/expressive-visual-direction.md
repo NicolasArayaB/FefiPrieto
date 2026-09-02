@@ -12,7 +12,7 @@ The homepage alternates visual density rather than giving every section the same
 2. **Methodology — quiet:** three compact stages keep the conceptual model clear and structured.
 3. **Services — two chapters:** cobalt and architectural photography give Corporate a structured, authoritative presence; orange and intimate pink-orange imagery make Individual more personal and expressive.
 4. **Testimonials — expressive evidence:** a warm feature carries the primary customer voice; supporting voices remain lighter.
-5. **Authority — intimate:** portraiture and neutral space return the focus to Fefi as a person.
+5. **Authority — intimate:** portraiture and neutral space return the focus to Fernanda as a person.
 
 ## Expressive Color
 

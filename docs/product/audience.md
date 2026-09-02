@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This document defines the primary and secondary audiences for the Fefi Prieto platform so product, content, design, and conversion decisions remain focused.
+This document defines the primary and secondary audiences for the Fernanda Prieto platform so product, content, design, and conversion decisions remain focused.
 
 ## Initial Content
 

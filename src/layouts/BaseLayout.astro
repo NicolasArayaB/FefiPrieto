@@ -45,13 +45,13 @@ const isHomePage = Astro.url.pathname === "/";
       data-homepage={isHomePage ? "true" : "false"}
       data-site-navigation
     >
-      <a class="site-wordmark" href="/" aria-label="Fefi Prieto, inicio"
-        >FEFI PRIETO</a
+      <a class="site-wordmark" href="/" aria-label="Fernanda Prieto, inicio"
+        >FERNANDA PRIETO</a
       >
       <nav aria-label="Navegación principal">
         <a href="#methodology">Método</a>
         <a href="#services">Servicios</a>
-        <a href="#about">Sobre Fefi</a>
+        <a href="#about">Sobre Fernanda</a>
       </nav>
       {
         isHomePage && (
@@ -60,7 +60,7 @@ const isHomePage = Astro.url.pathname === "/";
             <nav aria-label="Navegación móvil">
               <a href="#methodology">Método</a>
               <a href="#services">Servicios</a>
-              <a href="#about">Sobre Fefi</a>
+              <a href="#about">Sobre Fernanda</a>
             </nav>
           </details>
         )

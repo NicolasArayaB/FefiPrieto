@@ -6,9 +6,9 @@ FEF-18 refines testimonials into a compact social-proof moment after Services. T
 
 ## Content Condition
 
-The initial set uses testimonials published by clients on Dress the City's public [testimonials page](https://dressthecity.cl/testimonios/). Fefi Prieto founded that previous project and provided client-facing advice there, so every attribution explicitly retains the original context: `Clienta de Dress the City`.
+The initial set uses testimonials published by clients on Dress the City's public [testimonials page](https://dressthecity.cl/testimonios/). Fernanda Prieto founded that previous project and provided client-facing advice there, so every attribution explicitly retains the original context: `Clienta de Dress the City`.
 
-These testimonials must not be presented as feedback on a future Fefi Prieto service, or be supplemented with unverified professional context or outcomes. Before launch, confirm that this reuse and each public attribution have the required permission.
+These testimonials must not be presented as feedback on a future Fernanda Prieto service, or be supplemented with unverified professional context or outcomes. Before launch, confirm that this reuse and each public attribution have the required permission.
 
 ## Decisions Validated
 
@@ -27,7 +27,7 @@ These testimonials must not be presented as feedback on a future Fefi Prieto ser
 
 ## Deferred Decisions
 
-* Permission to reuse these published testimonials for Fefi Prieto and final claim-review guidance are required before production launch.
+* Permission to reuse these published testimonials for Fernanda Prieto and final claim-review guidance are required before production launch.
 * Testimonial ordering and any future relationship to service detail pages should be decided when the final content set is available.
 
 ## Related Documents

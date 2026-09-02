@@ -8,9 +8,9 @@ This document describes the planned system at a high level so implementation dec
 
 ## Product Type
 
-Fefi Prieto is planned as a high-performance storytelling single-page application with immersive design and interactive experiences.
+Fernanda Prieto is planned as a high-performance storytelling single-page application with immersive design and interactive experiences.
 
-The product should position Fefi Prieto as an authority in executive presence and image psychology while supporting corporate inquiries and individual bookings.
+The product should position Fernanda Prieto as an authority in executive presence and image psychology while supporting corporate inquiries and individual bookings.
 
 ## Planned Stack
 

@@ -2,7 +2,7 @@
 
 ## Narrative Sequence
 
-The homepage moves from Fefi's point of view to the way she works, the services she offers, evidence from clients, and finally her personal authority. The corporate inquiry is the primary conversion path; the Individual route remains present as a secondary, clearly differentiated path inside Services.
+The homepage moves from Fernanda's point of view to the way she works, the services she offers, evidence from clients, and finally her personal authority. The corporate inquiry is the primary conversion path; the Individual route remains present as a secondary, clearly differentiated path inside Services.
 
 ## Rhythm
 

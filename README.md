@@ -1,4 +1,4 @@
-# Fefi Prieto
+# Fernanda Prieto
 
 Premium personal brand website for psychology-informed image consulting, executive presence, and personal transformation.
 

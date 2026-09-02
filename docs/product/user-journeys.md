@@ -10,7 +10,7 @@ This document defines the core visitor journeys the website must support so info
 
 Primary path:
 
-1. Discover Fefi Prieto.
+1. Discover Fernanda Prieto.
 2. Understand image psychology.
 3. Learn the methodology.
 4. Explore corporate services.
@@ -24,7 +24,7 @@ The corporate journey should reduce perceived risk and make the business value o
 
 Primary path:
 
-1. Discover Fefi Prieto.
+1. Discover Fernanda Prieto.
 2. Understand psychology and image.
 3. Explore individual services.
 4. Build trust.
@@ -36,7 +36,7 @@ The individual journey should make image consulting feel developmental, personal
 
 Primary path:
 
-1. Discover Fefi Prieto.
+1. Discover Fernanda Prieto.
 2. Learn about image psychology.
 3. Follow social channels.
 4. Save contact information.

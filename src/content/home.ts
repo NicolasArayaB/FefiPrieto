@@ -13,7 +13,7 @@ export const homeMetadata = {
 export const homeContent = {
   hero: {
     eyebrow: "Psicología · Coaching · Imagen",
-    title: "Fefi Prieto",
+    title: "Fernanda Prieto",
     description:
       "Una forma más consciente de habitar tu imagen, tu identidad y tu presencia.",
     primaryCta: {
@@ -77,7 +77,7 @@ export const homeContent = {
     eyebrow: "Experiencias de clientas",
     title: "Sentirse bien también cambia la manera de estar.",
     description:
-      "Testimonios publicados por clientas de Dress the City, proyecto fundado por Fefi Prieto, donde recibieron atención y asesoramiento de imagen.",
+      "Testimonios publicados por clientas de Dress the City, proyecto fundado por Fernanda Prieto, donde recibieron atención y asesoramiento de imagen.",
     featured: {
       quote:
         "Me encantó la atención y asesoramiento personalizado, quede feliz con mi look.",
@@ -104,7 +104,7 @@ export const homeContent = {
     ],
   },
   authority: {
-    eyebrow: "Sobre Fefi",
+    eyebrow: "Sobre Fernanda",
     title: "Una mirada que empieza por la persona.",
     description:
       "Soy Fernanda Prieto, psicóloga, asesora de imagen y coach. Abordo la imagen desde una mirada psicológica: entender quién eres, qué quieres expresar y la relación que quieres construir con tu propia imagen.",

@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This document defines the reusable color primitives for the Fefi Prieto interface. The system supports a calm, premium editorial experience rooted in psychology, identity, and authority without relying on fashion or beauty-brand conventions.
+This document defines the reusable color primitives for the Fernanda Prieto interface. The system supports a calm, premium editorial experience rooted in psychology, identity, and authority without relying on fashion or beauty-brand conventions.
 
 ## Principles
 
