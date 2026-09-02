@@ -32,6 +32,13 @@ Primary path:
 
 The individual journey should make image consulting feel developmental, personal, and credible.
 
+### Interim conversion path
+
+Until Calendly is available, individual CTAs open a pre-addressed email to
+`contacto@fernandaprieto.cl` with a service-specific subject. The visitor's
+email client confirms the handoff; the completed inquiry is confirmed through
+the normal email response process.
+
 ## Brand Discovery Journey
 
 Primary path:
@@ -64,6 +71,6 @@ Every journey should include:
 
 * Exact page structure is not defined.
 * Specific CTAs are not finalized.
-* Calendly routing rules are not defined.
+* Calendly routing rules are not defined; the interim email-inquiry path remains in use until they are approved.
 * Corporate inquiry form fields are not defined.
 * Trust assets such as testimonials, credentials, and case studies are not available.

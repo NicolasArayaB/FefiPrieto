@@ -1,5 +1,6 @@
 ---
 import { siteMetadata } from "@constants/site";
+import { individualInquiryHref } from "@content/contact";
 import "@styles/global.css";
 
 interface Props {
@@ -65,8 +66,9 @@ const isHomePage = Astro.url.pathname === "/";
           </details>
         )
       }
-      <a class="navigation-cta" href="mailto:hello@example.com?subject=Consulta"
-        >Conversemos</a
+      <a
+        class="navigation-cta"
+        href={individualInquiryHref("Consulta individual")}>Conversemos</a
       >
     </header>
     <slot />

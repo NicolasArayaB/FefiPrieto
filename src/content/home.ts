@@ -2,6 +2,7 @@ import type { HomeContent, HomeMetadata } from "@app-types/content";
 import authorityPortrait from "../assets/images/fefi-authority.webp";
 import heroImage from "../assets/images/fefi-editorial.webp";
 import individualServicesImage from "../assets/images/fefi-editorial-2.webp";
+import { individualInquiryHref } from "./contact";
 import { services } from "./services";
 
 export const homeMetadata = {
@@ -18,7 +19,7 @@ export const homeContent = {
       "Una forma más consciente de habitar tu imagen, tu identidad y tu presencia.",
     primaryCta: {
       label: "Hablemos de tu proceso",
-      href: "mailto:hello@example.com?subject=Consulta%20individual",
+      href: individualInquiryHref("Consulta individual"),
     },
     image: {
       src: heroImage,
@@ -60,7 +61,7 @@ export const homeContent = {
       "Un proceso personal para que tu estilo sea una expresión más útil, segura y coherente de la persona que estás construyendo.",
     action: {
       label: "Conversemos sobre tu proceso",
-      href: "mailto:hello@example.com?subject=Servicios%20individuales",
+      href: individualInquiryHref("Consulta individual"),
     },
     image: {
       src: individualServicesImage,

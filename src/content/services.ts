@@ -1,9 +1,12 @@
 import type { ServiceDetail } from "@app-types/services";
+import { individualInquiryHref } from "./contact";
 
-const contactAction = {
-  label: "Conversemos sobre tu proceso",
-  href: "mailto:hello@example.com?subject=Consulta%20individual",
-};
+function contactAction(subject: string) {
+  return {
+    label: "Conversemos sobre tu proceso",
+    href: individualInquiryHref(subject),
+  };
+}
 
 export const services = [
   {
@@ -25,7 +28,7 @@ export const services = [
       description:
         "Este servicio se complementa especialmente bien con Colorimetría o Asesoría de Imagen Básica: dos herramientas para reconocer por qué ciertas elecciones te hacen sentir más tú.",
     },
-    action: contactAction,
+    action: contactAction("Consulta sobre Closet Detox"),
     metadata: {
       title: "Closet Detox",
       description:
@@ -48,7 +51,7 @@ export const services = [
       "Guía personalizada para escoger accesorios, maquillaje y colores de cabello.",
       "Informe personalizado para que puedas volver a tu paleta y aplicarla con autonomía.",
     ],
-    action: contactAction,
+    action: contactAction("Consulta sobre Colorimetría"),
     metadata: {
       title: "Colorimetría",
       description:
@@ -71,7 +74,7 @@ export const services = [
       "Recomendaciones de escotes, cortes y estilos que favorecen tu figura sin dejar de sentirse propios.",
       "Informe personalizado que reúne tus hallazgos y próximos pasos.",
     ],
-    action: contactAction,
+    action: contactAction("Consulta sobre Asesoría de Imagen Básica"),
     metadata: {
       title: "Asesoría de Imagen Básica",
       description:
@@ -95,7 +98,7 @@ export const services = [
       "Visagismo para analizar tu tipo de rostro y potenciar tus facciones.",
       "Informe digital personalizado con las recomendaciones de tu proceso.",
     ],
-    action: contactAction,
+    action: contactAction("Consulta sobre Asesoría de Imagen Full"),
     metadata: {
       title: "Asesoría de Imagen Full",
       description:
