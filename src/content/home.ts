@@ -34,7 +34,7 @@ export const homeContent = {
     stagesLabel: "Etapas de la metodología",
     stages: [
       {
-        title: "Psychology",
+        title: "Psicología",
         description:
           "Comenzamos más allá de la apariencia: en las creencias, hábitos y formas de percibirte que influyen en cómo ocupas un espacio.",
       },

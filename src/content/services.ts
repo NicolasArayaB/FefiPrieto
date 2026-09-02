@@ -10,6 +10,29 @@ function contactAction(subject: string) {
 
 export const services = [
   {
+    slug: "colorimetria",
+    eyebrow: "Acompañamiento uno a uno",
+    title: "Colorimetría",
+    lead: "Colores que acompañan tu energía y tu forma de estar.",
+    description:
+      "Descubrimos la paleta que realza tu belleza natural y la convertimos en una herramienta concreta para elegir, combinar y expresarte con más seguridad.",
+    deliverablesLabel: "Qué recibirás",
+    deliverables: [
+      "Drapeado de telas para observar los colores que iluminan y acompañan tu armonía natural.",
+      "Análisis de tu estación y subestación para identificar tu paleta personal con mayor precisión.",
+      "Una mirada a la psicología del color para comprender qué comunican los tonos y cómo usarlos a tu favor.",
+      "Propuestas de combinaciones que te ayuden a vestir con claridad en tu día a día.",
+      "Guía personalizada para escoger accesorios, maquillaje y colores de cabello.",
+      "Informe personalizado para que puedas volver a tu paleta y aplicarla con autonomía.",
+    ],
+    action: contactAction("Consulta sobre Colorimetría"),
+    metadata: {
+      title: "Colorimetría",
+      description:
+        "Descubre tu paleta personal y aprende a elegir colores, accesorios, maquillaje y cabello con intención y seguridad.",
+    },
+  },
+  {
     slug: "closet-detox",
     eyebrow: "Acompañamiento uno a uno",
     title: "Closet Detox",
@@ -33,29 +56,6 @@ export const services = [
       title: "Closet Detox",
       description:
         "Revisa, ordena y vuelve a habitar tu clóset con intención a través de un proceso de asesoría de imagen personalizado.",
-    },
-  },
-  {
-    slug: "colorimetria",
-    eyebrow: "Acompañamiento uno a uno",
-    title: "Colorimetría",
-    lead: "Colores que acompañan tu energía y tu forma de estar.",
-    description:
-      "Descubrimos la paleta que realza tu belleza natural y la convertimos en una herramienta concreta para elegir, combinar y expresarte con más seguridad.",
-    deliverablesLabel: "Qué recibirás",
-    deliverables: [
-      "Drapeado de telas para observar los colores que iluminan y acompañan tu armonía natural.",
-      "Análisis de tu estación y subestación para identificar tu paleta personal con mayor precisión.",
-      "Una mirada a la psicología del color para comprender qué comunican los tonos y cómo usarlos a tu favor.",
-      "Propuestas de combinaciones que te ayuden a vestir con claridad en tu día a día.",
-      "Guía personalizada para escoger accesorios, maquillaje y colores de cabello.",
-      "Informe personalizado para que puedas volver a tu paleta y aplicarla con autonomía.",
-    ],
-    action: contactAction("Consulta sobre Colorimetría"),
-    metadata: {
-      title: "Colorimetría",
-      description:
-        "Descubre tu paleta personal y aprende a elegir colores, accesorios, maquillaje y cabello con intención y seguridad.",
     },
   },
   {
