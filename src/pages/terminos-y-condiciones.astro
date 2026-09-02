@@ -1,0 +1,13 @@
+---
+import LegalDocumentSection from "@components/sections/LegalDocumentSection.astro";
+import { termsAndConditions } from "@content/legal";
+import BaseLayout from "@layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title={termsAndConditions.title}
+  description={termsAndConditions.description}
+  canonicalPath="/terminos-y-condiciones"
+>
+  <LegalDocumentSection document={termsAndConditions} />
+</BaseLayout>

@@ -1,0 +1,13 @@
+---
+import LegalDocumentSection from "@components/sections/LegalDocumentSection.astro";
+import { privacyPolicy } from "@content/legal";
+import BaseLayout from "@layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title={privacyPolicy.title}
+  description={privacyPolicy.description}
+  canonicalPath="/politica-de-privacidad"
+>
+  <LegalDocumentSection document={privacyPolicy} />
+</BaseLayout>

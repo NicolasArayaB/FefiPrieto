@@ -1,6 +1,7 @@
 ---
 import { siteMetadata } from "@constants/site";
 import { individualInquiryHref } from "@content/contact";
+import SiteFooter from "@components/ui/SiteFooter.astro";
 import "@styles/global.css";
 
 interface Props {
@@ -72,6 +73,7 @@ const isHomePage = Astro.url.pathname === "/";
       >
     </header>
     <slot />
+    <SiteFooter />
     <script>
       import { initStickyNavigation } from "@animations/navigation";
 

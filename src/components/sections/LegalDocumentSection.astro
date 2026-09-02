@@ -1,0 +1,92 @@
+---
+import Container from "@components/ui/Container.astro";
+import Section from "@components/ui/Section.astro";
+import type { LegalDocument } from "@content/legal";
+
+interface Props {
+  document: LegalDocument;
+}
+
+const { document } = Astro.props;
+---
+
+<main>
+  <Section
+    id="legal-document"
+    class="legal-document"
+    labelledby="legal-document-title"
+    spacing="editorial"
+  >
+    <Container size="reading">
+      <header class="legal-document-header">
+        <p class="type-eyebrow">Información legal</p>
+        <h1 id="legal-document-title" class="type-display-l">
+          {document.title}
+        </h1>
+        <p class="legal-document-intro type-lead">{document.intro}</p>
+        <p class="legal-document-date type-caption">
+          Última actualización: {document.updatedAt}
+        </p>
+      </header>
+
+      <div class="legal-document-content">
+        {
+          document.sections.map((section) => (
+            <section aria-labelledby={`legal-${section.title}`}>
+              <h2 id={`legal-${section.title}`} class="type-heading-l">
+                {section.title}
+              </h2>
+              {section.paragraphs.map((paragraph) => (
+                <p class="type-body">{paragraph}</p>
+              ))}
+            </section>
+          ))
+        }
+      </div>
+    </Container>
+  </Section>
+</main>
+
+<style>
+  :global(.legal-document) {
+    min-height: 70vh;
+    padding-top: calc(var(--space-section-hero) + var(--space-3xl));
+  }
+  .legal-document-header {
+    border-bottom: 1px solid var(--color-deep-indigo);
+    display: grid;
+    gap: var(--space-xl);
+    padding-bottom: var(--space-4xl);
+  }
+  .legal-document-header > :first-child,
+  .legal-document-date {
+    color: var(--color-deep-indigo);
+  }
+  .legal-document-header h1 {
+    color: var(--color-deep-indigo);
+    max-width: 12ch;
+  }
+  .legal-document-intro {
+    max-width: 55ch;
+  }
+  .legal-document-content {
+    display: grid;
+    gap: var(--space-4xl);
+    padding-top: var(--space-4xl);
+  }
+  .legal-document-content section {
+    display: grid;
+    gap: var(--space-md);
+  }
+  .legal-document-content h2 {
+    color: var(--color-deep-indigo);
+  }
+  .legal-document-content p {
+    max-width: 65ch;
+  }
+  @media (max-width: 48rem) {
+    :global(.legal-document) {
+      padding-top: calc(var(--space-6xl) + var(--space-4xl));
+    }
+  }
+</style>

@@ -1,0 +1,75 @@
+---
+import { individualInquiryEmail, instagramUrl } from "@content/contact";
+---
+
+<footer class="site-footer">
+  <div class="site-footer-content">
+    <a
+      class="site-footer-wordmark"
+      href="/"
+      aria-label="Fernanda Prieto, inicio">FERNANDA PRIETO</a
+    >
+    <nav class="site-footer-links" aria-label="Pie de página">
+      <a href={`mailto:${individualInquiryEmail}`}>Correo</a>
+      <a href={instagramUrl} target="_blank" rel="noreferrer"
+        >Instagram <span aria-hidden="true">↗</span></a
+      >
+      <a href="/politica-de-privacidad">Privacidad</a>
+      <a href="/terminos-y-condiciones">Términos</a>
+    </nav>
+    <p class="site-footer-copyright type-caption">
+      © {new Date().getFullYear()} Fernanda Prieto
+    </p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--color-deep-indigo);
+    color: var(--color-pure-white);
+    padding: var(--space-2xl) var(--space-page) var(--space-lg);
+  }
+  .site-footer-content {
+    align-items: center;
+    display: grid;
+    gap: var(--space-xl);
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    margin-inline: auto;
+    max-width: var(--layout-content);
+  }
+  .site-footer-wordmark {
+    color: var(--color-pure-white);
+    font: 400 32px / 0.9 var(--font-display);
+    letter-spacing: 0.043em;
+    text-decoration: none;
+  }
+  .site-footer-links {
+    display: grid;
+    gap: var(--space-lg);
+    grid-template-columns: repeat(4, auto);
+  }
+  .site-footer-links a {
+    color: var(--color-pure-white);
+    font: var(--type-caption);
+    letter-spacing: 0.133em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .site-footer-copyright {
+    margin: 0;
+    opacity: 0.78;
+    text-align: right;
+  }
+  @media (max-width: 48rem) {
+    .site-footer-content {
+      grid-template-columns: 1fr;
+    }
+    .site-footer-links {
+      gap: var(--space-sm) var(--space-lg);
+      grid-template-columns: repeat(2, max-content);
+    }
+    .site-footer-copyright {
+      text-align: left;
+    }
+  }
+</style>
