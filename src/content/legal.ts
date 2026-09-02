@@ -33,15 +33,29 @@ export const privacyPolicy = {
       ],
     },
     {
+      title: "Medición del sitio",
+      paragraphs: [
+        "Con tu consentimiento, utilizamos PostHog para comprender el uso general del sitio. Esta medición puede tratar datos técnicos y de navegación, como páginas visitadas, origen de la visita, interacciones necesarias para medir una consulta, tipo de dispositivo, navegador, dirección IP e información de rendimiento.",
+        "No enviamos a PostHog el contenido de los correos que decides enviar ni utilizamos esta medición para publicidad personalizada.",
+      ],
+    },
+    {
       title: "Tus solicitudes",
       paragraphs: [
         "Puedes solicitar acceso, corrección o eliminación de los datos que hayas compartido escribiendo a contacto@fernandaprieto.cl. También puedes pedir que no se utilicen para futuros contactos.",
       ],
     },
     {
+      title: "Cookies y retiro del consentimiento",
+      paragraphs: [
+        "Puedes aceptar o rechazar las cookies analíticas cuando se muestran al visitar el sitio. También puedes cambiar tu decisión en cualquier momento desde el enlace “Gestionar cookies” del pie de página.",
+        "La medición solo se activa después de tu aceptación. Si retiras tu consentimiento, se detiene la captura futura desde este navegador.",
+      ],
+    },
+    {
       title: "Cambios a esta política",
       paragraphs: [
-        "Esta versión del sitio no incorpora herramientas propias de analítica ni publicidad. Si se agregan nuevas herramientas o cambia la forma de tratar datos, esta política se actualizará antes de su uso.",
+        "Esta política puede actualizarse si cambia la forma de tratar datos o las herramientas utilizadas. La fecha de actualización muestra la versión vigente.",
       ],
     },
   ],

@@ -1,5 +1,5 @@
 ---
-import { individualInquiryEmail, instagramUrl } from "@content/contact";
+import { individualInquiryHref, instagramUrl } from "@content/contact";
 ---
 
 <footer class="site-footer">
@@ -10,18 +10,33 @@ import { individualInquiryEmail, instagramUrl } from "@content/contact";
       aria-label="Fernanda Prieto, inicio">FERNANDA PRIETO</a
     >
     <nav class="site-footer-links" aria-label="Pie de página">
-      <a href={`mailto:${individualInquiryEmail}`}>Correo</a>
+      <a
+        href={individualInquiryHref("Consulta individual")}
+        data-analytics-inquiry
+        data-analytics-placement="footer">Correo</a
+      >
       <a href={instagramUrl} target="_blank" rel="noreferrer"
         >Instagram <span aria-hidden="true">↗</span></a
       >
       <a href="/politica-de-privacidad">Privacidad</a>
       <a href="/terminos-y-condiciones">Términos</a>
+      <button type="button" data-manage-analytics-consent
+        >Gestionar cookies</button
+      >
     </nav>
     <p class="site-footer-copyright type-caption">
       © {new Date().getFullYear()} Fernanda Prieto
     </p>
   </div>
 </footer>
+
+<script>
+  document
+    .querySelector<HTMLButtonElement>("[data-manage-analytics-consent]")
+    ?.addEventListener("click", () => {
+      document.dispatchEvent(new CustomEvent("open-analytics-consent"));
+    });
+</script>
 
 <style>
   .site-footer {
@@ -46,13 +61,24 @@ import { individualInquiryEmail, instagramUrl } from "@content/contact";
   .site-footer-links {
     display: grid;
     gap: var(--space-lg);
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(5, auto);
   }
   .site-footer-links a {
     color: var(--color-pure-white);
     font: var(--type-caption);
     letter-spacing: 0.133em;
     text-decoration: none;
+    text-transform: uppercase;
+  }
+  .site-footer-links button {
+    background: transparent;
+    border: 0;
+    color: var(--color-pure-white);
+    cursor: pointer;
+    font: var(--type-caption);
+    letter-spacing: 0.133em;
+    padding: 0;
+    text-align: left;
     text-transform: uppercase;
   }
   .site-footer-copyright {

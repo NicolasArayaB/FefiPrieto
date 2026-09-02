@@ -1,0 +1,119 @@
+<aside
+  class="analytics-consent type-body-small"
+  aria-labelledby="analytics-consent-title"
+  data-analytics-consent
+  hidden
+>
+  <div class="analytics-consent-copy">
+    <h2 id="analytics-consent-title" class="type-heading-s">Tu privacidad</h2>
+    <p>
+      Usamos cookies analíticas para entender cómo se navega este sitio y
+      mejorarlo. Puedes aceptarlas o continuar solo con las necesarias.
+      <a href="/politica-de-privacidad">Más información</a>
+    </p>
+  </div>
+  <div class="analytics-consent-actions">
+    <button type="button" data-analytics-consent-reject>Rechazar</button>
+    <button type="button" data-analytics-consent-accept>Aceptar</button>
+  </div>
+</aside>
+
+<script>
+  const consentStorageKey = "fernanda-prieto-analytics-consent";
+  const consentBanner = document.querySelector<HTMLElement>(
+    "[data-analytics-consent]",
+  );
+  const acceptButton = document.querySelector<HTMLButtonElement>(
+    "[data-analytics-consent-accept]",
+  );
+  const rejectButton = document.querySelector<HTMLButtonElement>(
+    "[data-analytics-consent-reject]",
+  );
+
+  function showConsentBanner() {
+    consentBanner?.removeAttribute("hidden");
+  }
+
+  function hideConsentBanner() {
+    consentBanner?.setAttribute("hidden", "");
+  }
+
+  function saveConsent(consent: "granted" | "rejected") {
+    localStorage.setItem(consentStorageKey, consent);
+    document.dispatchEvent(
+      new CustomEvent("analytics-consent-changed", { detail: consent }),
+    );
+    hideConsentBanner();
+  }
+
+  if (!localStorage.getItem(consentStorageKey)) {
+    showConsentBanner();
+  }
+
+  acceptButton?.addEventListener("click", () => saveConsent("granted"));
+  rejectButton?.addEventListener("click", () => saveConsent("rejected"));
+  document.addEventListener("open-analytics-consent", showConsentBanner);
+</script>
+
+<style>
+  .analytics-consent {
+    align-items: end;
+    background: var(--color-deep-indigo);
+    bottom: var(--space-lg);
+    box-shadow: var(--shadow-xl);
+    color: var(--color-pure-white);
+    display: grid;
+    gap: var(--space-xl);
+    grid-template-columns: minmax(0, 1fr) auto;
+    left: var(--space-lg);
+    max-width: 44rem;
+    padding: var(--space-xl);
+    position: fixed;
+    right: var(--space-lg);
+    z-index: 20;
+  }
+  .analytics-consent[hidden] {
+    display: none;
+  }
+  .analytics-consent-copy {
+    display: grid;
+    gap: var(--space-sm);
+  }
+  .analytics-consent h2,
+  .analytics-consent p {
+    margin: 0;
+  }
+  .analytics-consent a {
+    color: inherit;
+  }
+  .analytics-consent-actions {
+    display: flex;
+    gap: var(--space-sm);
+  }
+  .analytics-consent button {
+    background: transparent;
+    border: 1px solid currentColor;
+    border-radius: var(--radius-control);
+    color: inherit;
+    cursor: pointer;
+    font: var(--type-button);
+    letter-spacing: 0.1em;
+    min-height: var(--target-size);
+    padding: var(--space-sm) var(--space-lg);
+    text-transform: uppercase;
+  }
+  .analytics-consent button[data-analytics-consent-accept] {
+    background: var(--color-pure-white);
+    color: var(--color-deep-indigo);
+  }
+  @media (max-width: 40rem) {
+    .analytics-consent {
+      align-items: stretch;
+      grid-template-columns: 1fr;
+    }
+    .analytics-consent-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>

@@ -2,12 +2,14 @@
 import type { ActionLink } from "@app-types/content";
 
 interface Props extends ActionLink {
+  analyticsPlacement?: string;
   appearance?: "button" | "editorial";
   variant?: "primary" | "secondary";
   size?: "default" | "compact";
 }
 
 const {
+  analyticsPlacement = "cta",
   appearance = "button",
   href,
   label,
@@ -25,6 +27,10 @@ const {
     `button-link-${size}`,
   ]}
   href={href}
+  data-analytics-inquiry={href.startsWith("mailto:") ? "true" : undefined}
+  data-analytics-placement={href.startsWith("mailto:")
+    ? analyticsPlacement
+    : undefined}
 >
   <slot>{label}</slot>
 </a>

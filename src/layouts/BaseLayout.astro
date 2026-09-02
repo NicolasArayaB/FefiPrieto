@@ -1,6 +1,8 @@
 ---
 import { siteMetadata } from "@constants/site";
 import { individualInquiryHref } from "@content/contact";
+import PostHog from "@components/posthog.astro";
+import AnalyticsConsent from "@components/ui/AnalyticsConsent.astro";
 import SiteFooter from "@components/ui/SiteFooter.astro";
 import "@styles/global.css";
 
@@ -40,6 +42,7 @@ const isHomePage = Astro.url.pathname === "/";
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:type" content="website" />
     <title>{pageTitle}</title>
+    <PostHog />
   </head>
   <body class="site-shell">
     <header
@@ -69,11 +72,14 @@ const isHomePage = Astro.url.pathname === "/";
       }
       <a
         class="navigation-cta"
-        href={individualInquiryHref("Consulta individual")}>Conversemos</a
+        href={individualInquiryHref("Consulta individual")}
+        data-analytics-inquiry
+        data-analytics-placement="navigation">Conversemos</a
       >
     </header>
     <slot />
     <SiteFooter />
+    <AnalyticsConsent />
     <script>
       import { initStickyNavigation } from "@animations/navigation";
 

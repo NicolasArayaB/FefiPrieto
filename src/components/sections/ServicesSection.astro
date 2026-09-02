@@ -50,7 +50,11 @@ const { content } = Astro.props;
         <p class="service-group-description type-body">
           {content.groupDescription}
         </p>
-        <ButtonLink {...content.action} variant="secondary">
+        <ButtonLink
+          {...content.action}
+          analyticsPlacement="services"
+          variant="secondary"
+        >
           <span>{content.action.label}</span><span aria-hidden="true">→</span>
         </ButtonLink>
         {

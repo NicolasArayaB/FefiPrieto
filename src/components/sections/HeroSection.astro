@@ -20,7 +20,11 @@ const { content } = Astro.props;
         <p class="hero-tagline">La imagen empieza por dentro.</p>
         <p class="hero-description type-lead">{content.description}</p>
         <div class="hero-actions">
-          <ButtonLink {...content.primaryCta} variant="primary" />
+          <ButtonLink
+            {...content.primaryCta}
+            analyticsPlacement="hero"
+            variant="primary"
+          />
         </div>
         <a class="scroll-indicator" href="#hero" aria-label="Volver al inicio"
           >⌃</a

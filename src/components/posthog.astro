@@ -1,0 +1,87 @@
+---
+const apiKey = import.meta.env.PUBLIC_POSTHOG_PROJECT_TOKEN;
+const apiHost = import.meta.env.PUBLIC_POSTHOG_HOST;
+const isDevelopment = import.meta.env.DEV;
+---
+
+<script
+  id="posthog-config"
+  is:inline
+  type="application/json"
+  set:html={JSON.stringify({ apiHost, apiKey, isDevelopment })}
+/>
+
+<script>
+  const consentStorageKey = "fernanda-prieto-analytics-consent";
+  const posthogConfig =
+    document.querySelector<HTMLScriptElement>("#posthog-config");
+  const { apiHost, apiKey, isDevelopment } = posthogConfig?.textContent
+    ? JSON.parse(posthogConfig.textContent)
+    : {};
+  let posthogClient: typeof import("posthog-js").default | undefined;
+
+  async function enableAnalytics() {
+    if (isDevelopment || !apiKey || !apiHost) return;
+
+    if (!posthogClient) {
+      const { default: posthog } = await import("posthog-js");
+
+      posthog.init(apiKey, {
+        api_host: apiHost,
+        autocapture: false,
+        capture_dead_clicks: false,
+        capture_exceptions: {
+          capture_console_errors: false,
+          capture_unhandled_errors: true,
+          capture_unhandled_rejections: true,
+        },
+        capture_heatmaps: true,
+        capture_pageleave: true,
+        capture_pageview: true,
+        capture_performance: true,
+        defaults: "2026-01-30",
+        disable_session_recording: true,
+        rageclick: false,
+      });
+
+      posthogClient = posthog;
+      window.posthog = posthog;
+    }
+
+    posthogClient.opt_in_capturing();
+  }
+
+  function disableAnalytics() {
+    posthogClient?.opt_out_capturing();
+  }
+
+  document.addEventListener("analytics-consent-changed", (event) => {
+    const consent = (event as CustomEvent<"granted" | "rejected">).detail;
+
+    if (consent === "granted") {
+      void enableAnalytics();
+      return;
+    }
+
+    disableAnalytics();
+  });
+
+  if (localStorage.getItem(consentStorageKey) === "granted") {
+    void enableAnalytics();
+  }
+
+  document.addEventListener("click", (event) => {
+    const target = (event.target as Element | null)?.closest<HTMLAnchorElement>(
+      "[data-analytics-inquiry]",
+    );
+
+    if (!target || !posthogClient) return;
+
+    const subject = new URL(target.href).searchParams.get("subject");
+
+    posthogClient.capture("inquiry_cta_clicked", {
+      placement: target.dataset.analyticsPlacement,
+      subject,
+    });
+  });
+</script>

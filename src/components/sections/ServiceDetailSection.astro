@@ -105,7 +105,11 @@ const deliverablesId = `${service.slug}-deliverables`;
             Conversemos sobre el servicio que puede acompañarte mejor en este
             momento.
           </p>
-          <ButtonLink {...service.action} variant="primary" />
+          <ButtonLink
+            {...service.action}
+            analyticsPlacement="service_detail"
+            variant="primary"
+          />
           <svg
             class="service-botanical botanical-action"
             viewBox="0 0 260 260"
