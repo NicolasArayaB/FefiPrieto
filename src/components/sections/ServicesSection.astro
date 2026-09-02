@@ -126,7 +126,11 @@ const { content } = Astro.props;
     padding-top: var(--space-4xl);
   }
 
-  .services-eyebrow,
+  .services-eyebrow {
+    color: var(--color-ink-black);
+    margin-bottom: var(--space-md);
+  }
+
   .service-group-eyebrow {
     color: var(--color-deep-indigo);
     margin-bottom: var(--space-md);
@@ -184,6 +188,8 @@ const { content } = Astro.props;
   }
 
   .individual-intro :global(.button-link) {
+    border-color: var(--color-deep-indigo);
+    color: var(--color-deep-indigo);
     justify-self: start;
     transition: transform var(--motion-duration-fast)
       var(--motion-easing-standard);
