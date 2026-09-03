@@ -1,6 +1,7 @@
 # Fernanda Prieto
 
-Premium personal brand website for psychology-informed image consulting, executive presence, and personal transformation.
+This project is a premium personal-brand website for my wife. It begins as a simple way to offer her psychology-informed image consulting and coaching services, with room to grow as she develops products for her platform.
+I’m also using it to experiment with AI-assisted development, integrations, workflows, and new libraries and tools.
 
 ## Stack
 
@@ -10,10 +11,6 @@ Premium personal brand website for psychology-informed image consulting, executi
 - PostHog analytics, loaded only after visitor consent
 - pnpm
 
-## AI-assisted development
-
-This is also a small experiment in building with AI without turning the project into a black box. Product, business, architecture, design, and workflow notes live next to the code, so people and AI assistants can pick up the thread without starting from zero each time.
-AI helps make the site, but it is not part of the visitor experience. It also supports project management: defining and reading Linear tasks, and documenting and updating the decisions that matter.
 ## Commands
 
 ```bash
