@@ -1,5 +1,5 @@
 ---
-import { individualInquiryHref, instagramUrl } from "@content/contact";
+import { instagramUrl } from "@content/contact";
 ---
 
 <footer class="site-footer">
@@ -10,11 +10,6 @@ import { individualInquiryHref, instagramUrl } from "@content/contact";
       aria-label="Fernanda Prieto, inicio">FERNANDA PRIETO</a
     >
     <nav class="site-footer-links" aria-label="Pie de página">
-      <a
-        href={individualInquiryHref("Consulta individual")}
-        data-analytics-inquiry
-        data-analytics-placement="footer">Correo</a
-      >
       <a href={instagramUrl} target="_blank" rel="noreferrer"
         >Instagram <span aria-hidden="true">↗</span></a
       >
@@ -86,16 +81,18 @@ import { individualInquiryHref, instagramUrl } from "@content/contact";
     opacity: 0.78;
     text-align: right;
   }
-  @media (max-width: 48rem) {
+  @media (max-width: 64rem) {
     .site-footer-content {
       grid-template-columns: 1fr;
     }
     .site-footer-links {
       gap: var(--space-sm) var(--space-lg);
       grid-template-columns: repeat(2, max-content);
+      justify-self: center;
     }
     .site-footer-copyright {
-      text-align: left;
+      justify-self: center;
+      text-align: center;
     }
   }
 </style>
