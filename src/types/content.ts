@@ -84,7 +84,7 @@ export interface AuthorityContent {
   relationship: {
     eyebrow: string;
     title: string;
-    description: string;
+    descriptions: string[];
   };
   journey: {
     moments: AuthorityJourneyMoment[];

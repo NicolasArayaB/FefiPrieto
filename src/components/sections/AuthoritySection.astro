@@ -78,17 +78,14 @@ const { content } = Astro.props;
         <circle cx="84" cy="173" r="5"></circle>
         <circle cx="124" cy="117" r="4"></circle>
       </svg>
-      <section class="authority-relationship">
-        <p class="authority-relationship-eyebrow type-eyebrow">
-          {content.relationship.eyebrow}
-        </p>
-        <h3 class="type-heading-l">{content.relationship.title}</h3>
-        <p class="authority-relationship-description type-body-small">
-          {content.relationship.description}
-        </p>
-      </section>
+      <div class="authority-ledger-grid">
+        <div class="authority-relationship-heading">
+          <p class="authority-relationship-eyebrow type-eyebrow">
+            {content.relationship.eyebrow}
+          </p>
+          <h3 class="type-heading-l">{content.relationship.title}</h3>
+        </div>
 
-      <div class="authority-journey">
         <div class="authority-journey-story">
           {
             content.journey.moments.map((moment) => (
@@ -96,6 +93,17 @@ const { content } = Astro.props;
             ))
           }
         </div>
+
+        <div class="authority-relationship-descriptions">
+          {
+            content.relationship.descriptions.map((description) => (
+              <p class="authority-relationship-description type-body-small">
+                {description}
+              </p>
+            ))
+          }
+        </div>
+
         <p class="authority-journey-conclusion type-quote">
           {content.journey.conclusion}
         </p>
@@ -210,12 +218,20 @@ const { content } = Astro.props;
   }
   .authority-ledger {
     border-top: 1px solid var(--color-deep-indigo);
-    display: grid;
-    gap: var(--space-4xl);
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
     margin-top: var(--space-5xl);
     padding-top: var(--space-xl);
     position: relative;
+  }
+  .authority-ledger-grid {
+    align-items: center;
+    display: grid;
+    gap: var(--space-4xl);
+    grid-template-areas:
+      "relationship-heading journey-story"
+      "relationship-descriptions journey-conclusion";
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+    justify-items: center;
+    text-wrap: pretty;
   }
   .authority-botanical {
     color: var(--color-mint-sage);
@@ -239,28 +255,35 @@ const { content } = Astro.props;
     transform: rotate(18deg);
     width: 10rem;
   }
-  .authority-relationship {
+  .authority-relationship-heading {
     display: grid;
     gap: var(--space-sm);
+    grid-area: relationship-heading;
     max-width: 27rem;
     position: relative;
     z-index: 1;
   }
-  .authority-relationship h3 {
+  .authority-relationship-heading h3 {
     color: var(--color-deep-indigo);
+  }
+  .authority-relationship-descriptions {
+    display: block;
+    grid-area: relationship-descriptions;
+    max-width: 27rem;
+    position: relative;
+    z-index: 1;
   }
   .authority-relationship-description {
     color: var(--color-ink-black);
+    margin: 0;
   }
-  .authority-journey {
-    display: grid;
-    gap: var(--space-lg);
-    position: relative;
-    z-index: 1;
+  .authority-relationship-description + .authority-relationship-description {
+    margin-top: var(--space-sm);
   }
   .authority-journey-story {
     display: grid;
     gap: var(--space-lg);
+    grid-area: journey-story;
     margin: 0;
     padding: 0;
   }
@@ -271,6 +294,7 @@ const { content } = Astro.props;
   }
   .authority-journey-conclusion {
     color: var(--color-deep-indigo);
+    grid-area: journey-conclusion;
     margin: var(--space-xl) 0 0;
     max-width: 25ch;
   }
@@ -279,8 +303,7 @@ const { content } = Astro.props;
       padding-block: var(--space-5xl);
     }
     .authority-heading,
-    .authority-main,
-    .authority-ledger {
+    .authority-main {
       grid-template-columns: minmax(0, 1fr);
     }
     .authority-heading {
@@ -299,8 +322,16 @@ const { content } = Astro.props;
       width: min(100%, 32rem);
     }
     .authority-ledger {
-      gap: var(--space-3xl);
       margin-top: var(--space-4xl);
+    }
+    .authority-ledger-grid {
+      gap: var(--space-3xl);
+      grid-template-areas:
+        "relationship-heading"
+        "relationship-descriptions"
+        "journey-story"
+        "journey-conclusion";
+      grid-template-columns: minmax(0, 1fr);
     }
     .authority-botanical-top {
       right: -1rem;

@@ -114,8 +114,10 @@ export const homeContent = {
     relationship: {
       eyebrow: "Trayectoria",
       title: "Todo empezó por las personas.",
-      description:
+      descriptions: [
         "Mi recorrido profesional ha pasado por distintos mundos, pero siempre ha tenido un punto en común: el interés por las personas, su identidad y la manera en que se expresan en cada contexto.",
+        "Ese recorrido conecta con mi propósito: acompañarte a potenciar tu imagen, desde lo que eres hacia la forma en que eliges mostrarte al mundo.",
+      ],
     },
     journey: {
       moments: [
@@ -126,7 +128,7 @@ export const homeContent = {
           text: "Durante cinco años trabajé como tripulante de cabina en LATAM Airlines, en contacto permanente con personas, culturas y realidades diversas. Allí la presencia, la comunicación y la adaptación eran parte de lo cotidiano; también vi de cerca cómo la moda y las tendencias cambian alrededor del mundo.",
         },
         {
-          text: "Más tarde, desde el emprendimiento, cofundé y desarrollé Tweens Dresses durante cuatro años. Esa experiencia me acercó al vestir desde la vida real de mujeres que buscan sentirse cómodas, seguras y representadas por lo que llevan puesto. Con Dress the City profundicé ese vínculo con la imagen y con la experiencia personal de elegir cómo habitarla.",
+          text: "Más tarde, desde el emprendimiento, cofundé y desarrollé Twins Dresses durante cuatro años. Esa experiencia me acercó al vestir desde la vida real de mujeres que buscan sentirse cómodas, seguras y representadas por lo que llevan puesto. Con Dress the City profundicé ese vínculo con la imagen y con la experiencia personal de elegir cómo habitarla.",
         },
       ],
       conclusion:
