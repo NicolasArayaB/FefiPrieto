@@ -8,6 +8,9 @@ import {
 import PostHog from "@components/posthog.astro";
 import AnalyticsConsent from "@components/ui/AnalyticsConsent.astro";
 import SiteFooter from "@components/ui/SiteFooter.astro";
+import bebasNeueFontUrl from "../assets/fonts/bebas-neue-latin-400.woff2?url";
+import caveatFontUrl from "../assets/fonts/caveat-latin-400.woff2?url";
+import interFontUrl from "../assets/fonts/inter-latin-400.woff2?url";
 import socialShareImage from "../assets/images/fernanda-prieto-social-share.png";
 import "@styles/global.css";
 
@@ -61,11 +64,26 @@ const personStructuredData = {
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@400;500&family=Inter:wght@400;500&family=Jost:wght@400;500&family=Oswald:wght@400&display=swap"
+      rel="preload"
+      href={bebasNeueFontUrl}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href={caveatFontUrl}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href={interFontUrl}
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
     <link rel="canonical" href={canonicalUrl} />
     <link rel="sitemap" href="/sitemap-index.xml" />

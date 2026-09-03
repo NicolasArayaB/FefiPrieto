@@ -54,6 +54,7 @@ const { content } = Astro.props;
             width="1024"
             height="1536"
             decoding="async"
+            fetchpriority="high"
             loading="eager"
           />
         </figure>
@@ -86,7 +87,7 @@ const { content } = Astro.props;
   }
   .hero-copy {
     color: var(--color-deep-indigo);
-    padding-block: var(--space-4xl);
+    padding-bottom: var(--space-4xl);
     position: relative;
     z-index: 2;
   }
@@ -194,7 +195,7 @@ const { content } = Astro.props;
       gap: var(--space-xl);
     }
     .hero-copy {
-      padding-block: var(--space-4xl) 0;
+      padding-block: 0;
     }
     .hero-media {
       min-height: 420px;
