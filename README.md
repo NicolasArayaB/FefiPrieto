@@ -1,6 +1,7 @@
 # Fernanda Prieto
 
 This project is a premium personal-brand website for my wife. It begins as a simple way to offer her psychology-informed image consulting and coaching services, with room to grow as she develops products for her platform.
+
 I’m also using it to experiment with AI-assisted development, integrations, workflows, and new libraries and tools.
 
 ## Stack
