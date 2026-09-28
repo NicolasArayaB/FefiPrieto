@@ -1,7 +1,7 @@
 import type { HomeContent, HomeMetadata } from "@app-types/content";
-import authorityPortrait from "../assets/images/fefi-authority.webp";
-import heroImage from "../assets/images/fefi-editorial.webp";
-import individualServicesImage from "../assets/images/fefi-editorial-2.webp";
+import authorityPortrait from "../assets/images/authority.webp";
+import heroImage from "../assets/images/editorial.webp";
+import individualServicesImage from "../assets/images/services.webp";
 import { individualInquiryHref } from "./contact";
 import { services } from "./services";
 
