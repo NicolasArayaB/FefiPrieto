@@ -1,10 +1,10 @@
 import type { ServiceDetail } from "@app-types/services";
-import { individualInquiryHref } from "./contact";
+import { individualInquiryWhatsAppHref } from "./contact";
 
 function contactAction(subject: string) {
   return {
-    label: "Conversemos sobre tu proceso",
-    href: individualInquiryHref(subject),
+    label: "Agenda aquí",
+    href: individualInquiryWhatsAppHref(subject),
   };
 }
 
@@ -26,7 +26,7 @@ export const services = [
       "Propuesta de combinaciones.",
       "Informe digital personalizado.",
     ],
-    action: contactAction("Consulta sobre Colorimetría"),
+    action: contactAction("Hola, quería agendar una Colorimetría"),
     metadata: {
       title: "Colorimetría",
       description:
@@ -44,7 +44,7 @@ export const services = [
       "Un encuentro para reconocer los colores que te benefician y los cortes que pueden acompañar mejor tu silueta.",
     deliverablesLabel: "Qué incluye",
     deliverables: ["Análisis de colorimetría.", "Estudio de morfología."],
-    action: contactAction("Consulta sobre Colorimetría + Morfología"),
+    action: contactAction("Hola, quería agendar una Colorimetría + Morfología"),
     metadata: {
       title: "Colorimetría + Morfología",
       description:
@@ -68,7 +68,7 @@ export const services = [
       "Informe personalizado digitalizado.",
       "Videollamada para revisar el informe.",
     ],
-    action: contactAction("Consulta sobre Asesoría de Imagen Básica"),
+    action: contactAction("Hola, quería agendar una Asesoría de Imagen Básica"),
     metadata: {
       title: "Asesoría de Imagen Básica",
       description:
@@ -95,7 +95,7 @@ export const services = [
       "Propuestas de looks.",
       "Informe personalizado digitalizado.",
     ],
-    action: contactAction("Consulta sobre Asesoría de Imagen Full"),
+    action: contactAction("Hola, quería agendar una Asesoría de Imagen Full"),
     metadata: {
       title: "Asesoría de Imagen Full",
       description:
@@ -121,7 +121,7 @@ export const services = [
       description:
         "Es requisito realizar una Colorimetría y Morfología Express antes de este servicio.",
     },
-    action: contactAction("Consulta sobre Personal Shopper"),
+    action: contactAction("Hola, quería agendar una Personal Shopper"),
     metadata: {
       title: "Personal Shopper",
       description:
@@ -148,7 +148,7 @@ export const services = [
       description:
         "Es requisito realizar una Colorimetría y Morfología Express antes de este servicio.",
     },
-    action: contactAction("Consulta sobre Clóset Detox"),
+    action: contactAction("Hola, quería agendar una Clóset Detox"),
     metadata: {
       title: "Clóset Detox",
       description:

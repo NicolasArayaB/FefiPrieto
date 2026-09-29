@@ -27,8 +27,12 @@ const {
     `button-link-${size}`,
   ]}
   href={href}
-  data-analytics-inquiry={href.startsWith("mailto:") ? "true" : undefined}
-  data-analytics-placement={href.startsWith("mailto:")
+  data-analytics-inquiry={href.startsWith("mailto:") ||
+  href.startsWith("https://wa.me/")
+    ? "true"
+    : undefined}
+  data-analytics-placement={href.startsWith("mailto:") ||
+  href.startsWith("https://wa.me/")
     ? analyticsPlacement
     : undefined}
 >

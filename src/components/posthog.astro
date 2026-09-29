@@ -77,10 +77,13 @@ const isDevelopment = import.meta.env.DEV;
 
     if (!target || !posthogClient) return;
 
-    const subject = new URL(target.href).searchParams.get("subject");
+    const url = new URL(target.href);
+    const subject = url.searchParams.get("subject");
+    const message = url.searchParams.get("text");
 
     posthogClient.capture("inquiry_cta_clicked", {
       placement: target.dataset.analyticsPlacement,
+      message,
       subject,
     });
   });

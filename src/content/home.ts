@@ -2,7 +2,10 @@ import type { HomeContent, HomeMetadata } from "@app-types/content";
 import authorityPortrait from "../assets/images/authority.webp";
 import heroImage from "../assets/images/editorial.webp";
 import individualServicesImage from "../assets/images/services.webp";
-import { individualInquiryHref } from "./contact";
+import {
+  individualInquiryHref,
+  individualInquiryWhatsAppHref,
+} from "./contact";
 import { services } from "./services";
 
 export const homeMetadata = {
@@ -19,7 +22,9 @@ export const homeContent = {
       "Una forma más consciente de habitar tu imagen, tu identidad y tu presencia.",
     primaryCta: {
       label: "Hablemos de tu proceso",
-      href: individualInquiryHref("Consulta individual"),
+      href: individualInquiryWhatsAppHref(
+        "Hola, Fernanda. Me gustaría conversar sobre mi proceso de asesoría de imagen y conocer cómo podemos comenzar.",
+      ),
     },
     image: {
       src: heroImage,
@@ -60,8 +65,10 @@ export const homeContent = {
     groupDescription:
       "Un proceso personal para que tu estilo sea una expresión más útil, segura y coherente de la persona que estás construyendo.",
     action: {
-      label: "Conversemos sobre tu proceso",
-      href: individualInquiryHref("Consulta individual"),
+      label: "Hablemos de tu proceso",
+      href: individualInquiryWhatsAppHref(
+        "Hola, Fernanda. Me gustaría conversar sobre mi proceso de asesoría de imagen y conocer cómo podemos comenzar.",
+      ),
     },
     image: {
       src: individualServicesImage,
