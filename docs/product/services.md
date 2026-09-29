@@ -8,93 +8,142 @@ Este documento define el catálogo de servicios individuales del MVP y su orient
 
 Cada servicio debe sentirse cercano, claro y seguro. La imagen se presenta como una herramienta de autoconocimiento y expresión: no como una regla estética, una tendencia ni una promesa de transformación instantánea.
 
-La escritura debe explicar con precisión qué se trabaja y qué recibe la clienta. Evitar precios, duración, modalidad, ubicación o resultados que no hayan sido confirmados.
-
-## Closet Detox
-
-### Resumen
-
-Haz espacio para una imagen que sí te represente. Revisamos tu clóset prenda por prenda para decidir qué conservar, qué dejar ir y cómo volver a aprovechar lo que ya tienes.
-
-### Qué trabajaremos
-
-Observaremos tu clóset desde tu vida real, tu estilo y la forma en que hoy quieres sentirte. El objetivo es que tus prendas vuelvan a ser una herramienta útil para vestirte con más claridad y menos ruido.
-
-### Qué incluye
-
-* Revisión prenda por prenda.
-* Definición de qué se queda, qué se va y qué puede volver a usarse.
-* Orden del clóset.
-* Armado de looks con las prendas que ya tienes.
-
-### Recomendación
-
-Para profundizar el proceso, puedes complementarlo con un análisis de Colorimetría o Asesoría de Imagen Básica.
+La escritura debe explicar con precisión qué se trabaja y qué recibe la clienta. Duración, valor y requisitos previos deben mostrarse cuando estén confirmados.
 
 ## Colorimetría
 
 ### Resumen
 
-Descubre los colores que acompañan tu energía y realzan tu belleza natural. Una guía para elegir con intención y sentirte más tú en lo que llevas.
+Descubre los colores que te benefician y aprende a comunicar a través de ellos.
 
 ### Qué trabajaremos
 
-Identificaremos tu paleta personal y la llevaremos a decisiones concretas: combinaciones que funcionan, accesorios, maquillaje y color de cabello que acompañan tu armonía natural.
+Determinaremos los colores que te benefician mediante drapeado de telas y los llevaremos a decisiones concretas de imagen.
 
 ### Qué incluye
 
-* Drapeado de telas.
-* Análisis de estación y subestación.
-* Psicología del color aplicada a tu imagen.
+* Drapeado de telas para determinar qué colores te benefician.
+* Psicología del color: cómo comunicar a través del color.
+* Guía de maquillaje, accesorios y colores de cabello.
 * Propuesta de combinaciones.
-* Guía para escoger accesorios, maquillaje y colores de cabello.
-* Informe personalizado.
+* Informe digital personalizado.
+
+### Duración y valor
+
+Duración: 1 hora. Valor: $49.900.
 
 ## Asesoría de Imagen Básica
 
 ### Resumen
 
-Entiende tu color y tu forma para elegir con más seguridad. Un análisis integral para reconocer las prendas, los cortes y los tonos que acompañan tu cuerpo y tu identidad.
+Entiende tu color y tu forma para elegir con más seguridad.
 
 ### Qué trabajaremos
 
-Uniremos la claridad de una paleta personal con el conocimiento de tu silueta. Veremos cómo usar color, escotes, cortes y estilos de una manera que se sienta propia y funcional.
+Analizaremos colorimetría, morfología y estilo personal para identificar los colores, cortes y decisiones que potencian tu imagen.
 
 ### Qué incluye
 
-* Análisis de estación y subestación.
-* Propuesta de combinaciones.
-* Guía para escoger accesorios, maquillaje y colores de cabello.
-* Estudio de morfología con recomendaciones de prendas, escotes, cortes y estilos.
-* Informe personalizado.
+* Análisis de colorimetría mediante drapeado de telas.
+* Estudio de morfología o tipo de cuerpo para definir los cortes que resaltarán tu silueta.
+* Estudio de estilo personal y cómo potenciarlo.
+* Informe personalizado digitalizado.
+* Videollamada para revisión de informe.
+
+Duración: 1 hora 30 min. Valor: $130.000.
 
 ## Asesoría de Imagen Full
 
 ### Resumen
 
-Un proceso para llevar tu imagen hacia donde quieres ir. Profundizamos en tu estilo personal para que vestirte sea una decisión más simple, auténtica y alineada contigo.
+Un proceso de dos sesiones para llevar tu imagen hacia donde quieres ir.
 
 ### Qué trabajaremos
 
-En dos sesiones conectaremos color, morfología, rostro y estilo personal. La idea no es que interpretes a alguien más, sino que tengas herramientas concretas para expresar con seguridad lo que ya eres y hacia dónde vas.
+Profundizaremos en colorimetría, morfología, visagismo y estilo personal para construir elecciones auténticas y prácticas.
 
 ### Qué incluye
 
-* Dos sesiones de una hora y media cada una.
+* Análisis de colorimetría mediante drapeado de telas.
+* Combinaciones de colores y psicología del color.
+* Estudio de morfología o tipo de cuerpo para definir los cortes que resaltarán tu silueta.
+* Visagismo para potenciar las facciones a través de accesorios.
+* Estudio de estilo personal y cómo potenciarlo.
+* Propuestas de looks.
+* Informe personalizado digitalizado.
+* Videollamada para revisión de informe.
+
+Duración: 2 sesiones de 1 hora 30 min. Valor: $180.000.
+
+## Colorimetría + Morfología
+
+### Resumen
+
+Un análisis de colorimetría y morfología para reconocer colores y cortes que acompañen tu imagen.
+
+### Qué trabajaremos
+
+Identificaremos los colores que te benefician y estudiaremos tu tipo de cuerpo para orientar las elecciones que realzan tu silueta.
+
+### Qué incluye
+
+* Análisis de colorimetría.
 * Estudio de morfología.
-* Profundización de colorimetría y su aplicación al vestuario.
-* Guía para escoger accesorios, maquillaje y colores de cabello.
-* Propuesta de combinaciones.
-* Visagismo para analizar el tipo de rostro y potenciar las facciones.
-* Informe digital personalizado con recomendaciones.
+
+Duración: 1 hora 20 min. Valor: $90.000.
+
+## Personal Shopper
+
+### Resumen
+
+Te acompaño a hacer compras inteligentes y a potenciar al máximo tu presupuesto.
+
+### Qué trabajaremos
+
+Recibirás orientación durante tus compras para elegir con intención y aprovechar mejor tu presupuesto.
+
+### Qué incluye
+
+* Acompañamiento para hacer compras inteligentes.
+* Orientación para potenciar al máximo tu presupuesto.
+
+### Requisito
+
+Pasar antes por una Colorimetría y Morfología Express.
+
+Valor: $30.000 por hora.
+
+## Clóset Detox
+
+### Resumen
+
+Te ayudo a ordenar, definir qué se queda y qué se va, y a sacarle partido a tu clóset.
+
+### Qué trabajaremos
+
+Revisaremos tu clóset para tomar decisiones claras sobre tus prendas y aprovechar mejor lo que ya tienes.
+
+### Qué incluye
+
+* Orden y revisión de tu clóset.
+* Definición de qué se queda y qué se va.
+* Orientación para sacarle partido a tu clóset.
+
+### Requisito
+
+Pasar antes por una Colorimetría y Morfología Express.
+
+Valor: $30.000 por hora.
 
 ## Nombres, navegación y CTA
 
 Usar de forma consistente estos nombres y rutas:
 
-* Closet Detox — `/servicios/closet-detox`
 * Colorimetría — `/servicios/colorimetria`
 * Asesoría de Imagen Básica — `/servicios/asesoria-de-imagen-basica`
 * Asesoría de Imagen Full — `/servicios/asesoria-de-imagen-full`
+* Colorimetría + Morfología — `/servicios/colorimetria-morfologia`
+* Personal Shopper — `/servicios/personal-shopper`
+* Clóset Detox — `/servicios/closet-detox`
 
 Las páginas deben usar el canal de contacto configurado en el sitio. Hasta que exista una herramienta de reservas confirmada, no deben prometer una reserva inmediata.

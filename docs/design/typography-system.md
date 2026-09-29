@@ -22,7 +22,7 @@ Inter is loaded with `font-display: swap`. Canela is a licensed typeface and is 
 | `type-heading-l` | Secondary section or modal titles. |
 | `type-heading-m` | Card and compact subsection titles. |
 | `type-lead` | Introductory paragraph immediately after a major heading. |
-| `type-body-l` | Large reading copy when deliberate emphasis is needed. |
+| `type-body-l` | Large reading copy when deliberate emphasis is needed; use it for a concise editorial introduction or value proposition. |
 | `type-body` | Default reading copy. |
 | `type-body-small` | Dense supporting content only. |
 | `type-caption` | Secondary metadata and supplementary context. |

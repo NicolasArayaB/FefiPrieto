@@ -36,6 +36,16 @@ const deliverablesId = `${service.slug}-deliverables`;
               {service.title}
             </h1>
             <p class="service-lead type-heading-m">{service.lead}</p>
+            <dl class="service-facts type-body-small">
+              <div>
+                <dt>Duración</dt>
+                <dd>{service.duration}</dd>
+              </div>
+              <div>
+                <dt>Valor</dt>
+                <dd>{service.price}</dd>
+              </div>
+            </dl>
           </div>
         </div>
       </Container>
@@ -50,23 +60,27 @@ const deliverablesId = `${service.slug}-deliverables`;
   >
     <Container size="content">
       <div class="service-overview">
-        <p class="service-description type-body-l">{service.description}</p>
+        <div class="service-details-intro">
+          <p class="service-description type-body-l">{service.description}</p>
+        </div>
         <svg
           class="service-botanical botanical-overview"
           viewBox="0 0 240 320"
           aria-hidden="true"
           ><g fill="none" stroke="currentColor" stroke-width="1.25"
-            ><path
-              d="M120 319C111 236 99 152 28 17M107 259C159 229 197 188 208 143C157 135 117 181 107 259ZM87 204C91 149 69 102 24 75C3 128 30 181 87 204ZM118 164C157 130 165 87 143 48C102 77 94 122 118 164ZM61 111C49 70 29 37 4 24"
+            ><path d="M124 320C122 265 111 206 94 149C80 96 64 55 48 16"
             ></path><path
-              d="M206 143C188 113 166 102 144 106M143 48C133 29 118 20 102 20M25 75C20 52 11 36 3 24"
+              d="M111 206C76 201 49 176 39 141C73 142 102 168 111 206Z"
+            ></path><path
+              d="M94 149C126 142 155 115 164 80C132 83 105 111 94 149Z"
+            ></path><path d="M72 77C48 56 37 28 39 0C68 9 84 42 72 77Z"
             ></path></g
           ></svg
         >
         <div class="service-details-layout">
           <header class="service-details-heading">
             <p class="type-eyebrow">Un proceso pensado para ti</p>
-            <h2 id={deliverablesId} class="type-heading-xl">
+            <h2 id={deliverablesId} class="type-display-l">
               {service.deliverablesLabel}
             </h2>
           </header>
@@ -85,16 +99,16 @@ const deliverablesId = `${service.slug}-deliverables`;
         </div>
 
         {
-          service.recommendation && (
+          service.requirement && (
             <aside
               class="service-recommendation"
-              aria-labelledby={`${service.slug}-recommendation`}
+              aria-labelledby={`${service.slug}-requirement`}
             >
-              <p class="type-eyebrow">Recomendación</p>
-              <h2 id={`${service.slug}-recommendation`} class="type-heading-m">
-                {service.recommendation.title}
+              <p class="type-eyebrow">Requisito previo</p>
+              <h2 id={`${service.slug}-requirement`} class="type-heading-m">
+                {service.requirement.title}
               </h2>
-              <p class="type-body">{service.recommendation.description}</p>
+              <p class="type-body">{service.requirement.description}</p>
             </aside>
           )
         }
@@ -115,14 +129,12 @@ const deliverablesId = `${service.slug}-deliverables`;
             viewBox="0 0 260 260"
             fill="none"
             aria-hidden="true"
-            ><path d="M36 242C74 159 116 80 230 22"></path><path
-              d="M84 173C49 159 35 127 41 98C77 104 95 134 84 173Z"></path><path
-              d="M124 117C96 84 101 51 124 29C154 51 153 87 124 117Z"
-            ></path><path d="M165 75C166 40 191 22 222 20C219 52 194 75 165 75Z"
-            ></path><circle cx="84" cy="173" r="5"></circle><circle
-              cx="124"
-              cy="117"
-              r="4"></circle></svg
+            ><path d="M38 246C72 184 114 117 214 24"></path><path
+              d="M75 190C45 181 27 151 31 119C63 124 84 155 75 190Z"
+            ></path><path
+              d="M106 133C86 107 91 72 118 47C144 72 137 109 106 133Z"
+            ></path><path d="M158 81C160 50 183 30 214 24C209 56 186 79 158 81Z"
+            ></path></svg
           >
         </div>
       </div>
@@ -162,13 +174,19 @@ const deliverablesId = `${service.slug}-deliverables`;
       .service-details-layout {
         display: grid;
         gap: var(--space-4xl);
-        grid-template-columns: minmax(0, 1.1fr) minmax(16rem, 0.9fr);
+        grid-template-columns: minmax(0, 0.9fr) minmax(16rem, 1.1fr);
+        margin-top: var(--space-4xl);
       }
 
-      .service-hero-intro,
-      .service-details-heading {
+      .service-hero-intro {
         display: grid;
         gap: var(--space-lg);
+      }
+
+      .service-details-heading {
+        align-self: center;
+        display: grid;
+        gap: var(--space-heading);
       }
 
       .service-hero h1,
@@ -185,6 +203,27 @@ const deliverablesId = `${service.slug}-deliverables`;
         max-width: 20ch;
       }
 
+      .service-facts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-md) var(--space-3xl);
+        margin: var(--space-sm) 0 0;
+      }
+
+      .service-facts div {
+        display: grid;
+        gap: var(--space-xs);
+      }
+
+      .service-facts dt {
+        color: var(--color-deep-indigo);
+        font-weight: 700;
+      }
+
+      .service-facts dd {
+        margin: 0;
+      }
+
       :global(.service-details) {
         background: var(--color-pure-white);
         overflow: hidden;
@@ -198,8 +237,15 @@ const deliverablesId = `${service.slug}-deliverables`;
         position: relative;
       }
 
+      .service-details-intro {
+        border-bottom: 1px solid var(--color-ink-black);
+        padding-bottom: var(--space-4xl);
+      }
+
       .service-description {
-        max-width: 42ch;
+        margin-inline: auto;
+        max-width: 52ch;
+        text-align: center;
       }
 
       .service-details-heading h2 {
@@ -266,21 +312,23 @@ const deliverablesId = `${service.slug}-deliverables`;
         pointer-events: none;
         position: absolute;
         stroke: currentColor;
+        stroke-linecap: round;
+        stroke-linejoin: round;
         stroke-width: 1.5;
         user-select: none;
         width: auto;
       }
 
       .botanical-overview {
-        right: 2rem;
-        top: 6rem;
-        width: 15rem;
+        right: calc(var(--space-xl) * -1);
+        top: calc(var(--space-2xl) * -1);
+        width: 8rem;
       }
 
       .botanical-action {
         bottom: calc(var(--space-lg) * -1);
-        left: min(39rem, calc(100vw - 17rem));
-        width: 12rem;
+        left: min(calc(60rem - var(--space-4xl)), calc(100vw - 29.375rem));
+        width: 10rem;
         color: var(--color-mint-sage);
       }
 
@@ -292,6 +340,7 @@ const deliverablesId = `${service.slug}-deliverables`;
         .service-details-layout {
           gap: var(--space-xl);
           grid-template-columns: 1fr;
+          margin-top: var(--space-3xl);
         }
 
         .service-hero-content {
@@ -318,15 +367,11 @@ const deliverablesId = `${service.slug}-deliverables`;
         }
 
         .botanical-overview {
-          right: 4rem;
-          top: 20rem;
-          width: 11rem;
+          display: none;
         }
 
         .botanical-action {
-          top: calc(var(--space-sm) * -1);
-          left: min(24rem, calc(100vw - 9rem));
-          width: 9rem;
+          display: none;
         }
       }
     </style>

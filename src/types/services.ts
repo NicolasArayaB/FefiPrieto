@@ -5,7 +5,7 @@ export interface ServiceMetadata {
   description: string;
 }
 
-export interface ServiceRecommendation {
+export interface ServiceRequirement {
   title: string;
   description: string;
 }
@@ -14,11 +14,13 @@ export interface ServiceDetail {
   slug: string;
   eyebrow: string;
   title: string;
+  duration: string;
+  price: string;
   lead: string;
   description: string;
   deliverablesLabel: string;
   deliverables: string[];
-  recommendation?: ServiceRecommendation;
+  requirement?: ServiceRequirement;
   action: ActionLink;
   metadata: ServiceMetadata;
 }
