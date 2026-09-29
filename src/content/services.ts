@@ -13,17 +13,18 @@ export const services = [
     slug: "colorimetria",
     eyebrow: "Acompañamiento uno a uno",
     title: "Colorimetría",
+    duration: "1 hora",
+    price: "$49.900",
     lead: "Colores que acompañan tu energía y tu forma de estar.",
     description:
       "Descubrimos la paleta que realza tu belleza natural y la convertimos en una herramienta concreta para elegir, combinar y expresarte con más seguridad.",
-    deliverablesLabel: "Qué recibirás",
+    deliverablesLabel: "Qué incluye",
     deliverables: [
-      "Drapeado de telas para observar los colores que iluminan y acompañan tu armonía natural.",
-      "Análisis de tu estación y subestación para identificar tu paleta personal con mayor precisión.",
-      "Una mirada a la psicología del color para comprender qué comunican los tonos y cómo usarlos a tu favor.",
-      "Propuestas de combinaciones que te ayuden a vestir con claridad en tu día a día.",
-      "Guía personalizada para escoger accesorios, maquillaje y colores de cabello.",
-      "Informe personalizado para que puedas volver a tu paleta y aplicarla con autonomía.",
+      "Drapeado de telas para determinar qué colores te benefician.",
+      "Psicología del color: cómo comunicar a través del color.",
+      "Guía de maquillaje, accesorios y colores de cabello.",
+      "Propuesta de combinaciones.",
+      "Informe digital personalizado.",
     ],
     action: contactAction("Consulta sobre Colorimetría"),
     metadata: {
@@ -33,46 +34,39 @@ export const services = [
     },
   },
   {
-    slug: "closet-detox",
+    slug: "colorimetria-morfologia",
     eyebrow: "Acompañamiento uno a uno",
-    title: "Closet Detox",
-    lead: "Haz espacio para una imagen que sí te represente.",
+    title: "Colorimetría + Morfología",
+    duration: "1 hora 20 min",
+    price: "$90.000",
+    lead: "Color y forma para elegir con mayor claridad.",
     description:
-      "Revisamos tu clóset prenda por prenda para reconocer qué te acompaña hoy, qué ya cumplió su ciclo y cómo volver a usar con intención lo que tienes.",
-    deliverablesLabel: "Qué incluye tu proceso",
-    deliverables: [
-      "Revisión consciente de cada prenda para definir qué se queda, qué se va y qué puede tomar un nuevo lugar en tu vida.",
-      "Criterios claros para optimizar tu clóset desde tu estilo, tus rutinas y la imagen que quieres construir.",
-      "Orden del clóset para que elegir qué usar vuelva a sentirse simple.",
-      "Armado de looks con prendas que ya tienes, para transformar claridad en decisiones cotidianas.",
-    ],
-    recommendation: {
-      title: "Para profundizar aún más",
-      description:
-        "Este servicio se complementa especialmente bien con Colorimetría o Asesoría de Imagen Básica: dos herramientas para reconocer por qué ciertas elecciones te hacen sentir más tú.",
-    },
-    action: contactAction("Consulta sobre Closet Detox"),
+      "Un encuentro para reconocer los colores que te benefician y los cortes que pueden acompañar mejor tu silueta.",
+    deliverablesLabel: "Qué incluye",
+    deliverables: ["Análisis de colorimetría.", "Estudio de morfología."],
+    action: contactAction("Consulta sobre Colorimetría + Morfología"),
     metadata: {
-      title: "Closet Detox",
+      title: "Colorimetría + Morfología",
       description:
-        "Revisa, ordena y vuelve a habitar tu clóset con intención a través de un proceso de asesoría de imagen personalizado.",
+        "Un análisis de colorimetría y morfología para reconocer colores y cortes que acompañen tu imagen.",
     },
   },
   {
     slug: "asesoria-de-imagen-basica",
     eyebrow: "Acompañamiento uno a uno",
     title: "Asesoría de Imagen Básica",
+    duration: "1 hora 30 min",
+    price: "$130.000",
     lead: "Entender tu color y tu forma para elegir con más seguridad.",
     description:
       "Un análisis integral para reconocer los colores, cortes y proporciones que acompañan tu cuerpo, tu identidad y la manera en que quieres estar presente.",
     deliverablesLabel: "Qué recibirás",
     deliverables: [
-      "Análisis de tu estación y subestación para conocer la paleta que mejor acompaña tu armonía natural.",
-      "Propuesta de combinaciones para llevar esa paleta a decisiones reales de vestuario.",
-      "Guía para escoger accesorios, maquillaje y colores de cabello desde tus propios rasgos.",
-      "Estudio de morfología para comprender la forma de tu cuerpo y las prendas que pueden potenciarla.",
-      "Recomendaciones de escotes, cortes y estilos que favorecen tu figura sin dejar de sentirse propios.",
-      "Informe personalizado que reúne tus hallazgos y próximos pasos.",
+      "Análisis de colorimetría a través del drapeado de telas para determinar qué colores te benefician.",
+      "Estudio de morfología o tipo de cuerpo para definir los cortes que resaltarán tu silueta.",
+      "Estudio de estilo personal y cómo potenciarlo.",
+      "Informe personalizado digitalizado.",
+      "Videollamada para revisar el informe.",
     ],
     action: contactAction("Consulta sobre Asesoría de Imagen Básica"),
     metadata: {
@@ -85,24 +79,81 @@ export const services = [
     slug: "asesoria-de-imagen-full",
     eyebrow: "Acompañamiento uno a uno",
     title: "Asesoría de Imagen Full",
+    duration: "2 sesiones de 1 hora 30 min",
+    price: "$180.000",
     lead: "Un proceso para llevar tu imagen hacia donde quieres ir.",
     description:
       "Dos sesiones para profundizar en tu estilo personal y traducir lo que descubres de ti en elecciones que se sientan auténticas, prácticas y sostenibles.",
     deliverablesLabel: "Qué incluye tu proceso",
     deliverables: [
-      "Dos sesiones de una hora y media para descubrir y potenciar tu estilo personal con tiempo y profundidad.",
-      "Estudio de morfología para identificar los cortes y estilos que mejor acompañan tu cuerpo.",
-      "Análisis profundo de colorimetría para reconocer tu paleta y aplicarla a tu vestuario.",
-      "Guía para escoger accesorios, maquillaje y colores de cabello de manera coherente con tu imagen.",
-      "Propuesta de combinaciones para que vestir bien se vuelva más simple y auténtico.",
-      "Visagismo para analizar tu tipo de rostro y potenciar tus facciones.",
-      "Informe digital personalizado con las recomendaciones de tu proceso.",
+      "Análisis de colorimetría a través del drapeado de telas para determinar qué colores te benefician.",
+      "Combinaciones de colores.",
+      "Psicología del color: cómo comunicar a través del color.",
+      "Estudio de morfología o tipo de cuerpo para definir los cortes que resaltarán tu silueta.",
+      "Visagismo para estudiar la forma de tu rostro y potenciar tus facciones mediante la elección de accesorios.",
+      "Estudio de estilo personal y cómo potenciarlo.",
+      "Propuestas de looks.",
+      "Informe personalizado digitalizado.",
+      "Videollamada para revisar el informe.",
     ],
     action: contactAction("Consulta sobre Asesoría de Imagen Full"),
     metadata: {
       title: "Asesoría de Imagen Full",
       description:
         "Un proceso integral de asesoría de imagen con colorimetría, morfología, visagismo y recomendaciones personalizadas.",
+    },
+  },
+  {
+    slug: "personal-shopper",
+    eyebrow: "Acompañamiento uno a uno",
+    title: "Personal Shopper",
+    duration: "Por hora",
+    price: "$30.000 por hora",
+    lead: "Compras inteligentes que aprovechan al máximo tu presupuesto.",
+    description:
+      "Te acompaño a hacer compras inteligentes y a potenciar al máximo tu presupuesto.",
+    deliverablesLabel: "Qué incluye",
+    deliverables: [
+      "Acompañamiento para hacer compras inteligentes.",
+      "Orientación para potenciar al máximo tu presupuesto.",
+    ],
+    requirement: {
+      title: "Antes de comenzar",
+      description:
+        "Es requisito realizar una Colorimetría y Morfología Express antes de este servicio.",
+    },
+    action: contactAction("Consulta sobre Personal Shopper"),
+    metadata: {
+      title: "Personal Shopper",
+      description:
+        "Acompañamiento para hacer compras inteligentes y aprovechar al máximo tu presupuesto.",
+    },
+  },
+  {
+    slug: "closet-detox",
+    eyebrow: "Acompañamiento uno a uno",
+    title: "Clóset Detox",
+    duration: "Por hora",
+    price: "$30.000 por hora",
+    lead: "Ordena tu clóset y sácale partido a lo que ya tienes.",
+    description:
+      "Te ayudo a ordenar, definir qué se queda y qué se va, y a sacarle partido a tu clóset.",
+    deliverablesLabel: "Qué incluye",
+    deliverables: [
+      "Orden y revisión de tu clóset.",
+      "Definición de las prendas que se quedan y las que se van.",
+      "Orientación para sacarle partido a tu clóset.",
+    ],
+    requirement: {
+      title: "Antes de comenzar",
+      description:
+        "Es requisito realizar una Colorimetría y Morfología Express antes de este servicio.",
+    },
+    action: contactAction("Consulta sobre Clóset Detox"),
+    metadata: {
+      title: "Clóset Detox",
+      description:
+        "Ordena tu clóset, define qué se queda y sácale partido a las prendas que ya tienes.",
     },
   },
 ] satisfies ServiceDetail[];
