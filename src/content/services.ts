@@ -66,7 +66,6 @@ export const services = [
       "Estudio de morfología o tipo de cuerpo para definir los cortes que resaltarán tu silueta.",
       "Estudio de estilo personal y cómo potenciarlo.",
       "Informe personalizado digitalizado.",
-      "Videollamada para revisar el informe.",
     ],
     action: contactAction("Consulta sobre Asesoría de Imagen Básica"),
     metadata: {
