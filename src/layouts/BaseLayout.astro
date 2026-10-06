@@ -250,6 +250,7 @@ const personStructuredData = {
   }
   @media (max-width: 48rem) {
     .site-navigation {
+      gap: var(--space-md);
       padding-block: var(--space-sm);
     }
     nav {
@@ -287,7 +288,7 @@ const personStructuredData = {
       min-width: 11rem;
       padding: var(--space-lg);
       position: absolute;
-      left: 0;
+      right: 0;
       top: calc(100% + var(--space-xs));
       z-index: 1;
     }
@@ -304,6 +305,13 @@ const personStructuredData = {
     }
     .site-navigation.is-scrolled nav {
       gap: var(--space-md);
+    }
+  }
+  @media (min-width: 390px) and (max-width: 48rem) {
+    .mobile-navigation nav {
+      left: 50%;
+      right: auto;
+      transform: translateX(-50%);
     }
   }
   @media (max-width: 389px) {
