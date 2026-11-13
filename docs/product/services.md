@@ -8,7 +8,7 @@ Este documento define el catálogo de servicios individuales del MVP y su orient
 
 Cada servicio debe sentirse cercano, claro y seguro. La imagen se presenta como una herramienta de autoconocimiento y expresión: no como una regla estética, una tendencia ni una promesa de transformación instantánea.
 
-La escritura debe explicar con precisión qué se trabaja y qué recibe la clienta. Duración, valor y requisitos previos deben mostrarse cuando estén confirmados.
+La escritura debe explicar con precisión qué se trabaja y qué recibe la clienta. La duración y los requisitos previos deben mostrarse cuando estén confirmados. Los precios no se publican en el sitio.
 
 ## Colorimetría
 
@@ -28,9 +28,9 @@ Determinaremos los colores que te benefician mediante drapeado de telas y los ll
 * Propuesta de combinaciones.
 * Informe digital personalizado.
 
-### Duración y valor
+### Duración
 
-Duración: 1 hora. Valor: $49.900.
+Duración: 1 hora.
 
 ## Asesoría de Imagen Básica
 
@@ -50,7 +50,7 @@ Analizaremos colorimetría, morfología y estilo personal para identificar los c
 * Informe personalizado digitalizado.
 * Videollamada para revisión de informe.
 
-Duración: 1 hora 30 min. Valor: $130.000.
+Duración: 1 hora 30 min.
 
 ## Asesoría de Imagen Full
 
@@ -73,7 +73,7 @@ Profundizaremos en colorimetría, morfología, visagismo y estilo personal para 
 * Informe personalizado digitalizado.
 * Videollamada para revisión de informe.
 
-Duración: 2 sesiones de 1 hora 30 min. Valor: $180.000.
+Duración: 2 sesiones de 1 hora 30 min.
 
 ## Colorimetría + Morfología
 
@@ -90,7 +90,7 @@ Identificaremos los colores que te benefician y estudiaremos tu tipo de cuerpo p
 * Análisis de colorimetría.
 * Estudio de morfología.
 
-Duración: 1 hora 20 min. Valor: $90.000.
+Duración: 1 hora 20 min.
 
 ## Personal Shopper
 
@@ -111,7 +111,7 @@ Recibirás orientación durante tus compras para elegir con intención y aprovec
 
 Pasar antes por una Colorimetría y Morfología Express.
 
-Valor: $30.000 por hora.
+Servicio: contratado por hora.
 
 ## Clóset Detox
 
@@ -133,7 +133,7 @@ Revisaremos tu clóset para tomar decisiones claras sobre tus prendas y aprovech
 
 Pasar antes por una Colorimetría y Morfología Express.
 
-Valor: $30.000 por hora.
+Servicio: contratado por hora.
 
 ## Nombres, navegación y CTA
 
