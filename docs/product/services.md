@@ -111,7 +111,7 @@ Recibirás orientación durante tus compras para elegir con intención y aprovec
 
 Pasar antes por una Colorimetría y Morfología Express.
 
-Duración: por hora.
+Servicio: contratado por hora.
 
 ## Clóset Detox
 
@@ -133,7 +133,7 @@ Revisaremos tu clóset para tomar decisiones claras sobre tus prendas y aprovech
 
 Pasar antes por una Colorimetría y Morfología Express.
 
-Duración: por hora.
+Servicio: contratado por hora.
 
 ## Nombres, navegación y CTA
 

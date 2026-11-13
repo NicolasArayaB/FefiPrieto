@@ -102,7 +102,7 @@ export const services = [
     slug: "personal-shopper",
     eyebrow: "Acompañamiento uno a uno",
     title: "Personal Shopper",
-    duration: "Por hora",
+    contracting: "contratado por hora",
     lead: "Compras inteligentes que aprovechan al máximo tu presupuesto.",
     description:
       "Te acompaño a hacer compras inteligentes y a potenciar al máximo tu presupuesto.",
@@ -127,7 +127,7 @@ export const services = [
     slug: "closet-detox",
     eyebrow: "Acompañamiento uno a uno",
     title: "Clóset Detox",
-    duration: "Por hora",
+    contracting: "contratado por hora",
     lead: "Ordena tu clóset y sácale partido a lo que ya tienes.",
     description:
       "Te ayudo a ordenar, definir qué se queda y qué se va, y a sacarle partido a tu clóset.",

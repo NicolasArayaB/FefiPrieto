@@ -37,10 +37,22 @@ const deliverablesId = `${service.slug}-deliverables`;
             </h1>
             <p class="service-lead type-heading-m">{service.lead}</p>
             <dl class="service-facts type-body-small">
-              <div>
-                <dt>Duración</dt>
-                <dd>{service.duration}</dd>
-              </div>
+              {
+                service.duration && (
+                  <div>
+                    <dt>Duración</dt>
+                    <dd>{service.duration}</dd>
+                  </div>
+                )
+              }
+              {
+                service.contracting && (
+                  <div>
+                    <dt>Servicio</dt>
+                    <dd>{service.contracting}</dd>
+                  </div>
+                )
+              }
             </dl>
           </div>
         </div>
