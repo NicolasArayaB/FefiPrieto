@@ -14,7 +14,6 @@ export const services = [
     eyebrow: "Acompañamiento uno a uno",
     title: "Colorimetría",
     duration: "1 hora",
-    price: "$49.900",
     lead: "Colores que acompañan tu energía y tu forma de estar.",
     description:
       "Descubrimos la paleta que realza tu belleza natural y la convertimos en una herramienta concreta para elegir, combinar y expresarte con más seguridad.",
@@ -38,7 +37,6 @@ export const services = [
     eyebrow: "Acompañamiento uno a uno",
     title: "Colorimetría + Morfología",
     duration: "1 hora 20 min",
-    price: "$90.000",
     lead: "Color y forma para elegir con mayor claridad.",
     description:
       "Un encuentro para reconocer los colores que te benefician y los cortes que pueden acompañar mejor tu silueta.",
@@ -56,7 +54,6 @@ export const services = [
     eyebrow: "Acompañamiento uno a uno",
     title: "Asesoría de Imagen Básica",
     duration: "1 hora 30 min",
-    price: "$130.000",
     lead: "Entender tu color y tu forma para elegir con más seguridad.",
     description:
       "Un análisis integral para reconocer los colores, cortes y proporciones que acompañan tu cuerpo, tu identidad y la manera en que quieres estar presente.",
@@ -80,7 +77,6 @@ export const services = [
     eyebrow: "Acompañamiento uno a uno",
     title: "Asesoría de Imagen Full",
     duration: "2 sesiones de 1 hora 30 min",
-    price: "$180.000",
     lead: "Un proceso para llevar tu imagen hacia donde quieres ir.",
     description:
       "Dos sesiones para profundizar en tu estilo personal y traducir lo que descubres de ti en elecciones que se sientan auténticas, prácticas y sostenibles.",
@@ -107,7 +103,6 @@ export const services = [
     eyebrow: "Acompañamiento uno a uno",
     title: "Personal Shopper",
     duration: "Por hora",
-    price: "$30.000 por hora",
     lead: "Compras inteligentes que aprovechan al máximo tu presupuesto.",
     description:
       "Te acompaño a hacer compras inteligentes y a potenciar al máximo tu presupuesto.",
@@ -133,7 +128,6 @@ export const services = [
     eyebrow: "Acompañamiento uno a uno",
     title: "Clóset Detox",
     duration: "Por hora",
-    price: "$30.000 por hora",
     lead: "Ordena tu clóset y sácale partido a lo que ya tienes.",
     description:
       "Te ayudo a ordenar, definir qué se queda y qué se va, y a sacarle partido a tu clóset.",

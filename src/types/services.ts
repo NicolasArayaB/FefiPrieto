@@ -15,7 +15,6 @@ export interface ServiceDetail {
   eyebrow: string;
   title: string;
   duration: string;
-  price: string;
   lead: string;
   description: string;
   deliverablesLabel: string;
