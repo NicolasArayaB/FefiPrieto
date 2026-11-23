@@ -1,0 +1,17 @@
+---
+import ServiceDetailSection from "@components/sections/ServiceDetailSection.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import type { ServiceDetail } from "@app-types/services";
+interface Props {
+  service: ServiceDetail;
+}
+const { service } = Astro.props;
+---
+
+<BaseLayout
+  pageId={service.id}
+  title={service.metadata.title}
+  description={service.metadata.description}
+>
+  <ServiceDetailSection service={service} />
+</BaseLayout>

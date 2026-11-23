@@ -121,6 +121,10 @@ AI workflow work:
 * [ai/commands.md](commands.md)
 * [ai/workflow.md](workflow.md)
 
+## Bilingual Website
+
+Spanish remains the default at existing URLs; English is available under `/en/`. Visitors can switch languages on the equivalent page. All site content, consent controls, contact messages, and metadata have Spanish and English versions. This scope was approved on 2026-11-23; see [ADR-006](../docs/architecture/decisions/ADR-006-native-bilingual-site.md).
+
 ## Out of MVP Scope
 
 Do not introduce these capabilities during MVP implementation:
@@ -137,7 +141,6 @@ Do not introduce these capabilities during MVP implementation:
 * Dashboards
 * Client portals
 * Complex admin panels
-* Multi-language support
 * Webinar platforms
 * AI-powered personalization
 * Mobile applications

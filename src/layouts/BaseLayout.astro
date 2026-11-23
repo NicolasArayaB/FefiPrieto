@@ -1,4 +1,8 @@
 ---
+import LanguageSwitcher from "@components/ui/LanguageSwitcher.astro";
+import { contentFor } from "@content/localized";
+import { ui } from "@content/ui";
+import { getLocale, pagePath, locales, type PageId } from "@lib/i18n";
 import { siteMetadata } from "@constants/site";
 import {
   individualInquiryEmail,
@@ -17,14 +21,18 @@ import "@styles/global.css";
 interface Props {
   title?: string;
   description?: string;
-  canonicalPath?: string;
+  pageId: PageId;
 }
 
+const locale = getLocale(Astro.currentLocale);
+const text = ui[locale];
+const { metadata } = contentFor(locale);
 const {
-  title = siteMetadata.title,
-  description = siteMetadata.description,
-  canonicalPath = Astro.url.pathname,
+  title = metadata.title,
+  description = metadata.description,
+  pageId,
 } = Astro.props;
+const canonicalPath = pagePath(pageId, locale);
 const pageTitle =
   title === siteMetadata.title ? title : `${title} | ${siteMetadata.title}`;
 const normalizedCanonicalPath =
@@ -39,19 +47,16 @@ const socialImageUrl = new URL(
   socialShareImage.src,
   siteMetadata.url,
 ).toString();
-const isHomePage = Astro.url.pathname === "/";
+const isHomePage = pageId === "home";
+const homePath = pagePath("home", locale);
 const personStructuredData = {
   "@context": "https://schema.org",
   "@type": "Person",
-  description: siteMetadata.description,
+  description: metadata.description,
   email: individualInquiryEmail,
   image: socialImageUrl,
-  jobTitle: "Psicóloga y asesora de imagen",
-  knowsAbout: [
-    "Psicología de la imagen",
-    "Asesoría de imagen",
-    "Identidad y presencia personal",
-  ],
+  jobTitle: text.jobTitle,
+  knowsAbout: text.knowsAbout,
   name: "Fernanda Prieto",
   sameAs: [instagramUrl],
   url: siteMetadata.url,
@@ -59,7 +64,7 @@ const personStructuredData = {
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={locale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -86,6 +91,23 @@ const personStructuredData = {
       crossorigin
     />
     <link rel="canonical" href={canonicalUrl} />
+    {
+      locales.map((language) => (
+        <link
+          rel="alternate"
+          hreflang={language}
+          href={new URL(
+            pagePath(pageId, language),
+            siteMetadata.url,
+          ).toString()}
+        />
+      ))
+    }
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href={new URL(pagePath(pageId, "es"), siteMetadata.url).toString()}
+    />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta property="og:title" content={pageTitle} />
@@ -93,21 +115,15 @@ const personStructuredData = {
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:image" content={socialImageUrl} />
-    <meta
-      property="og:image:alt"
-      content="Fernanda Prieto, psicología e imagen"
-    />
+    <meta property="og:image:alt" content={text.socialImage} />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:width" content="1200" />
-    <meta property="og:locale" content="es_CL" />
+    <meta property="og:locale" content={locale === "es" ? "es_CL" : "en_US"} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImageUrl} />
-    <meta
-      name="twitter:image:alt"
-      content="Fernanda Prieto, psicología e imagen"
-    />
+    <meta name="twitter:image:alt" content={text.socialImage} />
     <title>{pageTitle}</title>
     <script
       is:inline
@@ -122,31 +138,42 @@ const personStructuredData = {
       data-homepage={isHomePage ? "true" : "false"}
       data-site-navigation
     >
-      <a class="site-wordmark" href="/" aria-label="Fernanda Prieto, inicio"
+      <a class="site-wordmark" href={homePath} aria-label={text.home}
         >FERNANDA PRIETO</a
       >
-      <nav aria-label="Navegación principal">
-        <a href="#methodology">Método</a>
-        <a href="#services">Servicios</a>
-        <a href="#about">Sobre Fernanda</a>
+      <nav aria-label={text.mainNav}>
+        <a href={isHomePage ? "#methodology" : `${homePath}#methodology`}
+          >{text.method}</a
+        >
+        <a href={isHomePage ? "#services" : `${homePath}#services`}
+          >{text.services}</a
+        >
+        <a href={isHomePage ? "#about" : `${homePath}#about`}>{text.about}</a>
       </nav>
       {
         isHomePage && (
           <details class="mobile-navigation">
-            <summary class="type-caption">Menú</summary>
-            <nav aria-label="Navegación móvil">
-              <a href="#methodology">Método</a>
-              <a href="#services">Servicios</a>
-              <a href="#about">Sobre Fernanda</a>
+            <summary class="type-caption">{text.menu}</summary>
+            <nav aria-label={text.mobileNav}>
+              <a href={isHomePage ? "#methodology" : `${homePath}#methodology`}>
+                {text.method}
+              </a>
+              <a href={isHomePage ? "#services" : `${homePath}#services`}>
+                {text.services}
+              </a>
+              <a href={isHomePage ? "#about" : `${homePath}#about`}>
+                {text.about}
+              </a>
             </nav>
           </details>
         )
       }
+      <LanguageSwitcher locale={locale} pageId={pageId} />
       <a
         class="navigation-cta"
-        href={individualInquiryHref("Consulta individual")}
+        href={individualInquiryHref(text.inquiry)}
         data-analytics-inquiry
-        data-analytics-placement="navigation">Conversemos</a
+        data-analytics-placement="navigation">{text.talk}</a
       >
     </header>
     <slot />
@@ -165,7 +192,8 @@ const personStructuredData = {
     align-items: center;
     background: var(--color-cream-paper);
     display: flex;
-    gap: var(--space-xl);
+    gap: var(--space-md);
+    color: var(--color-deep-indigo);
     justify-content: space-between;
     left: 0;
     padding: var(--space-md) var(--space-page);
@@ -187,7 +215,7 @@ const personStructuredData = {
   }
   nav {
     display: flex;
-    gap: var(--space-2xl);
+    gap: var(--space-xl);
   }
   nav a {
     color: var(--color-deep-indigo);
@@ -209,11 +237,18 @@ const personStructuredData = {
   .mobile-navigation {
     display: none;
   }
+  .site-navigation[data-homepage="true"]:not(.is-scrolled) .navigation-cta {
+    display: none;
+  }
+  .site-navigation.is-scrolled :global(.language-switcher) {
+    display: none;
+  }
   .site-navigation[data-homepage="false"] > nav {
     display: none;
   }
   .site-navigation.is-scrolled {
     background: var(--color-deep-indigo);
+    color: var(--color-pure-white);
     border-radius: var(--radius-control);
     box-shadow: var(--shadow-xl);
     left: 50%;
@@ -238,9 +273,9 @@ const personStructuredData = {
     white-space: nowrap;
   }
   .site-navigation[data-homepage="false"].is-scrolled {
-    background: transparent;
+    background: var(--color-deep-indigo);
     box-shadow: none;
-    padding: 0;
+    padding: var(--space-sm) var(--space-md);
   }
   .site-navigation[data-homepage="false"].is-scrolled nav {
     display: none;
@@ -250,7 +285,14 @@ const personStructuredData = {
   }
   @media (max-width: 48rem) {
     .site-navigation {
+      flex-wrap: wrap;
+      column-gap: var(--space-sm);
+      row-gap: 0;
       padding-block: var(--space-sm);
+    }
+    .site-wordmark {
+      flex-basis: 100%;
+      font-size: 28px;
     }
     nav {
       display: none;
@@ -268,11 +310,12 @@ const personStructuredData = {
       display: flex;
       height: var(--target-size);
       justify-content: center;
-      list-style: none;
-      width: var(--target-size);
+      list-style: disclosure-closed;
+      min-width: var(--target-size);
+      padding-inline: var(--space-sm);
     }
-    .mobile-navigation summary::-webkit-details-marker {
-      display: none;
+    .mobile-navigation summary::after {
+      content: " ▾";
     }
     .mobile-navigation[open] summary {
       background: var(--color-deep-indigo);
@@ -302,7 +345,13 @@ const personStructuredData = {
       max-width: calc(100% - var(--space-page) - var(--space-page));
       padding-inline: var(--space-lg);
     }
+    .site-navigation.is-scrolled {
+      justify-content: center;
+      width: max-content;
+    }
     .site-navigation.is-scrolled nav {
+      flex-wrap: wrap;
+      justify-content: center;
       gap: var(--space-md);
     }
   }

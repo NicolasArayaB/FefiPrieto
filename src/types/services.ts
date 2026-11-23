@@ -1,3 +1,4 @@
+import type { ServiceId } from "@lib/i18n";
 import type { ActionLink } from "@app-types/content";
 
 export interface ServiceMetadata {
@@ -11,6 +12,7 @@ export interface ServiceRequirement {
 }
 
 export interface ServiceDetail {
+  id: ServiceId;
   slug: string;
   eyebrow: string;
   title: string;

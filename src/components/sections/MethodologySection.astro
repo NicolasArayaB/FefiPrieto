@@ -1,7 +1,11 @@
 ---
+import { ui } from "@content/ui";
+import { getLocale } from "@lib/i18n";
 import Container from "@components/ui/Container.astro";
 import Section from "@components/ui/Section.astro";
 import type { MethodologyContent } from "@app-types/content";
+
+const text = ui[getLocale(Astro.currentLocale)];
 
 interface Props {
   content: MethodologyContent;
@@ -35,7 +39,7 @@ const { content } = Astro.props;
         <h2 id="methodology-title" class="type-display-m">{content.title}</h2>
       </div>
       <div class="methodology-summary">
-        <p class="methodology-script">De adentro hacia afuera.</p>
+        <p class="methodology-script">{text.methodTagline}</p>
         <p class="methodology-description type-body">{content.description}</p>
       </div>
     </header>
@@ -49,7 +53,7 @@ const { content } = Astro.props;
             </p>
             <div class="methodology-stage-copy">
               <p class="methodology-stage-label type-eyebrow">
-                Etapa {String(index + 1).padStart(2, "0")}
+                {text.stage} {String(index + 1).padStart(2, "0")}
               </p>
               <h3 class="type-heading-l">{stage.title}</h3>
               <p class="methodology-stage-description type-body-small">

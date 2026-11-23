@@ -1,7 +1,11 @@
 ---
+import { ui } from "@content/ui";
+import { getLocale } from "@lib/i18n";
 import Container from "@components/ui/Container.astro";
 import Section from "@components/ui/Section.astro";
 import type { LegalDocument } from "@content/legal";
+
+const text = ui[getLocale(Astro.currentLocale)];
 
 interface Props {
   document: LegalDocument;
@@ -19,21 +23,22 @@ const { document } = Astro.props;
   >
     <Container size="reading">
       <header class="legal-document-header">
-        <p class="type-eyebrow">Información legal</p>
+        <p class="type-eyebrow">{text.legal}</p>
         <h1 id="legal-document-title" class="type-display-l">
           {document.title}
         </h1>
         <p class="legal-document-intro type-lead">{document.intro}</p>
         <p class="legal-document-date type-caption">
-          Última actualización: {document.updatedAt}
+          {text.updated}
+          {document.updatedAt}
         </p>
       </header>
 
       <div class="legal-document-content">
         {
-          document.sections.map((section) => (
-            <section aria-labelledby={`legal-${section.title}`}>
-              <h2 id={`legal-${section.title}`} class="type-heading-l">
+          document.sections.map((section, index) => (
+            <section aria-labelledby={`legal-section-${index}`}>
+              <h2 id={`legal-section-${index}`} class="type-heading-l">
                 {section.title}
               </h2>
               {section.paragraphs.map((paragraph) => (

@@ -26,6 +26,10 @@ Avoid embedding long business copy or service definitions directly inside compon
 
 Detailed implementation conventions are defined in [frontend-conventions.md](frontend-conventions.md).
 
+## Internationalization
+
+Use native Astro i18n and static routes, preserving unprefixed Spanish URLs and placing English under `/en/`. Thin routes reuse templates in `src/components/pages/`. `src/lib/i18n.ts` maps stable page identities to both language URLs, including translated service slugs. Components read `Astro.currentLocale`; the URL is authoritative. See [ADR-006](decisions/ADR-006-native-bilingual-site.md) for routing, SEO, and content conventions.
+
 ## State Management
 
 Use Zustand only where state is meaningfully shared or persistent across components.

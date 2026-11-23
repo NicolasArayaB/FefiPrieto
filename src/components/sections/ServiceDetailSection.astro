@@ -1,10 +1,14 @@
 ---
+import { ui } from "@content/ui";
+import { getLocale } from "@lib/i18n";
 import { Image } from "astro:assets";
 import ButtonLink from "@components/ui/ButtonLink.astro";
 import Container from "@components/ui/Container.astro";
 import Section from "@components/ui/Section.astro";
 import type { ServiceDetail } from "@app-types/services";
 import serviceDetailHero from "../../assets/images/service-detail-hero.png";
+
+const text = ui[getLocale(Astro.currentLocale)];
 
 interface Props {
   service: ServiceDetail;
@@ -24,7 +28,7 @@ const deliverablesId = `${service.slug}-deliverables`;
     <div class="service-hero-media">
       <Image
         src={serviceDetailHero}
-        alt="Paleta de color, telas, un lirio rosado y un espejo en una composición editorial."
+        alt={text.serviceImage}
         loading="eager"
         decoding="async"
       />
@@ -38,11 +42,11 @@ const deliverablesId = `${service.slug}-deliverables`;
             <p class="service-lead type-heading-m">{service.lead}</p>
             <dl class="service-facts type-body-small">
               <div>
-                <dt>Duración</dt>
+                <dt>{text.duration}</dt>
                 <dd>{service.duration}</dd>
               </div>
               <div>
-                <dt>Valor</dt>
+                <dt>{text.price}</dt>
                 <dd>{service.price}</dd>
               </div>
             </dl>
@@ -79,7 +83,7 @@ const deliverablesId = `${service.slug}-deliverables`;
         >
         <div class="service-details-layout">
           <header class="service-details-heading">
-            <p class="type-eyebrow">Un proceso pensado para ti</p>
+            <p class="type-eyebrow">{text.process}</p>
             <h2 id={deliverablesId} class="type-display-l">
               {service.deliverablesLabel}
             </h2>
@@ -104,7 +108,7 @@ const deliverablesId = `${service.slug}-deliverables`;
               class="service-recommendation"
               aria-labelledby={`${service.slug}-requirement`}
             >
-              <p class="type-eyebrow">Requisito previo</p>
+              <p class="type-eyebrow">{text.prerequisite}</p>
               <h2 id={`${service.slug}-requirement`} class="type-heading-m">
                 {service.requirement.title}
               </h2>
@@ -113,11 +117,10 @@ const deliverablesId = `${service.slug}-deliverables`;
           )
         }
 
-        <div class="service-action" aria-label="Contacto">
-          <p class="type-heading-m">¿Quieres comenzar?</p>
+        <div class="service-action" aria-label={text.contact}>
+          <p class="type-heading-m">{text.ready}</p>
           <p class="type-body">
-            Conversemos sobre el servicio que puede acompañarte mejor en este
-            momento.
+            {text.serviceContact}
           </p>
           <ButtonLink
             {...service.action}

@@ -48,6 +48,7 @@ What tradeoffs, constraints, or follow-up work result from this decision?
 * [ADR-003: Content-Driven Architecture](ADR-003-content-driven-architecture.md)
 * [ADR-004: Animation Isolation Pattern](ADR-004-animation-isolation-pattern.md)
 * [ADR-005: State Management Strategy](ADR-005-state-management-strategy.md)
+* [ADR-006: Native Bilingual Site](ADR-006-native-bilingual-site.md)
 
 ## Missing Information / Clarifications
 

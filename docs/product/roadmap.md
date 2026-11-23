@@ -26,6 +26,7 @@ The MVP should support:
 * Service exploration.
 * Trust-building content.
 * Performance-focused responsive experience.
+* Spanish and English versions of all pages, with Spanish as the default and English under `/en/` (approved 2026-11-23).
 
 ## Explicitly Out of MVP Scope
 
@@ -43,7 +44,6 @@ Do not introduce:
 * Dashboards
 * Client portals
 * Complex admin panels
-* Multi-language support
 * Webinar platforms
 * AI-powered personalization
 * Mobile applications

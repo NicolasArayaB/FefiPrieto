@@ -10,6 +10,7 @@ function contactAction(subject: string) {
 
 export const services = [
   {
+    id: "colorimetria",
     slug: "colorimetria",
     eyebrow: "Acompañamiento uno a uno",
     title: "Colorimetría",
@@ -34,6 +35,7 @@ export const services = [
     },
   },
   {
+    id: "colorimetria-morfologia",
     slug: "colorimetria-morfologia",
     eyebrow: "Acompañamiento uno a uno",
     title: "Colorimetría + Morfología",
@@ -52,6 +54,7 @@ export const services = [
     },
   },
   {
+    id: "asesoria-de-imagen-basica",
     slug: "asesoria-de-imagen-basica",
     eyebrow: "Acompañamiento uno a uno",
     title: "Asesoría de Imagen Básica",
@@ -76,6 +79,7 @@ export const services = [
     },
   },
   {
+    id: "asesoria-de-imagen-full",
     slug: "asesoria-de-imagen-full",
     eyebrow: "Acompañamiento uno a uno",
     title: "Asesoría de Imagen Full",
@@ -103,6 +107,7 @@ export const services = [
     },
   },
   {
+    id: "personal-shopper",
     slug: "personal-shopper",
     eyebrow: "Acompañamiento uno a uno",
     title: "Personal Shopper",
@@ -129,6 +134,7 @@ export const services = [
     },
   },
   {
+    id: "closet-detox",
     slug: "closet-detox",
     eyebrow: "Acompañamiento uno a uno",
     title: "Clóset Detox",

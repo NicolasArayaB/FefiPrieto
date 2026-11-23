@@ -1,7 +1,11 @@
 ---
+import { ui } from "@content/ui";
+import { getLocale } from "@lib/i18n";
 import Container from "@components/ui/Container.astro";
 import Section from "@components/ui/Section.astro";
 import type { Testimonial, TestimonialsContent } from "@app-types/content";
+
+const text = ui[getLocale(Astro.currentLocale)];
 
 interface Props {
   content: TestimonialsContent;
@@ -28,7 +32,7 @@ const testimonialCards = testimonials.map((testimonial, index) => ({
         <h2 id="testimonials-title" class="type-display-m">{content.title}</h2>
       </div>
       <div class="testimonials-intro-copy">
-        <p class="testimonials-script">Lo que cambia cuando te reconoces.</p>
+        <p class="testimonials-script">{text.testimonialsTagline}</p>
         <p class="testimonials-description type-body">{content.description}</p>
       </div>
     </header>
