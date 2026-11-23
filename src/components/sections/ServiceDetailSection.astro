@@ -41,14 +41,22 @@ const deliverablesId = `${service.slug}-deliverables`;
             </h1>
             <p class="service-lead type-heading-m">{service.lead}</p>
             <dl class="service-facts type-body-small">
-              <div>
-                <dt>{text.duration}</dt>
-                <dd>{service.duration}</dd>
-              </div>
-              <div>
-                <dt>{text.price}</dt>
-                <dd>{service.price}</dd>
-              </div>
+              {
+                service.duration && (
+                  <div>
+                    <dt>{text.duration}</dt>
+                    <dd>{service.duration}</dd>
+                  </div>
+                )
+              }
+              {
+                service.contracting && (
+                  <div>
+                    <dt>{text.price}</dt>
+                    <dd>{service.contracting}</dd>
+                  </div>
+                )
+              }
             </dl>
           </div>
         </div>
@@ -338,6 +346,19 @@ const deliverablesId = `${service.slug}-deliverables`;
       @media (max-width: 48rem) {
         :global(.section.service-hero) {
           --service-hero-min-block: 34rem;
+        }
+
+        .service-facts {
+          background: var(--color-surface);
+          color: var(--color-text);
+          gap: var(--space-sm) var(--space-xl);
+          justify-self: start;
+          padding: var(--space-sm) var(--space-md);
+          width: fit-content;
+        }
+
+        .service-facts dt {
+          color: var(--color-text-muted);
         }
 
         .service-details-layout {

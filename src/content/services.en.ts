@@ -138,7 +138,7 @@ export const services: ServiceDetail[] = spanishServices.map((service) => ({
   ...translations[service.id],
   slug: serviceSlugs[service.id].en,
   eyebrow: "One-to-one guidance",
-  price: `CLP ${service.price.replaceAll(".", ",").replace(" por hora", " per hour")}`,
+  price: `CLP ${service.contracting?.replaceAll(".", ",").replace(" por hora", " per hour")}`,
   action: {
     label: "Book here",
     href: individualInquiryWhatsAppHref(
