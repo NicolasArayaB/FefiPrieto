@@ -1,9 +1,13 @@
 ---
+import { ui } from "@content/ui";
+import { getLocale } from "@lib/i18n";
 import { Image } from "astro:assets";
 import ButtonLink from "@components/ui/ButtonLink.astro";
 import Container from "@components/ui/Container.astro";
 import Section from "@components/ui/Section.astro";
 import type { ServicesContent } from "@app-types/content";
+
+const text = ui[getLocale(Astro.currentLocale)];
 
 interface Props {
   content: ServicesContent;
@@ -32,7 +36,7 @@ const { content } = Astro.props;
       <div class="services-heading-row">
         <h2 id="services-title" class="type-display-m">{content.title}</h2>
         <div class="services-intro-copy">
-          <p class="services-script">La presencia se construye.</p>
+          <p class="services-script">{text.servicesTagline}</p>
           <p class="services-description type-body">{content.description}</p>
         </div>
       </div>
@@ -72,10 +76,7 @@ const { content } = Astro.props;
           )
         }
       </div>
-      <ol
-        class="individual-service-list"
-        aria-label="Servicios de asesoría de imagen"
-      >
+      <ol class="individual-service-list" aria-label={text.servicesLabel}>
         {
           content.services.map((service, index) => (
             <li>

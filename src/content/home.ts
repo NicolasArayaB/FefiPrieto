@@ -4,6 +4,7 @@ import heroImage from "../assets/images/editorial.webp";
 import individualServicesImage from "../assets/images/services.webp";
 import { individualInquiryWhatsAppHref } from "./contact";
 import { services } from "./services";
+import { pagePath } from "@lib/i18n";
 
 export const homeMetadata = {
   title: "Fernanda Prieto",
@@ -74,7 +75,7 @@ export const homeContent = {
     services: services.map((service) => ({
       title: service.title,
       description: service.lead,
-      href: `/servicios/${service.slug}`,
+      href: pagePath(service.id, "es"),
       entryLabel: "Conocer el servicio",
     })),
   },

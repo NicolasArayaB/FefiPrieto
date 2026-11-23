@@ -1,0 +1,28 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import AuthoritySection from "@components/sections/AuthoritySection.astro";
+import HeroSection from "@components/sections/HeroSection.astro";
+import MethodologySection from "@components/sections/MethodologySection.astro";
+import ServicesSection from "@components/sections/ServicesSection.astro";
+// import TestimonialsSection from "@components/sections/TestimonialsSection.astro";
+import { contentFor } from "@content/localized";
+import { getLocale } from "@lib/i18n";
+const locale = getLocale(Astro.currentLocale);
+const { home: homeContent, metadata } = contentFor(locale);
+
+const { authority, hero, methodology, services } = homeContent;
+---
+
+<BaseLayout
+  pageId="home"
+  title={metadata.title}
+  description={metadata.description}
+>
+  <main class="home-shell">
+    <HeroSection content={hero} />
+    <MethodologySection content={methodology} />
+    <ServicesSection content={services} />
+    <!-- <TestimonialsSection content={testimonials} /> -->
+    <AuthoritySection content={authority} />
+  </main>
+</BaseLayout>

@@ -1,0 +1,46 @@
+---
+import { locales, pagePath, type Locale, type PageId } from "@lib/i18n";
+import { ui } from "@content/ui";
+interface Props {
+  locale: Locale;
+  pageId: PageId;
+}
+const { locale, pageId } = Astro.props;
+---
+
+<div class="language-switcher" role="group" aria-label={ui[locale].languageNav}>
+  {
+    locales.map((language) => (
+      <a
+        href={pagePath(pageId, language)}
+        lang={language}
+        hreflang={language}
+        aria-current={language === locale ? "true" : undefined}
+      >
+        {language === "es" ? "Español" : "English"}
+      </a>
+    ))
+  }
+</div>
+<style>
+  .language-switcher {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  a {
+    align-items: center;
+    color: inherit;
+    display: inline-flex;
+    font: var(--type-caption);
+    min-height: var(--target-size);
+    padding-inline: 0.25rem;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  a[aria-current] {
+    text-decoration: underline;
+    text-underline-offset: 0.3em;
+    font-weight: 700;
+  }
+</style>

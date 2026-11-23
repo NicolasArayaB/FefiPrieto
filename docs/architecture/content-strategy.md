@@ -52,6 +52,10 @@ Example responsibilities:
 * `src/content/*.ts` exports typed content objects.
 * Astro and React components consume content through props or imports, but should not become the source of business definitions.
 
+## Language Versions
+
+Spanish content remains in the existing modules. English content lives in sibling `*.en.ts` modules using the same contracts; `localized.ts` selects the content for a locale. Interface strings live in `ui.ts`. Keep service identities and shared facts independent of translated text. Translate accessible labels, legal copy, metadata, and contact subjects/messages alongside visible page content. See [ADR-006](decisions/ADR-006-native-bilingual-site.md).
+
 ## Content Tone
 
 Content should be:

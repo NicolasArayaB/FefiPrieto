@@ -1,4 +1,8 @@
 ---
+import { ui } from "@content/ui";
+import { getLocale, pagePath } from "@lib/i18n";
+const locale = getLocale(Astro.currentLocale);
+const text = ui[locale];
 import { instagramUrl } from "@content/contact";
 ---
 
@@ -6,17 +10,16 @@ import { instagramUrl } from "@content/contact";
   <div class="site-footer-content">
     <a
       class="site-footer-wordmark"
-      href="/"
-      aria-label="Fernanda Prieto, inicio">FERNANDA PRIETO</a
+      href={pagePath("home", locale)}
+      aria-label={text.home}>FERNANDA PRIETO</a
     >
-    <nav class="site-footer-links" aria-label="Pie de página">
+    <nav class="site-footer-links" aria-label={text.footer}>
       <a href={instagramUrl} target="_blank" rel="noreferrer"
         >Instagram <span aria-hidden="true">↗</span></a
       >
-      <a href="/politica-de-privacidad">Política de privacidad</a>
-      <a href="/terminos-y-condiciones">Términos</a>
-      <button type="button" data-manage-analytics-consent
-        >Gestionar cookies</button
+      <a href={pagePath("privacy", locale)}>{text.privacy}</a>
+      <a href={pagePath("terms", locale)}>{text.terms}</a>
+      <button type="button" data-manage-analytics-consent>{text.cookies}</button
       >
     </nav>
     <p class="site-footer-copyright type-caption">

@@ -1,9 +1,13 @@
 ---
+import { ui } from "@content/ui";
+import { getLocale } from "@lib/i18n";
 import { Image } from "astro:assets";
 import ButtonLink from "@components/ui/ButtonLink.astro";
 import Container from "@components/ui/Container.astro";
 import Section from "@components/ui/Section.astro";
 import type { HeroContent } from "@app-types/content";
+
+const text = ui[getLocale(Astro.currentLocale)];
 
 interface Props {
   content: HeroContent;
@@ -17,7 +21,7 @@ const { content } = Astro.props;
       <div class="hero-copy">
         <p class="eyebrow type-eyebrow">{content.eyebrow}</p>
         <h1 id="hero-title" class="type-display-xl">{content.title}</h1>
-        <p class="hero-tagline">La imagen empieza por dentro.</p>
+        <p class="hero-tagline">{text.heroTagline}</p>
         <p class="hero-description type-lead">{content.description}</p>
         <div class="hero-actions">
           <ButtonLink
@@ -26,7 +30,7 @@ const { content } = Astro.props;
             variant="primary"
           />
         </div>
-        <a class="scroll-indicator" href="#hero" aria-label="Volver al inicio"
+        <a class="scroll-indicator" href="#hero" aria-label={text.backToTop}
           >⌃</a
         >
       </div>

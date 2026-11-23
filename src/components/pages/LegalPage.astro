@@ -1,0 +1,19 @@
+---
+import LegalDocumentSection from "@components/sections/LegalDocumentSection.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { contentFor } from "@content/localized";
+import { getLocale } from "@lib/i18n";
+interface Props {
+  pageId: "privacy" | "terms";
+}
+const { pageId } = Astro.props;
+const document = contentFor(getLocale(Astro.currentLocale))[pageId];
+---
+
+<BaseLayout
+  pageId={pageId}
+  title={document.title}
+  description={document.description}
+>
+  <LegalDocumentSection document={document} />
+</BaseLayout>
