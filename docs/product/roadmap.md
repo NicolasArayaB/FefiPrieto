@@ -21,7 +21,6 @@ The MVP should support:
 
 * Premium brand storytelling.
 * Clear explanation of image psychology.
-* Corporate lead generation.
 * Individual booking generation.
 * Service exploration.
 * Trust-building content.
@@ -60,17 +59,11 @@ Phase 2 may include:
 
 These should be added only after MVP learning shows they support authority, trust, or conversion.
 
-## Phase 3 Candidates
+## Later-Phase Candidates
 
-Phase 3 may include:
+CRM integrations may be considered if individual inquiry volume and follow-up needs justify them.
 
-* Corporate landing pages
-* Workshop catalog
-* Corporate inquiry workflows
-* CRM integrations
-* Corporate case studies
-
-These should be added only after corporate demand and sales workflow requirements are clearer.
+Corporate services are not currently offered. Corporate landing pages, workshop catalogs, inquiry workflows, and case studies are not part of the current roadmap. Any future corporate offering requires a separate business decision before product work begins.
 
 ## Roadmap Rule
 

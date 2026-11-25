@@ -1,5 +1,9 @@
 # Services Prototype Notes
 
+## Status
+
+This document records a historical prototype with Corporate and Individual chapters. Its corporate offerings and conversion hierarchy are superseded: corporate services are not currently offered. Use [../product/audience.md](../product/audience.md), [../product/services.md](../product/services.md), and [../business/goals.md](../business/goals.md) for current audience, service, and conversion guidance. The notes below preserve the earlier visual exploration rather than define the current offering.
+
 ## Purpose
 
 The refined Services prototype tests a vertically sequenced editorial composition for transactional content. The working service definitions and mailto links are prototype-only; the section validates the relationship between hierarchy, imagery, conversion, and visual restraint.

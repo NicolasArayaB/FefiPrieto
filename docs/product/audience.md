@@ -2,73 +2,42 @@
 
 ## Purpose
 
-This document defines the primary and secondary audiences for the Fernanda Prieto platform so product, content, design, and conversion decisions remain focused.
-
-## Initial Content
+This document defines the audience for the Fernanda Prieto platform so product, content, design, and conversion decisions remain focused.
 
 ## Primary Audience
 
-The primary audience is corporate decision-makers who can evaluate and purchase workshops, executive presence programs, and corporate training services.
+The primary audience is individuals seeking personal image consulting, primarily women around ages 30–50.
 
-This includes:
+The website should help them understand image consulting as a tool for self-awareness, confidence, identity alignment, and personal expression. Messaging should connect these benefits to their everyday lives and personal goals.
 
-* HR leaders
-* Organizational development professionals
-* Talent management teams
-* Executives
-* Founders
-* Business owners
-* Leadership teams
-
-The website should help this audience understand that image, confidence, and executive presence are strategic business assets rather than superficial personal preferences.
-
-## Secondary Audience
-
-The secondary audience is professionals seeking personal growth through image psychology, identity alignment, confidence, and personal transformation.
-
-This includes:
-
-* Executives
-* Entrepreneurs
-* Emerging leaders
-* Career transition professionals
-* Personal development seekers
-
-The website should help this audience understand image consulting as a meaningful tool for self-awareness, confidence, and professional development.
+This age range and gender describe the core audience, not eligibility restrictions for individual services.
 
 ## Audience Needs
 
-Corporate visitors need:
-
-* Credibility
-* Clear methodology
-* Business relevance
-* Evidence of professional value
-* A direct inquiry path
-
 Individual visitors need:
 
-* Emotional resonance
-* Trust
-* Service clarity
-* A sense of personal transformation
-* A direct booking path
+* Emotional resonance.
+* Trust and credible expertise.
+* Clear explanations of services and what each includes.
+* A connection between image, identity, and confidence.
+* A direct path to ask about a service and arrange a session.
 
 ## Audience Priority
 
-When audience needs conflict, prioritize corporate lead generation without weakening the individual booking path.
+Prioritize individual service discovery, inquiries, and bookings. Corporate services are not currently offered, and corporate buyers are not a target audience.
+
+Use [services.md](services.md) as the source of truth for the current service catalog. Do not introduce corporate workshops, training, or executive presence programs as available offerings.
 
 ## Related Documents
 
 * [vision.md](vision.md)
 * [positioning.md](positioning.md)
+* [services.md](services.md)
 * [user-journeys.md](user-journeys.md)
 * [../business/goals.md](../business/goals.md)
 
 ## Missing Information / Clarifications
 
 * Geographic market focus is not defined.
-* Preferred corporate buyer segment by company size or industry is not defined.
 * Individual client price sensitivity and service readiness are not documented.
-* Language strategy is not defined.
-* Accessibility needs for target audiences are not documented.
+* Accessibility needs for the target audience are not documented.

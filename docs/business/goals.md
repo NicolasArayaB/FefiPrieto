@@ -8,9 +8,9 @@ This document defines the business outcomes the platform should support. It shou
 
 ## Primary Goals
 
-1. Generate qualified B2B leads for workshops, executive presence programs, and corporate training services.
-2. Generate individual bookings for colorimetry, image consulting, personal branding, and personal shopping.
-3. Establish Fernanda Prieto as an authority in image psychology, executive presence, and personal transformation.
+1. Generate qualified individual inquiries and bookings for the services defined in [../product/services.md](../product/services.md).
+2. Reach individuals seeking personal image consulting, primarily women around ages 30–50.
+3. Establish Fernanda Prieto as an authority in image psychology and personal transformation.
 
 ## Business Role of the Website
 
@@ -24,9 +24,9 @@ The website should:
 
 ## Lead Generation Priorities
 
-Corporate leads should be prioritized because they represent larger business opportunities and support the long-term vision around executive presence and organizational development.
+Prioritize individual service discovery, inquiries, and bookings. Help visitors understand which service fits their personal goals and how to arrange a session.
 
-Individual booking paths should remain prominent and credible because they validate the core consulting offer and support personal transformation positioning.
+Corporate services are not currently offered. Corporate lead generation is not a current business goal.
 
 ## Authority Building
 
@@ -50,5 +50,4 @@ Authority should be built through:
 * Revenue targets are not defined.
 * Lead qualification criteria are not defined.
 * Sales follow-up process is not defined.
-* Corporate offer packaging is not finalized.
-* Individual service pricing and booking flow are not documented.
+* The final individual booking workflow is not defined; current service content and contact guidance are documented in [../product/services.md](../product/services.md).

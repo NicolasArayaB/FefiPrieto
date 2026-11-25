@@ -2,15 +2,15 @@
 
 ## Narrative Sequence
 
-The homepage moves from Fernanda's point of view to the way she works, the services she offers, evidence from clients, and finally her personal authority. The corporate inquiry is the primary conversion path; the Individual route remains present as a secondary, clearly differentiated path inside Services.
+The homepage moves from Fernanda's point of view to the way she works, the services she offers, evidence from clients, and finally her personal authority. Individual service inquiries and bookings are the primary conversion path, aimed primarily at women around ages 30–50. Corporate services are not currently offered.
 
 ## Rhythm
 
 The sections alternate their visual role:
 
-1. **Hero:** identity statement with one orange photographic field and the primary corporate action.
+1. **Hero:** identity statement with one orange photographic field and the primary individual inquiry action.
 2. **Methodology:** quiet, structured explanation in three stages.
-3. **Services:** the longest editorial chapter, using photography, cobalt, and orange to distinguish Corporate from Individual.
+3. **Services:** the longest editorial chapter, using photography, cobalt, and orange to support discovery of the individual service catalog.
 4. **Testimonials:** a single-column entry creates a reading pause before the expressive proof block.
 5. **Authority:** neutral portraiture and personal context close the narrative.
 
