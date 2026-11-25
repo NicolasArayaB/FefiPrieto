@@ -10,7 +10,7 @@ This document describes the planned system at a high level so implementation dec
 
 Fernanda Prieto is planned as a high-performance storytelling single-page application with immersive design and interactive experiences.
 
-The product should position Fernanda Prieto as an authority in executive presence and image psychology while supporting corporate inquiries and individual bookings.
+The product should position Fernanda Prieto as an authority in image psychology while supporting individual service inquiries and bookings for the audience defined in [../product/audience.md](../product/audience.md).
 
 ## Planned Stack
 
@@ -41,8 +41,7 @@ The website should:
 
 * Render premium storytelling sections.
 * Present service and methodology content.
-* Support corporate inquiry conversion.
-* Support individual Calendly booking conversion.
+* Support individual service inquiries through the configured contact channels and subsequent session arrangements.
 * Track key analytics events.
 * Provide fast, accessible, responsive experiences.
 

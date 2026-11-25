@@ -6,9 +6,9 @@ This file gives AI coding assistants and human contributors a compact project br
 
 ## Initial Content
 
-Fernanda Prieto is a premium personal brand website for psychology-informed image consulting, executive presence, and personal transformation.
+Fernanda Prieto is a premium personal brand website for psychology-informed image consulting and personal transformation.
 
-The platform exists to generate qualified corporate leads and individual bookings while establishing the brand as an authority in image psychology and executive presence.
+The platform exists to generate individual service inquiries and bookings while establishing the brand as an authority in image psychology. The primary audience is women around ages 30–50. Corporate services are not currently offered.
 
 The product vision is documented in [docs/product/vision.md](../docs/product/vision.md). That file is the source of truth for the brand belief, positioning, long-term vision, relationship with Dress the City, non-goals, and foundational principle.
 
@@ -18,8 +18,7 @@ The website should educate visitors, build trust, and guide them toward appropri
 
 Primary conversion paths:
 
-* Corporate inquiry for workshops, executive presence programs, and corporate training.
-* Individual consultation or booking for image consulting, colorimetry, personal branding, and personal shopping.
+* Individual inquiries and session arrangements for the services defined in [services.md](../docs/product/services.md).
 * Brand discovery through educational content, social channels, and later return visits.
 
 ## Core Belief
@@ -30,23 +29,9 @@ All product, design, technical, and content decisions should reinforce this idea
 
 ## Target Audiences
 
-Primary audience:
+Individuals seeking personal image consulting, primarily women around ages 30–50. This describes the core audience rather than service eligibility restrictions.
 
-* HR leaders
-* Organizational development professionals
-* Talent management teams
-* Executives
-* Founders
-* Business owners
-* Leadership teams
-
-Secondary audience:
-
-* Executives
-* Entrepreneurs
-* Emerging leaders
-* Career transition professionals
-* Personal development seekers
+Prioritize personal goals, self-awareness, confidence, and identity alignment. See [audience.md](../docs/product/audience.md) for audience guidance.
 
 ## Current Technical Direction
 

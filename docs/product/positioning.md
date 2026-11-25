@@ -8,7 +8,7 @@ This document translates the product vision into practical positioning guidance 
 
 ## Positioning Statement
 
-Fernanda Prieto is a premium psychology-informed image consulting brand that helps individuals and organizations align identity, confidence, and external expression to strengthen presence, authority, and personal transformation.
+Fernanda Prieto is a premium psychology-informed image consulting brand that helps individuals align identity, confidence, and external expression to support personal transformation. The primary audience is women around ages 30–50 seeking personal image consulting.
 
 ## Primary Positioning
 
@@ -16,7 +16,7 @@ The initial positioning is:
 
 > Psychology + Image Consulting
 
-Executive presence and leadership development should appear as natural extensions of this expertise, not as disconnected or premature claims.
+Executive presence and leadership development remain possible future directions, not current services or the focus of audience messaging. Corporate services are not currently offered.
 
 ## Differentiation
 
@@ -38,13 +38,12 @@ Lead with:
 * Image is psychological.
 * Confidence affects behavior and performance.
 * Identity and external expression should be aligned.
-* Executive presence can be intentionally developed.
+* Personal image can express identity and support everyday confidence.
 
 Support with:
 
-* Consulting and coaching services.
-* Corporate workshops and executive presence programs.
-* Individual image consulting and personal branding services.
+* The individual services confirmed in [services.md](services.md).
+* Clear explanations of what each service includes and how to inquire.
 
 Avoid leading with:
 

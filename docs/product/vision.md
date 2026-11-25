@@ -2,7 +2,7 @@
 
 ## Vision Statement
 
-To transform how individuals and organizations understand image and presence by positioning personal presentation as a psychological, strategic, and developmental tool rather than a superficial concern.
+To transform how individuals understand image and presence by positioning personal presentation as a psychological, strategic, and developmental tool rather than a superficial concern.
 
 Fernanda Prieto exists to demonstrate that the way we present ourselves influences how we think, feel, behave, and are perceived by others. Through psychology, coaching, and image strategy, the brand seeks to help people align identity and external expression in ways that foster confidence, authenticity, and professional growth.
 
@@ -14,7 +14,7 @@ Fernanda Prieto is a premium personal brand positioned at the intersection of ps
 
 The brand is founded on the belief that personal image is not a superficial concern but a psychological and strategic tool that influences confidence, behavior, perception, and authority.
 
-Through psychology-informed consulting, coaching, and image strategy, Fernanda Prieto helps individuals and organizations align internal identity with external expression.
+Through psychology-informed consulting, coaching, and image strategy, Fernanda Prieto helps individuals align internal identity with external expression. The current audience is primarily women around ages 30–50, and the current offering consists of individual services. Corporate services are not currently offered.
 
 The platform aims to challenge the traditional perception of fashion and image as merely aesthetic pursuits and instead present them as meaningful instruments for self-awareness, personal transformation, and professional development.
 
@@ -159,6 +159,8 @@ Over time, the brand may evolve from individual consulting into broader offering
 * Strategic partnerships
 * Speaking opportunities
 * Research and frameworks around image psychology and executive presence
+
+These are long-term possibilities, not current services or committed roadmap items. They do not change the individual audience and conversion priorities defined in [audience.md](audience.md) and [../business/goals.md](../business/goals.md).
 
 Every future evolution of the brand should remain grounded in its foundational belief:
 

@@ -22,8 +22,8 @@ Every major decision should reinforce the foundational belief:
 
 ## Conversion Rules
 
-* Corporate inquiry paths should be clear and credible.
-* Individual booking paths should remain easy to find.
+* Prioritize individual service inquiries and bookings for the audience defined in [../product/audience.md](../product/audience.md).
+* Corporate services are not currently offered; do not present corporate workshops, training, or executive presence programs as available services.
 * CTAs should match visitor intent and journey stage.
 * Do not force all visitors into the same conversion path.
 
@@ -58,6 +58,5 @@ Out-of-scope MVP capabilities are listed in [../product/roadmap.md](../product/r
 
 * Legal, privacy, and consent requirements are not documented.
 * Brand claim review process is not defined.
-* Corporate lead qualification rules are not defined.
 * Rules for cross-promotion with Dress the City need concrete examples.
 * Rules for handling testimonials and before-after content are not documented.

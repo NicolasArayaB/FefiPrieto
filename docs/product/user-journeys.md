@@ -6,20 +6,6 @@ This document defines the core visitor journeys the website must support so info
 
 ## Initial Content
 
-## Corporate Journey
-
-Primary path:
-
-1. Discover Fernanda Prieto.
-2. Understand image psychology.
-3. Learn the methodology.
-4. Explore corporate services.
-5. Build trust.
-6. Submit an inquiry.
-7. Begin a sales conversation.
-
-The corporate journey should reduce perceived risk and make the business value of executive presence clear.
-
 ## Individual Journey
 
 Primary path:
@@ -28,9 +14,10 @@ Primary path:
 2. Understand psychology and image.
 3. Explore individual services.
 4. Build trust.
-5. Book a consultation through Calendly.
+5. Inquire through the configured contact channel.
+6. Arrange a session through the response process.
 
-The individual journey should make image consulting feel developmental, personal, and credible.
+This is the primary conversion journey for individuals seeking personal image consulting, primarily women around ages 30–50. It should make image consulting feel developmental, personal, and credible. Corporate services are not currently offered.
 
 ### Interim conversion path
 
@@ -73,5 +60,4 @@ Every journey should include:
 * Exact page structure is not defined.
 * Specific CTAs are not finalized.
 * Calendly routing rules are not defined; the interim WhatsApp and email inquiry paths remain in use until they are approved.
-* Corporate inquiry form fields are not defined.
 * Trust assets such as testimonials, credentials, and case studies are not available.

@@ -10,9 +10,10 @@ This document defines how platform success should be evaluated without reducing 
 
 Primary metrics:
 
-* Corporate consultation requests.
-* Workshop inquiries.
-* Calendly bookings.
+* Individual service inquiries.
+* Confirmed individual bookings.
+
+Contact CTA clicks indicate intent; they do not by themselves confirm an inquiry or booking.
 
 These metrics directly indicate lead generation and booking performance.
 
@@ -33,7 +34,7 @@ Track:
 
 * CTA clicks.
 * Form submissions.
-* Calendly interactions.
+* Interactions with the configured individual contact channels.
 * Service exploration.
 * Scroll depth.
 * Conversion events.
